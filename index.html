@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>발리·길리 16일</title>
+<title>발리와 길리 16일</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
@@ -38,13 +38,7 @@ a:hover { color: var(--brand); }
 header.hero { padding: 1rem 0 2.5rem; border-bottom: 1px solid var(--line); }
 h1 { font-size: clamp(2rem, 5.5vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin: 0 0 0.5rem; }
 .hero p { margin: 0 0 1.25rem; color: var(--sub); font-size: 1.0625rem; max-width: 38rem; }
-.pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.pill {
-  display: inline-flex; align-items: center;
-  padding: 0.35rem 0.9rem; border-radius: 999px;
-  background: var(--soft); font-size: 0.8125rem; font-weight: 500; color: var(--ink);
-}
-.pill.b { background: var(--brand); color: #fff; }
+.meta { color: var(--sub); font-size: 0.95rem; margin: 0; }
 
 section { padding: 2.75rem 0; border-bottom: 1px solid var(--line); }
 section:last-of-type { border-bottom: none; }
@@ -146,15 +140,9 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
 <div class="wrap">
 
 <header class="hero">
-  <h1>발리 · 길리 16일</h1>
+  <h1>발리와 길리 16일</h1>
   <p>청두에서 출발해 조호르바루와 싱가포르를 거쳐, 발리와 길리에서 13박. 시간과 이동 수단까지 정해 둔 계획표이고, 마음 가는 대로 빼고 더하면 된다.</p>
-  <div class="pills">
-    <span class="pill b">2026. 9. 23 – 10. 11</span>
-    <span class="pill">2인</span>
-    <span class="pill">말레이시아항공</span>
-    <span class="pill">발리·길리 13박</span>
-    <span class="pill">싱가포르 당일치기</span>
-  </div>
+  <p class="meta">2026. 9. 23 – 10. 11, 2인, 말레이시아항공</p>
   <figure class="photo hero-ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Nusa_Dua_Bali.jpg/960px-Nusa_Dua_Bali.jpg" alt="누사두아 해변" loading="lazy"></figure>
 </header>
 
@@ -181,14 +169,14 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
 
 <section>
   <h2>동선</h2>
-  <p class="sub">지도는 드래그·줌이 되고, 마커를 누르면 이름이 뜬다. 굵은 원이 자는 곳, 작은 점이 들르는 곳. 점선은 보트.</p>
+  <p class="sub">지도는 드래그, 줌이 되고, 마커를 누르면 이름이 뜬다. 굵은 원이 자는 곳, 작은 점이 들르는 곳. 점선은 보트.</p>
   <div id="livemap"></div>
   <p class="caption">발리를 시계 반대 방향으로 한 바퀴. 배는 딱 두 번 탄다.</p>
   <ul class="legs">
-    <li><span class="no">1</span><span class="txt"><strong>9/27</strong> 공항 → 사누르 · 차 30분 <small><a href="https://www.google.com/maps/dir/I+Gusti+Ngurah+Rai+International+Airport/Maison+Aurelia+Sanur">경로 보기</a></small></span></li>
-    <li><span class="no">2</span><span class="txt"><strong>9/28</strong> 사누르 → 길리 트라왕안 · 직행 보트 2시간 30분</span></li>
+    <li><span class="no">1</span><span class="txt"><strong>9/27</strong> 공항 → 사누르, 차 30분 <small><a href="https://www.google.com/maps/dir/I+Gusti+Ngurah+Rai+International+Airport/Maison+Aurelia+Sanur">경로 보기</a></small></span></li>
+    <li><span class="no">2</span><span class="txt"><strong>9/28</strong> 사누르 → 길리 트라왕안, 직행 보트 2시간 30분</span></li>
     <li><span class="no">3</span><span class="txt"><strong>10/2</strong> 길리 → 파당바이 보트, 이어서 고아 라와 → 시데멘 → 띠르따 강가를 들러 아메드까지 <small><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Goa+Lawah+Temple/Sidemen+Bali/Tirta+Gangga/Jemeluk+Beach+Amed">경로 보기</a></small></span></li>
-    <li><span class="no">4</span><span class="txt"><strong>10/6</strong> 아메드 → 울루와뚜 절벽 · 차 3시간 반 <small><a href="https://www.google.com/maps/dir/Jemeluk+Beach+Amed/Bingin+Beach+Uluwatu">경로 보기</a></small></span></li>
+    <li><span class="no">4</span><span class="txt"><strong>10/6</strong> 아메드 → 울루와뚜 절벽, 차 3시간 반 <small><a href="https://www.google.com/maps/dir/Jemeluk+Beach+Amed/Bingin+Beach+Uluwatu">경로 보기</a></small></span></li>
     <li><span class="no">5</span><span class="txt"><strong>10/7</strong> 절벽 → 발랑안 → 라구나 <small><a href="https://www.google.com/maps/dir/Bingin+Beach+Uluwatu/Balangan+Beach/The+Laguna+a+Luxury+Collection+Resort+%26+Spa+Nusa+Dua">경로 보기</a></small></span></li>
     <li><span class="no">6</span><span class="txt"><strong>10/9</strong> 라구나 → 울루와뚜 사원(케착) → 짐바란 → 공항 앞 <small><a href="https://www.google.com/maps/dir/The+Laguna+a+Luxury+Collection+Resort+%26+Spa+Nusa+Dua/Uluwatu+Temple/Menega+Cafe/Hilton+Garden+Inn+Bali+Ngurah+Rai+Airport">경로 보기</a></small></span></li>
     <li><span class="no">S</span><span class="txt"><strong>9/26</strong> 조호르바루 → 우드랜즈 → 센토사 USS → 가든스 바이 더 베이 <small><a href="https://www.google.com/maps/dir/R%26F+Princess+Cove+Johor+Bahru/Woodlands+Checkpoint/Universal+Studios+Singapore/Gardens+by+the+Bay">경로 보기</a></small></span></li>
@@ -197,15 +185,15 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
 
 <section>
   <h2>머무는 곳</h2>
-  <p class="sub">일곱 밤 자리. 도미토리 없음, 전부 더블·킹.</p>
+  <p class="sub">일곱 밤 자리. 도미토리 없음, 전부 더블, 킹.</p>
   <div class="stays">
-    <div class="stay"><span class="when">9/24 – 9/27 · 3박</span><span class="name">R&amp;F Princess Cove</span><span class="desc">조호르바루 에어비앤비. 싱가포르 국경(CIQ)까지 걸어서 10분이라 당일치기의 핵심 기지.</span></div>
-    <div class="stay"><span class="when">9/27 · 1박</span><span class="name">사누르</span><span class="desc">발리 도착 밤. 다음 날 아침 보트 항구가 코앞.</span></div>
-    <div class="stay"><span class="when">9/28 – 10/2 · 4박</span><span class="name">길리 트라왕안</span><span class="desc">차 없는 섬. 자전거와 마차, 거북이와 일몰 그네. 숙소는 조용한 남쪽.</span></div>
-    <div class="stay"><span class="when">10/2 – 10/6 · 4박</span><span class="name">아메드 · 제멜룩</span><span class="desc">검은 모래의 조용한 어촌. 다이빙과 프리다이빙, 아궁산 일몰.</span></div>
-    <div class="stay"><span class="when">10/6 · 1박</span><span class="name">울루와뚜 절벽 방갈로</span><span class="desc">빙인 절벽 위에서 하룻밤. 파도 소리 들으며 잔다.</span></div>
-    <div class="stay"><span class="when">10/7 – 10/9 · 2박</span><span class="name">라구나 럭셔리 컬렉션</span><span class="desc">누사두아의 클래식 리조트, 킹 라군뷰. 이 여행의 쉼표.</span></div>
-    <div class="stay"><span class="when">10/9 · 1박</span><span class="name">힐튼 가든 인 공항</span><span class="desc">공항 길 건너. 다음 날 아침 일어나서 바로 간다.</span></div>
+    <div class="stay"><span class="when">9/24 – 9/27, 3박</span><span class="name">R&amp;F Princess Cove</span><span class="desc">조호르바루 에어비앤비. 싱가포르 국경(CIQ)까지 걸어서 10분이라 당일치기의 핵심 기지.</span></div>
+    <div class="stay"><span class="when">9/27, 1박</span><span class="name">사누르</span><span class="desc">발리 도착 밤. 다음 날 아침 보트 항구가 코앞.</span></div>
+    <div class="stay"><span class="when">9/28 – 10/2, 4박</span><span class="name">길리 트라왕안</span><span class="desc">차 없는 섬. 자전거와 마차, 거북이와 일몰 그네. 숙소는 조용한 남쪽.</span></div>
+    <div class="stay"><span class="when">10/2 – 10/6, 4박</span><span class="name">아메드, 제멜룩</span><span class="desc">검은 모래의 조용한 어촌. 다이빙과 프리다이빙, 아궁산 일몰.</span></div>
+    <div class="stay"><span class="when">10/6, 1박</span><span class="name">울루와뚜 절벽 방갈로</span><span class="desc">빙인 절벽 위에서 하룻밤. 파도 소리 들으며 잔다.</span></div>
+    <div class="stay"><span class="when">10/7 – 10/9, 2박</span><span class="name">라구나 럭셔리 컬렉션</span><span class="desc">누사두아의 클래식 리조트, 킹 라군뷰. 이 여행의 쉼표.</span></div>
+    <div class="stay"><span class="when">10/9, 1박</span><span class="name">힐튼 가든 인 공항</span><span class="desc">공항 길 건너. 다음 날 아침 일어나서 바로 간다.</span></div>
   </div>
 </section>
 
@@ -218,9 +206,9 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
     <div>
       <h3>출국 전야</h3>
       <ul class="beats">
-        <li><span class="hh">20:30</span><span>집에서 출발 — 지하철 18호선 40분 또는 택시 1시간·¥150~200.</span></li>
+        <li><span class="hh">20:30</span><span>집에서 출발 — 지하철 18호선 40분 또는 택시 1시간, ¥150~200.</span></li>
         <li><span class="hh">22:00</span><span>TFU T1 도착, 체크인(카운터는 3시간 전 오픈). 수하물은 <strong>조호르바루까지 태그</strong> 확인.</span></li>
-        <li><span class="hh">23:00</span><span>출국심사. 심야라 식당이 닫혀 있으니 물·간식은 미리.</span></li>
+        <li><span class="hh">23:00</span><span>출국심사. 심야라 식당이 닫혀 있으니 물, 간식은 미리.</span></li>
         <li><span class="hh">00:25</span><span>탑승. 기내 5시간이 오늘 밤 수면의 전부 — 타자마자 자는 게 목표.</span></li>
       </ul>
     </div>
@@ -234,13 +222,13 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
       <p class="lead">밤을 새운 뒤라 KLCC–부킷빙탕 한 축만 돈다. 걷는 건 다 합쳐 3km 이하.</p>
       <ul class="beats">
         <li><span class="hh">06:10</span><span>KUL 도착, 입국. 짐 없이 통과.</span></li>
-        <li><span class="hh">07:15</span><span><strong>KLIA Ekspres</strong>로 시내.<span class="mv">28분 · RM55/인 · 가방은 KL Sentral 보관소에</span></span></li>
+        <li><span class="hh">07:15</span><span><strong>KLIA Ekspres</strong>로 시내.<span class="mv">28분, RM55/인, 가방은 KL Sentral 보관소에</span></span></li>
         <li><span class="hh">08:30</span><span>KLCC에서 조식 — 카야토스트와 화이트커피.</span></li>
         <li><span class="hh">09:30</span><span><strong>페트로나스 트윈타워</strong>와 공원 산책. 호수 분수 쪽이 사진 자리.</span></li>
         <li><span class="hh">12:00</span><span>부킷빙탕 파빌리온에서 점심 — 나시르막과 사테.</span></li>
         <li><span class="hh">13:30</span><span>발 마사지 60분. 밤샘 후엔 관광 한 곳보다 이게 남는다.</span></li>
         <li><span class="hh">16:15</span><span>공항 복귀 → 18:05 국내선 → 19:05 조호르바루.</span></li>
-        <li><span class="hh">19:20</span><span>그랩으로 숙소.<span class="mv">35분 · RM60 선</span> 저녁은 가볍게, 22:30 취침.</span></li>
+        <li><span class="hh">19:20</span><span>그랩으로 숙소.<span class="mv">35분, RM60 선</span> 저녁은 가볍게, 22:30 취침.</span></li>
       </ul>
     </div>
   </div>
@@ -257,7 +245,7 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
         <li><span class="hh">18:00</span><span>저녁 — <strong>Kam Long 피시헤드 커리</strong>. 일찍 닫으니 6시엔 도착.</span></li>
         <li><span class="hh">21:30</span><span>취침. 내일 새벽 5시 기상.</span></li>
       </ul>
-      <div class="tip">저녁에 내일 준비: 싱가포르 입국카드(SGAC)와 말레이시아 재입국 카드(MDAC) 제출, 티켓·여권 가방에.</div>
+      <div class="tip">저녁에 내일 준비: 싱가포르 입국카드(SGAC)와 말레이시아 재입국 카드(MDAC) 제출, 티켓, 여권 가방에.</div>
     </div>
   </div>
 
@@ -279,12 +267,12 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
         <li><span class="hh">21:00</span><span><strong>Spectra</strong> 워터쇼 → 21:20 귀환 시작.</span></li>
         <li><span class="hh">23:45</span><span>JB 숙소. 바로 취침.</span></li>
       </ul>
-      <div class="alert"><strong>전자담배는 두고 간다.</strong> 싱가포르는 소지만으로 최대 S$10,000 벌금에 기기 압수(외국인 초범도 S$700 선). 기기·팟 전부 JB 숙소에 두고 갈 것. 일반 담배도 면세 반입이 없고, 껌도 제한된다.</div>
+      <div class="alert"><strong>전자담배는 두고 간다.</strong> 싱가포르는 소지만으로 최대 S$10,000 벌금에 기기 압수(외국인 초범도 S$700 선). 기기, 팟 전부 JB 숙소에 두고 갈 것. 일반 담배도 면세 반입이 없고, 껌도 제한된다.</div>
     </div>
   </div>
 
   <div class="day">
-    <div class="stamp"><span class="d">9.27</span><span class="w">일</span><span class="p">→ 발리 · 사누르</span></div>
+    <div class="stamp"><span class="d">9.27</span><span class="w">일</span><span class="p">→ 발리, 사누르</span></div>
     <div>
       <figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Sanur_Beach.JPG/960px-Sanur_Beach.JPG" alt="사누르 해변" loading="lazy"></figure>
       <h3>발리 입국</h3>
@@ -292,7 +280,7 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
         <li><span class="hh">08:20</span><span>그랩으로 세나이 공항. 체크인 후 라운지에서 조식.</span></li>
         <li><span class="hh">11:15</span><span>이륙 → KUL 환승 3시간, 라운지 점심과 샤워.</span></li>
         <li><span class="hh">18:30</span><span>발리 도착. e-VOA 레인 → 수하물 → 세관 QR. 저녁 입국장은 한 시간쯤 잡는다.</span></li>
-        <li><span class="hh">20:00</span><span>그랩으로 사누르.<span class="mv">30분 · IDR 200k</span></span></li>
+        <li><span class="hh">20:00</span><span>그랩으로 사누르.<span class="mv">30분, IDR 200k</span></span></li>
         <li><span class="hh">21:15</span><span>늦은 저녁 — 숙소 근처 워룽에서 나시고렝에 빈땅 한 병.</span></li>
       </ul>
     </div>
@@ -306,8 +294,8 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
       <ul class="beats">
         <li><span class="hh">06:15</span><span><strong>사누르 해변 일출</strong> — 동해안이라 해가 바다에서 뜬다.</span></li>
         <li><span class="hh">08:00</span><span>조식 — <strong>Warung Mak Beng</strong> 오픈런(1941년부터 생선튀김+생선머리수프 단일 메뉴).</span></li>
-        <li><span class="hh">08:45</span><span>은행 ATM에서 현금 인출 — 길리·아메드는 카드가 거의 안 된다.</span></li>
-        <li><span class="hh">10:30</span><span><strong>직행 보트 출항</strong> → 13:00 길리 트라왕안.<span class="mv">2시간 30분 · 신항만이라 짐 안 젖음 · 멀미약은 30분 전 · <a href="https://www.gilibookings.com/sanur-to-gili-trawangan">보트 예약</a>(direct 표기 확인)</span></span></li>
+        <li><span class="hh">08:45</span><span>은행 ATM에서 현금 인출 — 길리, 아메드는 카드가 거의 안 된다.</span></li>
+        <li><span class="hh">10:30</span><span><strong>직행 보트 출항</strong> → 13:00 길리 트라왕안.<span class="mv">2시간 30분, 신항만이라 짐 안 젖음, 멀미약은 30분 전, <a href="https://www.gilibookings.com/sanur-to-gili-trawangan">보트 예약</a>(direct 표기 확인)</span></span></li>
         <li><span class="hh">15:00</span><span><strong>자전거 대여</strong>(섬의 발) + 내일 스노클링 투어 예약.</span></li>
         <li><span class="hh">17:30</span><span><strong>Sunset Beach</strong> — 물 위 그네와 아궁산 실루엣.</span></li>
         <li><span class="hh">19:30</span><span>저녁 — <strong>나이트마켓</strong>에서 생선 골라 그릴.</span></li>
@@ -335,7 +323,7 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
       <figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Blacktip_reef_shark_%28Carcharhinus_melanopterus%29_Moorea.jpg/960px-Blacktip_reef_shark_%28Carcharhinus_melanopterus%29_Moorea.jpg" alt="블랙팁 리프 샤크" loading="lazy"></figure>
       <h3>다이빙하고 자전거로 섬 한 바퀴</h3>
       <ul class="beats">
-        <li><span class="hh">08:00</span><span><strong>2탱크 다이브</strong> — Shark Point(블랙팁·거북)와 Halik(산호벽).</span></li>
+        <li><span class="hh">08:00</span><span><strong>2탱크 다이브</strong> — Shark Point(블랙팁, 거북)와 Halik(산호벽).</span></li>
         <li><span class="hh">13:30</span><span>점심 후 낮잠과 해변.</span></li>
         <li><span class="hh">16:30</span><span><strong>자전거 섬 일주</strong> 5.5km — 북쪽 모래 구간은 5분만 끌면 된다.</span></li>
         <li><span class="hh">19:30</span><span>저녁 — 메인 스트립 씨푸드 BBQ.</span></li>
@@ -374,7 +362,7 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
   </div>
 
   <div class="day">
-    <div class="stamp"><span class="d">10.3</span><span class="w">토</span><span class="p">아메드 · 뚤람벤</span></div>
+    <div class="stamp"><span class="d">10.3</span><span class="w">토</span><span class="p">아메드, 뚤람벤</span></div>
     <div>
       <figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/USAT_Liberty.jpg/960px-USAT_Liberty.jpg" alt="USAT 리버티호" loading="lazy"></figure>
       <h3>리버티 난파선</h3>
@@ -467,7 +455,7 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
       <ul class="beats">
         <li><span class="hh">10:30</span><span>라군 풀 — 이 여행의 마지막 수영.</span></li>
         <li><span class="hh">16:00</span><span>레이트 체크아웃, 기사와 울루와뚜로.</span></li>
-        <li><span class="hh">17:15</span><span><strong>울루와뚜 사원</strong> 절벽길 산책 — 안경·모자는 가방에, 원숭이가 진짜 낚아챈다.</span></li>
+        <li><span class="hh">17:15</span><span><strong>울루와뚜 사원</strong> 절벽길 산책 — 안경, 모자는 가방에, 원숭이가 진짜 낚아챈다.</span></li>
         <li><span class="hh">18:00</span><span><strong>케착 파이어 댄스</strong> — 일몰을 등지고 60분. <a href="https://uluwatukecakdance.com/">티켓은 미리 사둔다</a>, 17:15 입장이면 절벽 쪽 자리.</span></li>
         <li><span class="hh">19:40</span><span><strong>짐바란 Menega Cafe</strong> — 마지막 저녁. 킬로 단위로 골라 잠발 소스에 구워 준다.</span></li>
         <li><span class="hh">21:15</span><span>공항 앞 호텔 체크인. 짐 최종 정리.</span></li>
@@ -496,15 +484,15 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
     <table>
       <thead><tr><th>항목</th><th style="text-align:right">1인 (만원)</th></tr></thead>
       <tbody>
-        <tr><td>숙소 — 사누르 · 길리 · 아메드</td><td class="n">41</td></tr>
-        <tr><td>라구나 2박 · 공항 1박 (포인트·숙박권 처리)</td><td class="n">0</td></tr>
+        <tr><td>숙소 — 사누르, 길리, 아메드</td><td class="n">41</td></tr>
+        <tr><td>라구나 2박, 공항 1박 (포인트, 숙박권 처리)</td><td class="n">0</td></tr>
         <tr><td>울루와뚜 절벽 1박</td><td class="n">10</td></tr>
         <tr><td>식비 16일</td><td class="n">60</td></tr>
-        <tr><td>다이빙 · 프리다이빙 · 서핑</td><td class="n">25</td></tr>
+        <tr><td>다이빙, 프리다이빙, 서핑</td><td class="n">25</td></tr>
         <tr><td>보트 2편</td><td class="n">15</td></tr>
-        <tr><td>기사 대절 · 그랩 · 스쿠터 · 열차</td><td class="n">15</td></tr>
-        <tr><td>USS · 싱가포르 하루</td><td class="n">15</td></tr>
-        <tr><td>KL 시내 · 비자 · 관광세 · 보험</td><td class="n">15</td></tr>
+        <tr><td>기사 대절, 그랩, 스쿠터, 열차</td><td class="n">15</td></tr>
+        <tr><td>USS, 싱가포르 하루</td><td class="n">15</td></tr>
+        <tr><td>KL 시내, 비자, 관광세, 보험</td><td class="n">15</td></tr>
       </tbody>
       <tfoot><tr><td>합계</td><td class="n">196</td></tr></tfoot>
     </table>
@@ -521,25 +509,25 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
     <li><strong>발리 관광세</strong> <span>— <a href="https://lovebali.baliprov.go.id/">Love Bali</a>(.go.id만 공식)에서 1인 IDR 150,000, QR 보관.</span></li>
     <li><strong>국제운전면허증</strong> <span>— 스쿠터용. 경찰이 실제로 확인한다.</span></li>
     <li><strong>여행자보험</strong> <span>— 다이빙 보장과 후송 담보 확인. 길리엔 병원이 없다.</span></li>
-    <li><strong>eSIM</strong> <span>— 말레이·싱가포르·인도네시아 3국 커버로. 입국카드 제출과 그랩이 전부 데이터에 걸려 있다.</span></li>
+    <li><strong>eSIM</strong> <span>— 말레이, 싱가포르, 인도네시아 3국 커버로. 입국카드 제출과 그랩이 전부 데이터에 걸려 있다.</span></li>
   </ul>
 </section>
 
 <section>
   <h2>알아두기</h2>
   <ul class="tips">
-    <li><strong>전자담배</strong> <span>— 싱가포르는 반입·소지 자체가 불법(최대 S$10,000 벌금, 기기 압수). 9/26엔 반드시 JB 숙소에 두고 간다. 발리·말레이시아는 합법.</span></li>
-    <li><strong>현금</strong> <span>— 길리·아메드는 카드가 거의 안 된다. 9/28 사누르에서 넉넉히 인출하고, ATM은 은행 부스 안 기기만(스키밍 조심). 10/6부터는 카드 되는 동네.</span></li>
-    <li><strong>라운지</strong> <span>— 세나이·쿠알라룸푸르·발리 공항 모두 라운지키 제휴. 라운지 식사가 네 끼 나온다. 청두 국제선만 제휴가 없다.</span></li>
-    <li><strong>날씨</strong> <span>— 9월 말~10월 초는 건기 끝자락, 발리·길리 다니기 가장 좋은 때.</span></li>
+    <li><strong>전자담배</strong> <span>— 싱가포르는 반입, 소지 자체가 불법(최대 S$10,000 벌금, 기기 압수). 9/26엔 반드시 JB 숙소에 두고 간다. 발리, 말레이시아는 합법.</span></li>
+    <li><strong>현금</strong> <span>— 길리, 아메드는 카드가 거의 안 된다. 9/28 사누르에서 넉넉히 인출하고, ATM은 은행 부스 안 기기만(스키밍 조심). 10/6부터는 카드 되는 동네.</span></li>
+    <li><strong>라운지</strong> <span>— 세나이, 쿠알라룸푸르, 발리 공항 모두 라운지키 제휴. 라운지 식사가 네 끼 나온다. 청두 국제선만 제휴가 없다.</span></li>
+    <li><strong>날씨</strong> <span>— 9월 말~10월 초는 건기 끝자락, 발리와 길리 다니기 가장 좋은 때.</span></li>
     <li><strong>사원 복장</strong> <span>— 사롱 필요. 입장료에 대여가 포함되는 곳이 대부분이고, 하나 사두면 편하다.</span></li>
     <li><strong>다이빙과 비행</strong> <span>— 사이에 24시간. 마지막 다이빙은 10/5까지라 여유가 크다.</span></li>
     <li><strong>말레이시아 에티켓</strong> <span>— 공공장소 스킨십은 접어두는 쪽이 편하다. 발리는 신경 안 써도 된다.</span></li>
   </ul>
 </section>
 
-<footer><p>시간표까지 적힌 상세 실행 계획은 <a href="plan.html">여기</a>에 있어요.</p>
-  2026년 8월 기준으로 짠 계획. 보트·열차 시간과 입국 요건은 출발 2주 전에 한 번 더 확인. 사진: Wikimedia Commons · 지도: OpenStreetMap.
+<footer><p>시간표까지 적힌 상세 실행 계획은 <a href="plan.html">여기</a>에 있다.</p>
+  2026년 8월 기준으로 짠 계획. 보트, 열차 시간과 입국 요건은 출발 2주 전에 한 번 더 확인. 사진: Wikimedia Commons, 지도: OpenStreetMap.
 </footer>
 
 </div>
@@ -556,9 +544,9 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
   var stay = [
     ['사누르 (9/27밤)', -8.678, 115.263],
     ['길리 트라왕안 (9/28–10/2)', -8.349, 116.033],
-    ['아메드 · 제멜룩 (10/2–10/6)', -8.336, 115.663],
+    ['아메드, 제멜룩 (10/2–10/6)', -8.336, 115.663],
     ['빙인 절벽 방갈로 (10/6밤)', -8.805, 115.111],
-    ['라구나 럭셔리 컬렉션 (10/7·8밤)', -8.800, 115.232],
+    ['라구나 럭셔리 컬렉션 (10/7-8밤)', -8.800, 115.232],
     ['힐튼 가든 인 공항 (10/9밤)', -8.741, 115.169]
   ];
   var poi = [
@@ -567,12 +555,12 @@ footer { padding-top: 2rem; font-size: 0.8125rem; color: var(--sub); }
     ['파당바이 항', -8.532, 115.508],
     ['시데멘', -8.467, 115.427],
     ['띠르따 강가', -8.412, 115.587],
-    ['뚤람벤 · 리버티 난파선', -8.274, 115.593],
+    ['뚤람벤, 리버티 난파선', -8.274, 115.593],
     ['발랑안 (서핑)', -8.792, 115.123],
-    ['술루반 · 싱글핀', -8.815, 115.088],
-    ['울루와뚜 사원 · 케착', -8.829, 115.085],
+    ['술루반, 싱글핀', -8.815, 115.088],
+    ['울루와뚜 사원, 케착', -8.829, 115.085],
     ['멜라스티 비치', -8.848, 115.161],
-    ['짐바란 · 메네가', -8.790, 115.168],
+    ['짐바란, 메네가', -8.790, 115.168],
     ['길리 메노', -8.351, 116.056],
     ['길리 에어', -8.358, 116.081]
   ];
