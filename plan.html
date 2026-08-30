@@ -11,8 +11,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
 <style>
 :root {
-  --pink: #ff385c;
-  --pink-dark: #e00b41;
+  --pink: #c9184a;
+  --pink-dark: #b91643;
   --ink: #222222;
   --body: #3f3f3f;
   --muted: #6a6a6a;
@@ -57,6 +57,9 @@ img { display: block; width: 100%; }
   gap: 24px;
 }
 .brand {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   color: var(--ink);
   font-weight: 600;
   text-decoration: none;
@@ -69,6 +72,7 @@ img { display: block; width: 100%; }
   border-radius: 8px;
   background: var(--white);
   color: var(--ink);
+  min-height: 44px;
   padding: 9px 16px;
   cursor: pointer;
 }
@@ -117,6 +121,19 @@ section { padding: 64px 0; border-top: 1px solid var(--line-soft); }
 h2 { margin: 0; font-size: 28px; line-height: 1.25; letter-spacing: -.03em; }
 .section-head p { max-width: none; margin: 8px 0 0; color: var(--muted); }
 .section-link { color: var(--ink); font-size: 14px; font-weight: 600; white-space: nowrap; }
+.section-link,
+.transport-note a,
+.comparison-route a,
+.day-option a,
+.stay-body a,
+.choice-note a,
+.footer-row a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+.navlinks a { display: inline-flex; min-height: 44px; align-items: center; }
+.scroll-hint { display: none; color: var(--muted); font-size: 12px; }
 
 .overview-grid { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--line); }
 .overview-card { padding: 18px; border-right: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
@@ -207,6 +224,7 @@ h2 { margin: 0; font-size: 28px; line-height: 1.25; letter-spacing: -.03em; }
 .transport-steps li:last-child { padding-bottom: 0; }
 .transport-steps strong { color: var(--ink); font-weight: 600; }
 .transport-note { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+.transport-note a { margin-right: 14px; }
 
 .place-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 32px; }
 .place-card { padding: 22px 0; border-top: 1px solid var(--line); }
@@ -268,7 +286,7 @@ h2 { margin: 0; font-size: 28px; line-height: 1.25; letter-spacing: -.03em; }
 .mini-beat:last-child { border-bottom: 0; padding-bottom: 0; }
 .mini-beat time { color: var(--muted); font-variant-numeric: tabular-nums; }
 .day-detail { margin-top: 17px; }
-.day-detail summary { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-size: 13px; font-weight: 600; cursor: pointer; list-style: none; }
+.day-detail summary { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; padding: 6px 0; color: var(--ink); font-size: 13px; font-weight: 600; cursor: pointer; list-style: none; }
 .day-detail summary::-webkit-details-marker { display: none; }
 .day-detail summary::after { content: "열기"; color: var(--muted); font-size: 12px; font-weight: 400; }
 .day-detail[open] summary::after { content: "닫기"; }
@@ -280,7 +298,7 @@ h2 { margin: 0; font-size: 28px; line-height: 1.25; letter-spacing: -.03em; }
 .stay-body span { color: var(--pink); font-size: 12px; font-weight: 600; }
 .stay-body h3 { margin: 7px 0 0; font-size: 18px; }
 .stay-body p { margin: 8px 0 0; color: var(--body); font-size: 14px; }
-.stay-body a { display: inline-block; margin-top: 13px; font-size: 13px; font-weight: 600; }
+.stay-body a { margin-top: 7px; font-size: 13px; font-weight: 600; }
 
 .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .booking-card { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); }
@@ -355,6 +373,8 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
   .section-head { align-items: start; flex-direction: column; margin-bottom: 22px; }
   h2 { font-size: 24px; }
   .option-tabs { display: flex; overflow-x: auto; padding-bottom: 4px; scroll-snap-type: x mandatory; }
+  .scroll-hint { display: block; margin: -10px 0 12px; }
+  .map-scroll, .table-scroll, .option-tabs { scrollbar-width: thin; }
   .option-tab { min-width: 250px; scroll-snap-align: start; }
   .option-panel { padding: 20px; border-radius: 8px; }
   .nights { grid-template-columns: repeat(3, minmax(0,1fr)); }
@@ -380,6 +400,66 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
   .booking-grid, .practical { grid-template-columns: 1fr; }
   .footer-row { flex-direction: column; }
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --pink: #ff7a92;
+    --pink-dark: #ff97a9;
+    --ink: #f4f4f4;
+    --body: #dddddd;
+    --muted: #b9b9b9;
+    --line: #555555;
+    --line-soft: #343434;
+    --soft: #1d1d1d;
+    --white: #121212;
+  }
+  body, .topbar, .share, .option-tab, .option-panel, .status-card, .stay, .day-option { background: var(--white); }
+  .map-scroll { background: #202524; }
+  .map-svg { background: #eef1ed; filter: brightness(.78) saturate(.82); }
+  .toast { background: #f4f4f4; color: #121212; }
+}
+
+@media print {
+  @page { size: A4; margin: 12mm; }
+  :root {
+    color-scheme: light;
+    --pink: #9f1239;
+    --pink-dark: #881337;
+    --ink: #111111;
+    --body: #2f2f2f;
+    --muted: #555555;
+    --line: #bdbdbd;
+    --line-soft: #dddddd;
+    --soft: #f5f5f5;
+    --white: #ffffff;
+  }
+  body { background: #ffffff; color: #111111; font-size: 10pt; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .topbar, .share, .scroll-hint, .toast, footer { display: none !important; }
+  .wrap { width: 100%; }
+  .hero { padding: 0 0 8mm; }
+  h1 { font-size: 26pt; }
+  .hero .lead { white-space: normal; font-size: 11pt; }
+  section { padding: 8mm 0; }
+  .collage { grid-template-rows: 48mm 48mm; }
+  .option-tabs { display: none; }
+  .option-panel { padding: 5mm; }
+  .option-panel:not(.active) { display: none !important; }
+  .map-scroll, .table-scroll { overflow: visible; border: 0; }
+  .map-svg, .flights { min-width: 0; width: 100%; }
+  .day { grid-template-columns: 25mm 1fr; gap: 6mm; padding: 6mm 0; }
+  .day-main { grid-template-columns: 1fr; }
+  .day-photo { display: none; }
+  .day-detail summary { display: none; }
+  .day-detail > div { display: block !important; }
+  .day-options { grid-template-columns: 1fr 1fr; }
+  .stay-grid { grid-template-columns: repeat(2, 1fr); }
+  .status-grid { grid-template-columns: repeat(3, 1fr); }
+  .place-grid, .booking-grid, .practical { grid-template-columns: repeat(2, 1fr); }
+  .comparison-row, .transport-row { break-inside: avoid; page-break-inside: avoid; }
+  article, figure, table, tr, .day, .option-panel, .status-card, .stay, .booking-card, .practical-row { break-inside: avoid; page-break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+}
 </style>
 </head>
 <body>
@@ -401,7 +481,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 <main id="top">
   <div class="wrap hero">
     <h1>발리와 길리 10주년 여행 일정표</h1>
-    <p class="lead">길리 에어와 T에서 5박하고, 그다음 3박은 아메드 대신 시데멘이나 우붓을 넣을지 보고 있어.</p>
+    <p class="lead">길리 에어와 T에서 5박한 뒤, 발리에서는 시데멘 또는 아메드에서 3박하는 두 가지 동선을 안내합니다.</p>
     <div class="facts" aria-label="여행 요약">
       <div class="fact"><span>전체 기간</span><strong>9/23부터 10/11</strong></div>
       <div class="fact"><span>발리와 길리</span><strong>13박</strong></div>
@@ -433,23 +513,24 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
   <section id="options">
     <div class="wrap">
       <div class="section-head">
-        <div><h2>길리 5박 나누기</h2><p>배편은 어느 쪽이든 같아. 9/30에 T로 갈지, 에어에서 하루 더 자고 10/1에 갈지만 고르면 돼.</p></div>
+        <div><h2>길리 5박 나누기</h2><p>두 일정의 배편은 같습니다. 9/30에 T로 이동할지, 에어에서 하루 더 머문 뒤 10/1에 이동할지 선택하면 됩니다.</p></div>
       </div>
+      <span class="scroll-hint" aria-hidden="true">좌우로 밀어 보기</span>
       <div class="option-tabs" role="tablist" aria-label="일정 선택">
         <button class="option-tab" type="button" role="tab" aria-selected="true" aria-controls="plan-balanced" data-plan="balanced">
-          <span class="tag">옵션 A</span><strong>에어 2박, T 3박</strong><small>9/30에 T로 이동. 자전거 타는 날과 오전 다이빙 2회를 다른 날로 나눌 수 있어.</small>
+          <span class="tag">옵션 A</span><strong>에어 2박, T 3박</strong><small>9/30에 T로 이동합니다. 자전거와 오전 다이빙 2회를 서로 다른 날에 즐길 수 있습니다.</small>
         </button>
         <button class="option-tab" type="button" role="tab" aria-selected="false" aria-controls="plan-east" data-plan="east">
-          <span class="tag">옵션 B</span><strong>에어 3박, T 2박</strong><small>10/1에 T로 이동. 에어에서 일정 없는 하루를 하나 더 보내.</small>
+          <span class="tag">옵션 B</span><strong>에어 3박, T 2박</strong><small>10/1에 T로 이동합니다. 에어에서 여유로운 하루를 한 번 더 보냅니다.</small>
         </button>
       </div>
 
       <div class="option-panel active" id="plan-balanced" role="tabpanel" data-panel="balanced">
-        <div><h3>9/30부터 길리 T 3박</h3><p>9/28 오후에 에어에 도착하고 9/29에는 동쪽 해변에서 스노클링해. 9/30에 T로 넘어가면 10/1은 자전거와 해변, 10/2 오전은 다이빙 2회로 나눌 수 있어. T에서 보내는 온전한 하루가 이틀이야.</p></div>
+        <div><h3>9/30부터 길리 T 3박</h3><p>9/28 오후에 에어에 도착하고 9/29에는 동쪽 해변에서 스노클링합니다. 9/30에 T로 이동하면 10/1은 자전거와 해변, 10/2 오전은 다이빙 2회로 나눌 수 있습니다. T에서 온전히 보내는 날은 이틀입니다.</p></div>
         <div class="nights"><div class="night"><span>길리 에어</span><strong>2박</strong></div><div class="night"><span>길리 T</span><strong>3박</strong></div><div class="night"><span>시데멘</span><strong>3박</strong></div></div>
       </div>
       <div class="option-panel" id="plan-east" role="tabpanel" data-panel="east">
-        <div><h3>10/1까지 길리 에어 3박</h3><p>9/29 스노클링 다음 날을 비워둘 수 있어. 9/30은 해변 카페와 수영장, 서쪽 일몰을 천천히 보고 10/1에 T로 이동해. T에서는 도착일 저녁과 10/2 다이빙을 보내게 돼.</p></div>
+        <div><h3>10/1까지 길리 에어 3박</h3><p>9/29 스노클링 다음 날을 여유롭게 보낼 수 있습니다. 9/30은 해변 카페와 수영장, 서쪽 일몰을 즐기고 10/1에 T로 이동합니다. T에서는 도착일 저녁과 10/2 다이빙을 즐깁니다.</p></div>
         <div class="nights"><div class="night"><span>길리 에어</span><strong>3박</strong></div><div class="night"><span>길리 T</span><strong>2박</strong></div><div class="night"><span>시데멘</span><strong>3박</strong></div></div>
       </div>
     </div>
@@ -457,8 +538,9 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
   <section id="route">
     <div class="wrap">
-      <div class="section-head"><div><h2>발리와 길리 동선</h2><p>누사두아에서 배를 타고 길리로 들어간 뒤, 파당바이로 돌아와 발리 동부에서 남부로 내려오는 흐름이야.</p></div></div>
+      <div class="section-head"><div><h2>발리와 길리 동선</h2><p>누사두아에서 길리로 들어간 뒤 파당바이로 돌아와, 발리 동부에서 남부로 내려오는 동선입니다.</p></div></div>
       <figure class="map-frame">
+        <span class="scroll-hint" aria-hidden="true">좌우로 밀어 보기</span>
         <div class="map-scroll">
           <svg class="map-svg" viewBox="0 0 1280 768" role="img" aria-label="누사두아에서 길리 에어와 길리 트라왕안, 발리 동부와 울루와뚜를 거쳐 공항으로 돌아오는 여행 동선">
             <defs><marker id="routeArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ff385c"/></marker></defs>
@@ -490,7 +572,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
             <text x="1268" y="752" font-family="Inter, Noto Sans KR, sans-serif" font-size="10" text-anchor="end" fill="#6a6a6a">© OpenStreetMap contributors</text>
           </svg>
         </div>
-        <figcaption>분홍색이 아메드안, 검은 점선이 시데멘안이야. 시데멘을 고르면 파당바이에서 북쪽으로 멀리 올라가지 않고 바로 내륙으로 들어가.</figcaption>
+        <figcaption>분홍색은 아메드 일정, 검은 점선은 시데멘 일정입니다. 시데멘을 선택하면 파당바이에서 바로 내륙으로 이동해 북쪽 우회 구간을 줄일 수 있습니다.</figcaption>
       </figure>
       <div class="route-notes">
         <div class="route-note"><strong>9/28</strong><span>누사두아에서 길리 에어로 이동</span></div>
@@ -502,22 +584,22 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
   <section id="east-choice">
     <div class="wrap">
-      <div class="section-head"><div><h2>아메드 대신 어디로 갈지</h2><p>길리에서 바다는 충분히 볼 테니, 그다음 3박은 분위기를 바꿔도 좋아. 지금은 시데멘이 가장 잘 맞아.</p></div></div>
+      <div class="section-head"><div><h2>아메드 대신 어디로 갈지</h2><p>길리에서 바다를 충분히 즐긴 뒤에는 분위기를 바꿀 수 있습니다. 세 지역 가운데 시데멘이 전체 동선과 가장 잘 맞습니다.</p></div></div>
       <div class="comparison">
         <article class="comparison-row">
           <h3><span>가장 추천</span>시데멘 3박</h3>
-          <p>논과 아궁산을 보며 쉬는 곳이야. 논길 산책, 발리 요리 수업, 직조나 은공예, 뜨라가 와자 래프팅 중에서 하루에 하나만 골라도 충분해. 길리와 분위기가 겹치지 않고 숙소에서 쉴 시간도 넉넉해.</p>
-          <div class="comparison-route"><strong>파당바이에서 약 30분에서 1시간</strong>차량은 IDR 200k에서 350k 정도야. 시데멘에서 울루와뚜까지는 약 3시간, IDR 600k 선으로 보면 돼.<br><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Sidemen+Bali/Bingin+Beach+Uluwatu" target="_blank" rel="noopener">구글 지도</a></div>
+          <p>논과 아궁산을 바라보며 쉬기 좋은 곳입니다. 논길 산책, 발리 요리 수업, 직조나 은공예, 뜨라가 와자 래프팅 가운데 하루에 하나만 골라도 충분합니다. 길리와 분위기가 겹치지 않고 숙소에서 쉴 시간도 넉넉합니다.</p>
+          <div class="comparison-route"><strong>파당바이에서 약 30분에서 1시간</strong>차량은 IDR 200k에서 350k 정도입니다. 시데멘에서 울루와뚜까지는 약 3시간, IDR 600k 선으로 예상합니다.<br><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Sidemen+Bali/Bingin+Beach+Uluwatu" target="_blank" rel="noopener">구글 지도</a></div>
         </article>
         <article class="comparison-row">
           <h3><span>식당과 볼거리 우선</span>우붓 3박</h3>
-          <p>시장, 미술관, 요리 수업과 공연까지 고를 게 많아. 처음 가는 우붓이라면 하루가 가장 풍성해지지만 교통 체증과 많은 관광객은 감수해야 해. 그래도 파당바이에서 바로 들어가면 아메드보다 동선이 짧아.</p>
-          <div class="comparison-route"><strong>파당바이에서 약 1시간에서 1시간 30분</strong>차량은 IDR 350k에서 500k 정도야. 우붓에서 울루와뚜까지는 약 2시간 30분에서 3시간 30분 걸려.<br><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Ubud+Bali/Bingin+Beach+Uluwatu" target="_blank" rel="noopener">구글 지도</a></div>
+          <p>시장, 미술관, 요리 수업과 공연까지 선택지가 많습니다. 처음 방문하는 우붓이라면 가장 풍성한 일정을 만들 수 있지만 교통 체증과 많은 관광객은 감안해야 합니다. 파당바이에서 바로 이동하면 아메드보다 동선이 짧습니다.</p>
+          <div class="comparison-route"><strong>파당바이에서 약 1시간에서 1시간 30분</strong>차량은 IDR 350k에서 500k 정도입니다. 우붓에서 울루와뚜까지는 약 2시간 30분에서 3시간 30분 걸립니다.<br><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Ubud+Bali/Bingin+Beach+Uluwatu" target="_blank" rel="noopener">구글 지도</a></div>
         </article>
         <article class="comparison-row">
           <h3><span>다이빙을 더 하고 싶을 때</span>아메드 3박</h3>
-          <p>USAT Liberty가 확실한 목적이면 남겨도 돼. 다만 길리 다이빙 뒤에 다시 검은 해변과 난파선 다이빙이 이어지고, 마지막 날 울루와뚜까지 오래 이동해야 해.</p>
-          <div class="comparison-route"><strong>파당바이에서 약 2시간</strong>아메드에서 울루와뚜까지는 보통 4시간 안팎이야. 띠르따 강가까지 넣으면 도착일 대부분을 이동에 쓰게 돼.<br><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Tirta+Gangga/Jemeluk+Beach+Amed/Bingin+Beach+Uluwatu" target="_blank" rel="noopener">구글 지도</a></div>
+          <p>USAT Liberty가 분명한 목적이라면 아메드 일정도 좋습니다. 다만 길리 다이빙 뒤에 검은 해변과 난파선 다이빙이 이어지고, 마지막 날 울루와뚜까지 장거리 이동이 필요합니다.</p>
+          <div class="comparison-route"><strong>파당바이에서 약 2시간</strong>아메드에서 울루와뚜까지는 보통 4시간 안팎입니다. 띠르따 강가를 추가하면 도착일 대부분을 이동에 사용합니다.<br><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Tirta+Gangga/Jemeluk+Beach+Amed/Bingin+Beach+Uluwatu" target="_blank" rel="noopener">구글 지도</a></div>
         </article>
       </div>
     </div>
@@ -525,39 +607,39 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
   <section id="transport">
     <div class="wrap">
-      <div class="section-head"><div><h2>날짜별 이동 방법과 비용</h2><p>기차와 MRT는 타는 곳까지 적어뒀어. 발리 장거리는 버스보다 예약 차량이 편해. 요금은 2026년 8월 30일에 확인했어.</p></div></div>
+      <div class="section-head"><div><h2>날짜별 이동 방법과 비용</h2><p>기차와 MRT는 탑승 위치까지 안내합니다. 발리 장거리는 버스보다 예약 차량이 편리합니다. 요금은 2026년 8월 30일에 확인했습니다.</p></div></div>
       <div class="transport">
         <article class="transport-row">
           <div class="transport-date">9/24</div><h3>KUL 공항과 쿠알라룸푸르</h3>
-          <ul class="transport-steps"><li><strong>KUL T1에서 KLIA Ekspres</strong> 표지판을 따라가서 KL Sentral행을 타면 돼. 28분 걸리고 20분 간격으로 다녀. 편도 RM55/인, 공식 웹이나 앱 예매는 10% 할인돼.</li><li><strong>KL Sentral에서 KLCC</strong> LRT Kelana Jaya Line을 타고 KLCC역에서 내려. 약 15분, RM3 안팎이야. 부킷빈탕까지는 냉방 보행로로 20분쯤 걸으면 돼.</li><li><strong>15시 30분 전후 공항으로 복귀</strong> KL Sentral에서 KLIA Ekspres를 다시 타면 돼. 왕복권은 RM100/인이라 2인 RM200이야.<span class="transport-note"><a href="https://www.google.com/maps/dir/Kuala+Lumpur+International+Airport/KL+Sentral/KLCC+Park/Pavilion+Kuala+Lumpur/KL+Sentral/Kuala+Lumpur+International+Airport" target="_blank" rel="noopener">구글 지도</a>　<a href="https://www.kliaekspres.com/products-fares/klia-ekspres/" target="_blank" rel="noopener">공식 요금</a></span></li></ul>
+          <ul class="transport-steps"><li><strong>KUL T1에서 KLIA Ekspres</strong> 표지판을 따라 KL Sentral행에 탑승합니다. 28분 걸리며 20분 간격으로 운행합니다. 편도 RM55/인, 공식 웹이나 앱 예매는 10% 할인됩니다.</li><li><strong>KL Sentral에서 KLCC</strong> LRT Kelana Jaya Line을 타고 KLCC역에서 내립니다. 약 15분, RM3 안팎입니다. 부킷빈탕까지는 냉방 보행로로 약 20분 걸립니다.</li><li><strong>15시 30분 전후 공항으로 복귀</strong> KL Sentral에서 KLIA Ekspres에 다시 탑승합니다. 왕복권은 RM100/인이라 2인 RM200입니다.<span class="transport-note"><a href="https://www.google.com/maps/dir/Kuala+Lumpur+International+Airport/KL+Sentral/KLCC+Park/Pavilion+Kuala+Lumpur/KL+Sentral/Kuala+Lumpur+International+Airport" target="_blank" rel="noopener">구글 지도</a>　<a href="https://www.kliaekspres.com/products-fares/klia-ekspres/" target="_blank" rel="noopener">공식 요금</a></span></li></ul>
         </article>
         <article class="transport-row">
           <div class="transport-date">9/24 저녁</div><h3>JHB 공항에서 숙소</h3>
-          <ul class="transport-steps"><li><strong>Senai Airport Grab 픽업존</strong>에서 R&amp;F Princess Cove까지 약 35분이야. 수요에 따라 RM55에서 70 정도 생각하면 돼.</li><li>숙소에서 JB Sentral과 구시가는 걸어서 갈 수 있어. 늦은 시간에는 짧게 Grab을 타는 게 편해.<span class="transport-note"><a href="https://www.google.com/maps/dir/Senai+International+Airport/R%26F+Princess+Cove+Johor+Bahru" target="_blank" rel="noopener">구글 지도</a></span></li></ul>
+          <ul class="transport-steps"><li><strong>Senai Airport Grab 픽업존</strong>에서 R&amp;F Princess Cove까지 약 35분입니다. 수요에 따라 RM55에서 70 정도로 예상합니다.</li><li>숙소에서 JB Sentral과 구시가는 걸어서 이동할 수 있습니다. 늦은 시간에는 짧게 Grab을 이용하는 편이 좋습니다.<span class="transport-note"><a href="https://www.google.com/maps/dir/Senai+International+Airport/R%26F+Princess+Cove+Johor+Bahru" target="_blank" rel="noopener">구글 지도</a></span></li></ul>
         </article>
         <article class="transport-row">
           <div class="transport-date">9/26</div><h3>JB에서 USS와 마리나베이</h3>
-          <ul class="transport-steps"><li><strong>R&amp;F에서 JB Sentral</strong> 연결 통로를 따라 10분쯤 걸어가면 돼. JB Sentral에서 말레이시아 출국심사를 받고, Woodlands에 도착한 뒤 싱가포르 입국심사를 받아.</li><li><strong>Shuttle Tebrau</strong> JB에서 Woodlands는 RM5/인, 돌아오는 편은 외국인 SGD5/인이야. 좌석 지정이라 왕복 모두 미리 예약해두자.</li><li><strong>Woodlands Train Checkpoint에서 버스 856</strong>을 타고 Woodlands MRT로 간 뒤, MRT로 HarbourFront까지 가면 돼. 성인 카드 운임은 거리제라 한 번에 약 SGD2에서 3이고, 해외 Visa나 Mastercard를 개찰구에 바로 태그할 수 있어.</li><li><strong>VivoCity 3층에서 Sentosa Express</strong>를 타고 Resorts World역에서 내려. 입도 운임은 SGD4/인이야. USS 뒤에는 HarbourFront에서 Bayfront 또는 Gardens by the Bay역으로 가면 돼.<span class="transport-note"><a href="https://www.google.com/maps/dir/R%26F+Princess+Cove+Johor+Bahru/JB+Sentral/Woodlands+Train+Checkpoint/Universal+Studios+Singapore/Gardens+by+the+Bay/Marina+Bay+Sands" target="_blank" rel="noopener">구글 지도</a>　<a href="https://online.ktmb.com.my/Home/ShuttleFAQ" target="_blank" rel="noopener">셔틀 공식 안내</a></span></li></ul>
+          <ul class="transport-steps"><li><strong>R&amp;F에서 JB Sentral</strong> 연결 통로를 따라 약 10분 걷습니다. JB Sentral에서 말레이시아 출국심사를 받고, Woodlands 도착 뒤 싱가포르 입국심사를 받습니다.</li><li><strong>Shuttle Tebrau</strong> JB에서 Woodlands는 RM5/인, 돌아오는 편은 외국인 SGD5/인입니다. 좌석 지정이라 왕복 모두 미리 예약해야 합니다.</li><li><strong>Woodlands Train Checkpoint에서 버스 856</strong>을 타고 Woodlands MRT로 이동한 뒤, MRT로 HarbourFront까지 갑니다. 성인 카드 운임은 거리제라 한 번에 약 SGD2에서 3이며, 해외 Visa나 Mastercard를 개찰구에 바로 태그할 수 있습니다.</li><li><strong>VivoCity 3층에서 Sentosa Express</strong>를 타고 Resorts World역에서 내립니다. 입도 운임은 SGD4/인입니다. USS 뒤에는 HarbourFront에서 Bayfront 또는 Gardens by the Bay역으로 이동합니다.<span class="transport-note"><a href="https://www.google.com/maps/dir/R%26F+Princess+Cove+Johor+Bahru/JB+Sentral/Woodlands+Train+Checkpoint/Universal+Studios+Singapore/Gardens+by+the+Bay/Marina+Bay+Sands" target="_blank" rel="noopener">구글 지도</a>　<a href="https://online.ktmb.com.my/Home/ShuttleFAQ" target="_blank" rel="noopener">셔틀 공식 안내</a></span></li></ul>
         </article>
         <article class="transport-row">
           <div class="transport-date">9/27</div><h3>JHB 공항과 발리 도착</h3>
-          <ul class="transport-steps"><li><strong>R&amp;F에서 JHB</strong> Grab으로 약 35분, RM55에서 70 정도야. 국내선 출발 2시간 전에는 도착하도록 잡으면 돼.</li><li><strong>DPS에서 딴중베노아</strong> 공항 Grab 라운지나 Gojek 픽업존에서 부르면 돼. 약 25분에서 40분, IDR 150k에서 220k 정도야. 짐이 있으니 버스 환승보다 차량이 편해.<span class="transport-note"><a href="https://www.google.com/maps/dir/I+Gusti+Ngurah+Rai+International+Airport/Tanjung+Benoa+Bali" target="_blank" rel="noopener">구글 지도</a></span></li></ul>
+          <ul class="transport-steps"><li><strong>R&amp;F에서 JHB</strong> Grab으로 약 35분, RM55에서 70 정도입니다. 국내선 출발 2시간 전 도착을 기준으로 합니다.</li><li><strong>DPS에서 딴중베노아</strong> 공항 Grab 라운지나 Gojek 픽업존에서 호출합니다. 약 25분에서 40분, IDR 150k에서 220k 정도입니다. 짐이 있어 버스 환승보다 차량이 편리합니다.<span class="transport-note"><a href="https://www.google.com/maps/dir/I+Gusti+Ngurah+Rai+International+Airport/Tanjung+Benoa+Bali" target="_blank" rel="noopener">구글 지도</a></span></li></ul>
         </article>
         <article class="transport-row">
           <div class="transport-date">9/28</div><h3>누사두아에서 길리 에어</h3>
-          <ul class="transport-steps"><li><strong>에카자야 누사두아 항구</strong> 바우처에 적힌 체크인 위치까지 차량으로 가면 돼. 현재 공지 기준 체크인 06:30, 출항 07:30, 길리 에어 12:20 도착이야.</li><li>길리 에어는 큰 배가 바로 접안하지 못할 수 있어서 작은 셔틀 보트 시간이 포함돼. 실제로 모이는 시간은 e티켓을 먼저 봐.<span class="transport-note"><a href="https://ekajayafastferry.com/schedule.aspx" target="_blank" rel="noopener">공식 운항표</a></span></li></ul>
+          <ul class="transport-steps"><li><strong>에카자야 누사두아 항구</strong> 바우처에 적힌 체크인 위치까지 차량으로 이동합니다. 현재 공지 기준 체크인 06:30, 출항 07:30, 길리 에어 12:20 도착입니다.</li><li>길리 에어는 큰 배가 바로 접안하지 못할 수 있어 작은 셔틀 보트 시간이 포함됩니다. 실제 집합 시간은 e티켓을 우선합니다.<span class="transport-note"><a href="https://ekajayafastferry.com/schedule.aspx" target="_blank" rel="noopener">공식 운항표</a></span></li></ul>
         </article>
         <article class="transport-row">
           <div class="transport-date">9/30 또는 10/1</div><h3>길리 에어에서 길리 T</h3>
-          <ul class="transport-steps"><li><strong>공공 보트</strong> 항구 매표소에서 당일 사면 돼. 오전과 오후 정기편이 있고 약 15분에서 30분, IDR 45k/인 정도야.</li><li><strong>공공 패스트보트</strong>는 낮 시간대에 약 1시간 간격으로 다니고 IDR 85k/인 정도야. 큰 짐이 있으니 전날 숙소에 시간과 타는 곳을 확인해두자.</li></ul>
+          <ul class="transport-steps"><li><strong>공공 보트</strong> 항구 매표소에서 당일 구매합니다. 오전과 오후 정기편이 있고 약 15분에서 30분, IDR 45k/인 정도입니다.</li><li><strong>공공 패스트보트</strong>는 낮 시간대에 약 1시간 간격으로 운행하며 IDR 85k/인 정도입니다. 큰 짐이 있으므로 전날 숙소에 시간과 승선 위치를 확인합니다.</li></ul>
         </article>
         <article class="transport-row">
           <div class="transport-date">10/3</div><h3>길리 T에서 파당바이</h3>
-          <ul class="transport-steps"><li><strong>에카자야 체크인</strong> 오전 출발편이 여러 개라 무료 귀환표에 발권된 시간을 보면 돼. 항구에는 최소 1시간 전에 도착하자.</li><li><strong>파당바이 도착 뒤</strong> 시데멘까지 예약 차량으로 약 30분에서 1시간, IDR 200k에서 350k 정도야. 항구에서 바로 흥정하기보다 숙소 픽업을 미리 잡는 게 편해.<span class="transport-note"><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Sidemen+Bali" target="_blank" rel="noopener">시데멘 지도</a>　<a href="https://www.google.com/maps/dir/Padangbai+Harbour/Ubud+Bali" target="_blank" rel="noopener">우붓 지도</a>　<a href="https://www.google.com/maps/dir/Padangbai+Harbour/Jemeluk+Beach+Amed" target="_blank" rel="noopener">아메드 지도</a></span></li></ul>
+          <ul class="transport-steps"><li><strong>에카자야 체크인</strong> 오전 출발편이 여러 개이므로 무료 귀환표에 발권된 시간을 확인합니다. 항구에는 최소 1시간 전에 도착합니다.</li><li><strong>파당바이 도착 뒤</strong> 시데멘까지 예약 차량으로 약 30분에서 1시간, IDR 200k에서 350k 정도입니다. 항구에서 바로 흥정하기보다 숙소 픽업을 미리 예약하는 편이 편리합니다.<span class="transport-note"><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Sidemen+Bali" target="_blank" rel="noopener">시데멘 지도</a>　<a href="https://www.google.com/maps/dir/Padangbai+Harbour/Ubud+Bali" target="_blank" rel="noopener">우붓 지도</a>　<a href="https://www.google.com/maps/dir/Padangbai+Harbour/Jemeluk+Beach+Amed" target="_blank" rel="noopener">아메드 지도</a></span></li></ul>
         </article>
         <article class="transport-row">
           <div class="transport-date">10/6부터 10/10</div><h3>울루와뚜와 누사두아</h3>
-          <ul class="transport-steps"><li><strong>시데멘에서 울루와뚜</strong> 예약 차량으로 약 3시간, IDR 600k 선이야. 아메드에서 출발하면 4시간 안팎이라 1시간 이상 더 걸려.</li><li><strong>울루와뚜에서 라구나</strong> 약 40분에서 1시간, Grab이나 기사 차량은 IDR 200k에서 300k 정도야.</li><li><strong>10/9 라구나에서 울루와뚜 사원, 짐바란, 공항 힐튼</strong> 짐을 차에 둬야 해서 6시간 기사 대절이 편해. 차량은 IDR 700k에서 1,000k 정도 생각하면 돼.<span class="transport-note"><a href="https://www.google.com/maps/dir/Sidemen+Bali/Bingin+Beach+Uluwatu/The+Laguna+a+Luxury+Collection+Resort+%26+Spa+Nusa+Dua/Uluwatu+Temple/Menega+Cafe/Hilton+Garden+Inn+Bali+Ngurah+Rai+Airport" target="_blank" rel="noopener">구글 지도</a></span></li></ul>
+          <ul class="transport-steps"><li><strong>시데멘에서 울루와뚜</strong> 예약 차량으로 약 3시간, IDR 600k 선입니다. 아메드에서 출발하면 4시간 안팎이라 1시간 이상 더 걸립니다.</li><li><strong>울루와뚜에서 라구나</strong> 약 40분에서 1시간, Grab이나 기사 차량은 IDR 200k에서 300k 정도입니다.</li><li><strong>10/9 라구나에서 울루와뚜 사원, 짐바란, 공항 힐튼</strong> 짐을 차에 보관해야 하므로 6시간 기사 대절이 편리합니다. 차량은 IDR 700k에서 1,000k 정도로 예상합니다.<span class="transport-note"><a href="https://www.google.com/maps/dir/Sidemen+Bali/Bingin+Beach+Uluwatu/The+Laguna+a+Luxury+Collection+Resort+%26+Spa+Nusa+Dua/Uluwatu+Temple/Menega+Cafe/Hilton+Garden+Inn+Bali+Ngurah+Rai+Airport" target="_blank" rel="noopener">구글 지도</a></span></li></ul>
         </article>
       </div>
     </div>
@@ -567,33 +649,34 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
     <div class="wrap">
       <div class="section-head"><div><h2>지역별 볼거리와 음식</h2></div></div>
       <div class="place-grid">
-        <article class="place-card"><header><time>9/24</time><div><h3>쿠알라룸푸르</h3><p class="known-for">도심 한가운데 솟은 페트로나스 트윈타워와 말레이 음식이 먼저 떠오르는 도시야.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>KLCC 공원<br>메르데카 광장<br>부킷빈탕 마사지</dd></div><div><dt>먹을 것</dt><dd>나시 르막<br>로티 차나이<br>테 타릭</dd></div></dl></article>
-        <article class="place-card"><header><time>9/24부터 9/27</time><div><h3>조호르바루</h3><p class="known-for">싱가포르 국경을 바로 마주 보는 도시라 하루 쉬면서 먹고 다니기 좋아.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>탄히옥니 문화거리<br>JB 올드타운<br>R&amp;F 마리나 산책</dd></div><div><dt>먹을 것</dt><dd>바나나 케이크<br>쿠웨이 테오 키아<br>로컬 커피</dd></div></dl></article>
-        <article class="place-card"><header><time>9/26</time><div><h3>싱가포르</h3><p class="known-for">USS를 중심으로 놀고, 저녁에는 가든스 바이 더 베이와 마리나베이 야경을 보는 날이야.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>유니버설 스튜디오<br>가든스 바이 더 베이<br>마리나베이 산책</dd></div><div><dt>먹을 것</dt><dd>치킨라이스<br>락사<br>카야 토스트</dd></div></dl></article>
-        <article class="place-card"><header><time>9/27과 10/7부터</time><div><h3>누사두아</h3><p class="known-for">파도가 잔잔한 해변과 큰 리조트가 모여 있어. 첫날은 배를 타기 위한 숙박이고, 마지막에는 라구나에서 쉬어.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>라구나 라군 풀<br>누사두아 해변<br>워터 블로우</dd></div><div><dt>먹을 것</dt><dd>사테 릴릿<br>나시 캄푸르<br>리조트 기념 저녁</dd></div></dl></article>
-        <article class="place-card"><header><time>9/28부터</time><div><h3>길리 에어</h3><p class="known-for">차가 없는 작은 섬이야. 동쪽 바다에서는 거북이를 보기 좋고, 서쪽은 조용한 일몰로 유명해.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>Turtle Beach<br>자전거 섬 한 바퀴<br>서쪽 해변 일몰</dd></div><div><dt>먹을 것</dt><dd>Warung Sunny의 소토 아얌<br>Pachamama 브런치<br>Scallywags 해산물</dd></div></dl></article>
-        <article class="place-card"><header><time>9/30 또는 10/1부터</time><div><h3>길리 트라왕안</h3><p class="known-for">세 섬 중 식당과 다이브숍이 가장 많아. 동쪽은 활기차고 서쪽은 일몰이 좋아.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>Shark Point 또는 Halik<br>서쪽 해변 자전거길<br>동쪽 메인 스트립</dd></div><div><dt>먹을 것</dt><dd>야시장의 생선구이와 사테<br>Jali Kitchen<br>해변 바비큐</dd></div></dl></article>
-        <article class="place-card"><header><time>10/3부터 10/6</time><div><h3>시데멘</h3><p class="known-for">아궁산 아래로 논과 계곡이 이어지는 마을이야. 바다 대신 산과 논을 보며 쉬고, 작은 공방이나 요리 수업을 골라보기 좋아.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>시데멘 논길<br>뜨라가 와자 계곡<br>직조와 은공예 공방</dd></div><div><dt>먹을 것</dt><dd>사테 릴릿<br>라와르<br>요리 수업에서 만든 점심</dd></div></dl></article>
-        <article class="place-card"><header><time>10/3부터 10/6</time><div><h3>아메드와 뚤람벤</h3><p class="known-for">검은 화산 해변과 다이빙으로 유명해. 뚤람벤의 USAT Liberty 난파선이 이번 구간의 중심이야.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>USAT Liberty<br>제멜룩 만<br>전통 제염장과 해안도로</dd></div><div><dt>먹을 것</dt><dd>Warung Celagi 생선 요리<br>Blue Earth의 아궁산 뷰 식사<br>마히마히 구이</dd></div></dl></article>
-        <article class="place-card"><header><time>10/6과 10/9</time><div><h3>울루와뚜와 짐바란</h3><p class="known-for">부킷 반도의 절벽과 일몰이 강한 곳이야. 마지막 날은 케착을 보고 짐바란 해변에서 저녁을 먹어.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>빙인 또는 멜라스티 해변<br>울루와뚜 사원<br>일몰 케착 공연</dd></div><div><dt>먹을 것</dt><dd>짐바란 숯불 해산물<br>메네가의 생선과 새우<br>삼발 마타</dd></div></dl></article>
+        <article class="place-card"><header><time>9/24</time><div><h3>쿠알라룸푸르</h3><p class="known-for">도심 한가운데 솟은 페트로나스 트윈타워와 말레이 음식으로 잘 알려진 도시입니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>KLCC 공원<br>메르데카 광장<br>부킷빈탕 마사지</dd></div><div><dt>먹을 것</dt><dd>나시 르막<br>로티 차나이<br>테 타릭</dd></div></dl></article>
+        <article class="place-card"><header><time>9/24부터 9/27</time><div><h3>조호르바루</h3><p class="known-for">싱가포르 국경을 마주 보는 도시로, 하루 쉬면서 현지 음식을 즐기기 좋습니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>탄히옥니 문화거리<br>JB 올드타운<br>R&amp;F 마리나 산책</dd></div><div><dt>먹을 것</dt><dd>바나나 케이크<br>쿠웨이 테오 키아<br>로컬 커피</dd></div></dl></article>
+        <article class="place-card"><header><time>9/26</time><div><h3>싱가포르</h3><p class="known-for">USS를 중심으로 즐긴 뒤, 저녁에는 가든스 바이 더 베이와 마리나베이 야경을 감상합니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>유니버설 스튜디오<br>가든스 바이 더 베이<br>마리나베이 산책</dd></div><div><dt>먹을 것</dt><dd>치킨라이스<br>락사<br>카야 토스트</dd></div></dl></article>
+        <article class="place-card"><header><time>9/27과 10/7부터</time><div><h3>누사두아</h3><p class="known-for">파도가 잔잔한 해변과 큰 리조트가 모여 있습니다. 첫날은 배편을 위한 숙박, 마지막에는 라구나에서 휴식을 즐깁니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>라구나 라군 풀<br>누사두아 해변<br>워터 블로우</dd></div><div><dt>먹을 것</dt><dd>사테 릴릿<br>나시 캄푸르<br>리조트 기념 저녁</dd></div></dl></article>
+        <article class="place-card"><header><time>9/28부터</time><div><h3>길리 에어</h3><p class="known-for">차가 없는 작은 섬입니다. 동쪽 바다에서는 거북이를 보기 좋고, 서쪽은 조용한 일몰로 유명합니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>Turtle Beach<br>자전거 섬 한 바퀴<br>서쪽 해변 일몰</dd></div><div><dt>먹을 것</dt><dd>Warung Sunny의 소토 아얌<br>Pachamama 브런치<br>Scallywags 해산물</dd></div></dl></article>
+        <article class="place-card"><header><time>9/30 또는 10/1부터</time><div><h3>길리 트라왕안</h3><p class="known-for">세 섬 중 식당과 다이브숍이 가장 많습니다. 동쪽은 활기차고 서쪽은 일몰이 좋습니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>Shark Point 또는 Halik<br>서쪽 해변 자전거길<br>동쪽 메인 스트립</dd></div><div><dt>먹을 것</dt><dd>야시장의 생선구이와 사테<br>Jali Kitchen<br>해변 바비큐</dd></div></dl></article>
+        <article class="place-card"><header><time>10/3부터 10/6</time><div><h3>시데멘</h3><p class="known-for">아궁산 아래로 논과 계곡이 이어지는 마을입니다. 바다 대신 산과 논을 보며 쉬고, 작은 공방이나 요리 수업을 즐기기 좋습니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>시데멘 논길<br>뜨라가 와자 계곡<br>직조와 은공예 공방</dd></div><div><dt>먹을 것</dt><dd>사테 릴릿<br>라와르<br>요리 수업에서 만든 점심</dd></div></dl></article>
+        <article class="place-card"><header><time>10/3부터 10/6</time><div><h3>아메드와 뚤람벤</h3><p class="known-for">검은 화산 해변과 다이빙으로 유명합니다. 뚤람벤의 USAT Liberty 난파선이 이 구간의 중심입니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>USAT Liberty<br>제멜룩 만<br>전통 제염장과 해안도로</dd></div><div><dt>먹을 것</dt><dd>Warung Celagi 생선 요리<br>Blue Earth의 아궁산 뷰 식사<br>마히마히 구이</dd></div></dl></article>
+        <article class="place-card"><header><time>10/6과 10/9</time><div><h3>울루와뚜와 짐바란</h3><p class="known-for">부킷 반도의 절벽과 일몰로 유명합니다. 마지막 날은 케착을 보고 짐바란 해변에서 저녁을 즐깁니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>빙인 또는 멜라스티 해변<br>울루와뚜 사원<br>일몰 케착 공연</dd></div><div><dt>먹을 것</dt><dd>짐바란 숯불 해산물<br>메네가의 생선과 새우<br>삼발 마타</dd></div></dl></article>
       </div>
     </div>
   </section>
 
   <section id="bookings">
     <div class="wrap">
-      <div class="section-head"><div><h2>예약 현황</h2><p>결제가 끝난 예약과 날짜를 정한 뒤 예약할 항목을 나눠 적었어.</p></div></div>
+      <div class="section-head"><div><h2>예약 정보</h2><p>확정된 예약과 선택이 필요한 항목을 구분해 안내합니다.</p></div></div>
       <div class="status-grid">
-        <article class="status-card confirmed"><span class="state">예약 완료</span><h3>항공, 라구나, 공항 힐튼</h3><p>말레이시아항공은 발권 완료. 라구나는 10/7부터 2박 킹 라군뷰, 힐튼 가든 인 공항은 10/9 1박이야.</p></article>
-        <article class="status-card now"><span class="state">예약 예정</span><h3>에카자야와 길리 숙소</h3><p>옵션 A와 B 모두 9/28 누사두아 출발, 10/3 길리 T 출발이야. 숙소만 에어 2박과 T 3박, 또는 에어 3박과 T 2박으로 맞추면 돼.</p></article>
-        <article class="status-card"><span class="state">결정 후 예약</span><h3>시데멘 또는 아메드, 절벽 숙소</h3><p>10/3부터 3박은 시데멘을 먼저 보고 있어. 절벽 숙소는 10/6 1박이야. 지역을 정하면 무료취소 숙소와 이동 차량을 예약하면 돼.</p></article>
+        <article class="status-card confirmed"><span class="state">확정</span><h3>항공, 라구나, 공항 힐튼</h3><p>말레이시아항공은 발권되었습니다. 라구나는 10/7부터 2박 킹 라군뷰, 힐튼 가든 인 공항은 10/9 1박입니다.</p></article>
+        <article class="status-card now"><span class="state">선택 필요</span><h3>에카자야와 길리 숙소</h3><p>두 옵션 모두 9/28 누사두아 출발, 10/3 길리 T 출발입니다. 숙박은 에어 2박과 T 3박 또는 에어 3박과 T 2박 가운데 선택합니다.</p></article>
+        <article class="status-card"><span class="state">지역 선택 필요</span><h3>시데멘 또는 아메드, 절벽 숙소</h3><p>10/3부터 3박은 시데멘과 아메드 두 일정을 함께 안내합니다. 절벽 숙소는 10/6 1박이며, 지역을 선택한 뒤 무료취소 숙소와 이동 차량을 예약합니다.</p></article>
       </div>
     </div>
   </section>
 
   <section id="flights">
     <div class="wrap">
-      <div class="section-head"><div><h2>확정 항공</h2><p>발권이 끝난 항공편이야. 첫 체크인 때 수하물 최종 도착지가 JHB인지 확인해.</p></div></div>
+      <div class="section-head"><div><h2>확정 항공</h2><p>발권이 끝난 항공편입니다. 첫 체크인 때 수하물 최종 도착지가 JHB인지 확인합니다.</p></div></div>
+      <span class="scroll-hint" aria-hidden="true">좌우로 밀어 보기</span>
       <div class="table-scroll">
         <table class="flights">
           <thead><tr><th>날짜</th><th>구간</th><th>출발</th><th>도착</th><th>편명</th></tr></thead>
@@ -613,101 +696,101 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
   <section id="days">
     <div class="wrap">
-      <div class="section-head"><div><h2>하루하루</h2><p>항공과 배, 다이빙처럼 시간이 정해진 일정만 고정했어. 나머지는 날씨와 컨디션에 맞춰 고르면 돼.</p></div></div>
+      <div class="section-head"><div><h2>하루하루</h2><p>항공과 배, 다이빙처럼 시간이 정해진 일정만 고정했습니다. 나머지는 날씨와 컨디션에 맞춰 선택합니다.</p></div></div>
       <div class="timeline">
         <article class="day">
           <div class="date"><strong>9/23</strong><span>수요일</span><em>청두</em></div>
-          <div class="day-main"><div><h3>출국 전야</h3><p>심야 비행이라 저녁을 먹고 공항으로 가. 체크인할 때 수하물 태그의 최종 도착지가 JHB인지 확인하고, 기내에서 바로 잘 수 있게 세면도구와 목베개는 작은 가방에 따로 챙겨.</p><div class="schedule"><div class="beat"><time>20:30</time><div>집에서 출발</div></div><div class="beat"><time>22:00</time><div>TFU T1 체크인. <strong>수하물 JHB 최종 태그 확인</strong></div></div><div class="beat"><time>23:00</time><div>출국심사 후 물과 간식 준비</div></div><div class="beat"><time>01:05</time><div>MH527 출발</div></div></div></div><figure class="day-photo"><img src="assets/trip-7c4ee41ae3b1ac62.jpg" alt="청두 톈푸 국제공항"><span>청두 톈푸 국제공항</span></figure></div>
+          <div class="day-main"><div><h3>출국 전야</h3><p>심야 비행이라 저녁을 먹고 공항으로 이동합니다. 체크인할 때 수하물 태그의 최종 도착지가 JHB인지 확인하고, 세면도구와 목베개는 작은 가방에 따로 챙깁니다.</p><div class="schedule"><div class="beat"><time>20:30</time><div>집에서 출발</div></div><div class="beat"><time>22:00</time><div>TFU T1 체크인. <strong>수하물 JHB 최종 태그 확인</strong></div></div><div class="beat"><time>23:00</time><div>출국심사 후 물과 간식 준비</div></div><div class="beat"><time>01:05</time><div>MH527 출발</div></div></div></div><figure class="day-photo"><img src="assets/trip-7c4ee41ae3b1ac62.jpg" alt="청두 톈푸 국제공항"><span>청두 톈푸 국제공항</span></figure></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/24</strong><span>목요일</span><em>쿠알라룸푸르와 JB</em></div>
-          <div class="day-main"><div><h3>쿠알라룸푸르에서 반나절</h3><p>환승 시간이 11시간 55분이라 입국심사를 마친 뒤 시내에 다녀올 수 있어. KLIA Ekspres로 이동해 아침을 먹고 가까운 구역을 산책한 뒤 마사지까지 받고, 국내선 출발 3시간 전에는 공항으로 돌아오는 일정이야.</p><div class="schedule"><div class="beat"><time>06:10</time><div>KUL 도착과 입국심사</div></div><div class="beat"><time>08:00</time><div>KLIA Ekspres로 시내 이동</div></div><div class="beat"><time>오전</time><div>아침, 산책, 마사지</div></div><div class="beat"><time>15:00</time><div>공항 복귀와 국내선 체크인</div></div><div class="beat"><time>18:05</time><div>MH1057로 조호르바루 이동</div></div><div class="beat"><time>19:05</time><div>JHB 도착과 숙소 이동</div></div></div></div></div>
+          <div class="day-main"><div><h3>쿠알라룸푸르에서 반나절</h3><p>환승 시간이 11시간 55분이라 입국심사를 마친 뒤 시내에 다녀올 수 있습니다. KLIA Ekspres로 이동해 아침과 산책, 마사지를 즐기고 국내선 출발 3시간 전에는 공항으로 돌아옵니다.</p><div class="schedule"><div class="beat"><time>06:10</time><div>KUL 도착과 입국심사</div></div><div class="beat"><time>08:00</time><div>KLIA Ekspres로 시내 이동</div></div><div class="beat"><time>오전</time><div>아침, 산책, 마사지</div></div><div class="beat"><time>15:00</time><div>공항 복귀와 국내선 체크인</div></div><div class="beat"><time>18:05</time><div>MH1057로 조호르바루 이동</div></div><div class="beat"><time>19:05</time><div>JHB 도착과 숙소 이동</div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/25</strong><span>금요일</span><em>조호르바루</em></div>
-          <div class="day-main"><div><h3>늦게 일어나 구시가 산책</h3><p>전날 심야 비행과 환승이 길었으니 오전은 숙소에서 쉬어. 늦은 점심 뒤 구시가와 카페를 걷고 마사지를 받은 다음, 저녁에는 다음 날 싱가포르 육로 입국에 필요한 서류와 작은 가방을 정리해.</p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 늦은 아침</div></div><div class="beat"><time>오후</time><div>구시가 산책, 카페, 마사지</div></div><div class="beat"><time>저녁</time><div>조호르바루에서 저녁 식사</div></div><div class="beat"><time>밤</time><div>싱가포르 입국 서류와 당일 짐 확인</div></div></div></div></div>
+          <div class="day-main"><div><h3>늦게 일어나 구시가 산책</h3><p>전날 심야 비행과 긴 환승을 고려해 오전은 숙소에서 쉽니다. 늦은 점심 뒤 구시가와 카페를 걷고 마사지를 받은 다음, 저녁에는 싱가포르 육로 입국에 필요한 서류와 작은 가방을 정리합니다.</p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 늦은 아침</div></div><div class="beat"><time>오후</time><div>구시가 산책, 카페, 마사지</div></div><div class="beat"><time>저녁</time><div>조호르바루에서 저녁 식사</div></div><div class="beat"><time>밤</time><div>싱가포르 입국 서류와 당일 짐 확인</div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/26</strong><span>토요일</span><em>싱가포르</em></div>
-          <div class="day-main"><div><h3>USS와 싱가포르 야경</h3><p>아침에 육로 국경을 넘어 센토사로 이동해 USS를 보고, 저녁에는 가든스 바이 더 베이와 마리나 베이 야경을 이어서 봐. 마지막 Spectra가 끝나면 우드랜즈를 거쳐 조호르바루 숙소로 돌아가.</p><div class="schedule"><div class="beat"><time>아침</time><div>JB에서 우드랜즈로 이동과 입국심사</div></div><div class="beat"><time>오전</time><div><strong>Universal Studios Singapore</strong></div></div><div class="beat"><time>저녁</time><div>가든스 바이 더 베이로 이동과 식사</div></div><div class="beat"><time>19:45</time><div>Garden Rhapsody</div></div><div class="beat"><time>21:00</time><div>Spectra 관람 후 JB 복귀</div></div></div><div class="choice-note">전자담배 기기와 팟은 전부 JB 숙소에 두고 가.</div></div></div>
+          <div class="day-main"><div><h3>USS와 싱가포르 야경</h3><p>아침에 육로 국경을 넘어 센토사로 이동해 USS를 즐깁니다. 저녁에는 가든스 바이 더 베이와 마리나 베이 야경을 보고, 마지막 Spectra가 끝나면 우드랜즈를 거쳐 조호르바루 숙소로 돌아갑니다.</p><div class="schedule"><div class="beat"><time>아침</time><div>JB에서 우드랜즈로 이동과 입국심사</div></div><div class="beat"><time>오전</time><div><strong>Universal Studios Singapore</strong></div></div><div class="beat"><time>저녁</time><div>가든스 바이 더 베이로 이동과 식사</div></div><div class="beat"><time>19:45</time><div>Garden Rhapsody</div></div><div class="beat"><time>21:00</time><div>Spectra 관람 후 JB 복귀</div></div></div><div class="choice-note">전자담배 기기와 팟은 전부 JB 숙소에 보관합니다.</div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/27</strong><span>일요일</span><em>누사두아</em></div>
-          <div class="day-main"><div><h3>조호르바루에서 발리로</h3><p>오전에 JHB에서 쿠알라룸푸르로 이동하고 같은 날 발리행으로 갈아타. DPS에 도착하면 입국심사와 수하물 수령을 마친 뒤, 다음 날 에카자야 출항 장소와 가까운 딴중베노아 숙소로 이동해 늦은 저녁을 먹어.</p><div class="schedule"><div class="beat"><time>11:15</time><div>MH1052로 KUL 이동</div></div><div class="beat"><time>12:10</time><div>KUL 도착과 환승</div></div><div class="beat"><time>15:10</time><div>MH853 발리행 출발</div></div><div class="beat"><time>18:30</time><div>DPS 도착, 입국과 수하물 수령</div></div><div class="beat"><time>20:15</time><div>딴중베노아 숙소 체크인과 늦은 저녁</div></div><div class="beat"><time>밤</time><div>다음 날 배표, 멀미약, 방수 가방 준비</div></div></div></div><figure class="day-photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><span>누사두아</span></figure></div>
+          <div class="day-main"><div><h3>조호르바루에서 발리로</h3><p>오전에 JHB에서 쿠알라룸푸르로 이동하고 같은 날 발리행으로 환승합니다. DPS 도착 뒤 입국심사와 수하물 수령을 마치고, 다음 날 에카자야 출항 장소와 가까운 딴중베노아 숙소로 이동해 늦은 저녁을 먹습니다.</p><div class="schedule"><div class="beat"><time>11:15</time><div>MH1052로 KUL 이동</div></div><div class="beat"><time>12:10</time><div>KUL 도착과 환승</div></div><div class="beat"><time>15:10</time><div>MH853 발리행 출발</div></div><div class="beat"><time>18:30</time><div>DPS 도착, 입국과 수하물 수령</div></div><div class="beat"><time>20:15</time><div>딴중베노아 숙소 체크인과 늦은 저녁</div></div><div class="beat"><time>밤</time><div>다음 날 배표, 멀미약, 방수 가방 준비</div></div></div></div><figure class="day-photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><span>누사두아</span></figure></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/28</strong><span>월요일</span><em>길리 에어</em></div>
-          <div class="day-main"><div><h3>누사두아에서 길리 에어로</h3><p>이른 아침 딴중베노아에서 배를 타고 정오 무렵 길리 에어에 도착해. 이동 시간이 길어서 오후는 체크인과 점심, 낮잠에 쓰고 해가 질 때 서쪽 해변으로 나가면 좋아.</p><div class="schedule"><div class="beat"><time>05:45</time><div>호텔 출발</div></div><div class="beat"><time>06:30</time><div>에카자야 누사두아 카운터 체크인</div></div><div class="beat"><time>07:30</time><div><strong>누사두아 출항</strong></div></div><div class="beat"><time>12:20</time><div>길리 에어 도착, 숙소 이동</div></div><div class="beat"><time>오후</time><div>점심, 체크인, 휴식</div></div><div class="beat"><time>17:30</time><div>서쪽 해변 일몰과 저녁</div></div></div><div class="choice-note">멀미약은 출항 30분 전에 먹고 여권과 전자기기는 작은 방수 가방에 직접 들어.</div></div><figure class="day-photo"><img src="assets/trip-6618cbaec51f0b73.jpg" alt="바다거북"><span>길리 바다</span></figure></div>
+          <div class="day-main"><div><h3>누사두아에서 길리 에어로</h3><p>이른 아침 딴중베노아에서 배를 타고 정오 무렵 길리 에어에 도착합니다. 이동 시간이 길어 오후는 체크인과 점심, 휴식에 사용하고 일몰 시간에 서쪽 해변으로 이동합니다.</p><div class="schedule"><div class="beat"><time>05:45</time><div>호텔 출발</div></div><div class="beat"><time>06:30</time><div>에카자야 누사두아 카운터 체크인</div></div><div class="beat"><time>07:30</time><div><strong>누사두아 출항</strong></div></div><div class="beat"><time>12:20</time><div>길리 에어 도착, 숙소 이동</div></div><div class="beat"><time>오후</time><div>점심, 체크인, 휴식</div></div><div class="beat"><time>17:30</time><div>서쪽 해변 일몰과 저녁</div></div></div><div class="choice-note">멀미약은 출항 30분 전에 복용하고 여권과 전자기기는 작은 방수 가방에 직접 보관합니다.</div></div><figure class="day-photo"><img src="assets/trip-6618cbaec51f0b73.jpg" alt="바다거북"><span>길리 바다</span></figure></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/29</strong><span>화요일</span><em>길리 에어</em></div>
-          <div class="day-main"><div><h3>에어 동쪽 해변에서 스노클링</h3><p>Turtle Beach 쪽은 해변에서 바로 들어갈 수 있어. 조류와 수위를 확인한 뒤 오전에 한 번 들어가 거북이와 산호를 보고, 장비를 반납하면 늦은 아침을 먹어. 오후에는 숙소 수영장이나 마사지, 서쪽 해변 일몰 중에서 골라 보내면 돼.</p><div class="schedule"><div class="beat"><time>07:30</time><div>동쪽 Turtle Beach로 이동</div></div><div class="beat"><time>08:00</time><div><strong>해변 스노클링</strong></div></div><div class="beat"><time>10:00</time><div>늦은 조식과 카페</div></div><div class="beat"><time>오후</time><div>수영장 또는 마사지</div></div><div class="beat"><time>17:30</time><div>서쪽 해변 일몰</div></div></div></div></div>
+          <div class="day-main"><div><h3>에어 동쪽 해변에서 스노클링</h3><p>Turtle Beach 쪽은 해변에서 바로 들어갈 수 있습니다. 조류와 수위를 확인한 뒤 오전에 거북이와 산호를 보고, 장비 반납 후 늦은 아침을 먹습니다. 오후에는 숙소 수영장과 마사지, 서쪽 해변 일몰 가운데 선택합니다.</p><div class="schedule"><div class="beat"><time>07:30</time><div>동쪽 Turtle Beach로 이동</div></div><div class="beat"><time>08:00</time><div><strong>해변 스노클링</strong></div></div><div class="beat"><time>10:00</time><div>늦은 조식과 카페</div></div><div class="beat"><time>오후</time><div>수영장 또는 마사지</div></div><div class="beat"><time>17:30</time><div>서쪽 해변 일몰</div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/30</strong><span>수요일</span><em>에어 또는 T</em></div>
-          <div class="day-main"><div><h3>에어에 남거나 T로 이동</h3><p>에어 2박이면 이날 T로 이동하고, 에어 3박이면 섬에서 하루를 더 보내. 두 옵션 모두 물놀이보다는 이동과 휴식에 시간을 쓰는 날이야.</p><div class="day-options"><div class="day-option"><span>옵션 A</span><strong>길리 T로 이동</strong><p>에어에서 아침을 먹고 섬 사이 보트로 T에 넘어가. 체크인 뒤에는 항구와 동쪽 해변 주변에서 천천히 보내.</p><div class="mini-beats"><div class="mini-beat"><time>08:30</time><div>조식과 체크아웃</div></div><div class="mini-beat"><time>11시 전후</time><div>길리 에어에서 T로 이동</div></div><div class="mini-beat"><time>12:00</time><div>삼바에 짐 맡기고 점심</div></div><div class="mini-beat"><time>오후</time><div>항구 주변 산책과 카페</div></div><div class="mini-beat"><time>17:30</time><div>동쪽 해변 산책과 저녁</div></div></div></div><div class="day-option"><span>옵션 B</span><strong>길리 에어에서 하루 더</strong><p>스노클링 다음 날을 온전히 쉬는 날로 써. 북쪽과 서쪽 해변을 걷고 숙소 수영장과 마사지를 즐기면 돼.</p><div class="mini-beats"><div class="mini-beat"><time>09:00</time><div>늦은 조식과 해변 카페</div></div><div class="mini-beat"><time>11:30</time><div>북쪽 해변 산책</div></div><div class="mini-beat"><time>오후</time><div>수영장, 낮잠, 마사지</div></div><div class="mini-beat"><time>17:30</time><div>서쪽 해변 일몰</div></div><div class="mini-beat"><time>저녁</time><div>해변 식당에서 저녁</div></div></div></div></div></div></div>
+          <div class="day-main"><div><h3>에어에 남거나 T로 이동</h3><p>에어 2박이면 이날 T로 이동하고, 에어 3박이면 섬에서 하루를 더 보냅니다. 두 옵션 모두 물놀이보다 이동과 휴식에 시간을 사용하는 날입니다.</p><div class="day-options"><div class="day-option"><span>옵션 A</span><strong>길리 T로 이동</strong><p>에어에서 아침을 먹고 섬 사이 보트로 T에 이동합니다. 체크인 뒤에는 항구와 동쪽 해변 주변에서 여유롭게 보냅니다.</p><div class="mini-beats"><div class="mini-beat"><time>08:30</time><div>조식과 체크아웃</div></div><div class="mini-beat"><time>11시 전후</time><div>길리 에어에서 T로 이동</div></div><div class="mini-beat"><time>12:00</time><div>삼바에 짐 맡기고 점심</div></div><div class="mini-beat"><time>오후</time><div>항구 주변 산책과 카페</div></div><div class="mini-beat"><time>17:30</time><div>동쪽 해변 산책과 저녁</div></div></div></div><div class="day-option"><span>옵션 B</span><strong>길리 에어에서 하루 더</strong><p>스노클링 다음 날을 온전히 쉬는 날로 사용합니다. 북쪽과 서쪽 해변을 걷고 숙소 수영장과 마사지를 즐깁니다.</p><div class="mini-beats"><div class="mini-beat"><time>09:00</time><div>늦은 조식과 해변 카페</div></div><div class="mini-beat"><time>11:30</time><div>북쪽 해변 산책</div></div><div class="mini-beat"><time>오후</time><div>수영장, 낮잠, 마사지</div></div><div class="mini-beat"><time>17:30</time><div>서쪽 해변 일몰</div></div><div class="mini-beat"><time>저녁</time><div>해변 식당에서 저녁</div></div></div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/1</strong><span>목요일</span><em>길리 T</em></div>
-          <div class="day-main"><div><h3>T에서 보내는 시간</h3><p>옵션 A는 길리 T에서 하루를 온전히 쓸 수 있고, 옵션 B는 오전까지 에어에 머문 뒤 T로 이동해. 저녁부터는 같은 일정이야.</p><div class="day-options"><div class="day-option"><span>옵션 A</span><strong>자전거로 섬 한 바퀴</strong><p>오전에는 항구 북쪽의 조용한 길을 달리고, 더운 시간에는 숙소에서 쉬어. 해 질 무렵 서쪽 해변으로 다시 나가면 돼.</p><div class="mini-beats"><div class="mini-beat"><time>09:30</time><div>해변에서 늦은 아침</div></div><div class="mini-beat"><time>11:00</time><div>자전거로 북쪽 해안 이동</div></div><div class="mini-beat"><time>13:00</time><div>점심 후 숙소 휴식</div></div><div class="mini-beat"><time>16:30</time><div>서쪽 해변으로 자전거 이동</div></div><div class="mini-beat"><time>17:30</time><div>일몰과 저녁</div></div></div></div><div class="day-option"><span>옵션 B</span><strong>에어에서 T로 이동</strong><p>에어에서 마지막 아침을 보내고 T로 넘어가. 체크인과 늦은 점심 뒤에는 동쪽 해변과 식당가를 둘러봐.</p><div class="mini-beats"><div class="mini-beat"><time>08:30</time><div>조식과 체크아웃</div></div><div class="mini-beat"><time>11시 전후</time><div>길리 에어에서 T로 이동</div></div><div class="mini-beat"><time>12:00</time><div>삼바 체크인과 점심</div></div><div class="mini-beat"><time>오후</time><div>수영장과 동쪽 해변 산책</div></div><div class="mini-beat"><time>저녁</time><div>해변 식당에서 저녁</div></div></div></div></div></div></div>
+          <div class="day-main"><div><h3>T에서 보내는 시간</h3><p>옵션 A는 길리 T에서 하루를 온전히 보내고, 옵션 B는 오전까지 에어에 머문 뒤 T로 이동합니다. 저녁부터는 같은 일정입니다.</p><div class="day-options"><div class="day-option"><span>옵션 A</span><strong>자전거로 섬 한 바퀴</strong><p>오전에는 항구 북쪽의 조용한 길을 달리고, 더운 시간에는 숙소에서 쉽니다. 해 질 무렵 서쪽 해변으로 다시 이동합니다.</p><div class="mini-beats"><div class="mini-beat"><time>09:30</time><div>해변에서 늦은 아침</div></div><div class="mini-beat"><time>11:00</time><div>자전거로 북쪽 해안 이동</div></div><div class="mini-beat"><time>13:00</time><div>점심 후 숙소 휴식</div></div><div class="mini-beat"><time>16:30</time><div>서쪽 해변으로 자전거 이동</div></div><div class="mini-beat"><time>17:30</time><div>일몰과 저녁</div></div></div></div><div class="day-option"><span>옵션 B</span><strong>에어에서 T로 이동</strong><p>에어에서 마지막 아침을 보내고 T로 이동합니다. 체크인과 늦은 점심 뒤에는 동쪽 해변과 식당가를 둘러봅니다.</p><div class="mini-beats"><div class="mini-beat"><time>08:30</time><div>조식과 체크아웃</div></div><div class="mini-beat"><time>11시 전후</time><div>길리 에어에서 T로 이동</div></div><div class="mini-beat"><time>12:00</time><div>삼바 체크인과 점심</div></div><div class="mini-beat"><time>오후</time><div>수영장과 동쪽 해변 산책</div></div><div class="mini-beat"><time>저녁</time><div>해변 식당에서 저녁</div></div></div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/2</strong><span>금요일</span><em>길리 T</em></div>
-          <div class="day-main"><div><h3>길리 T 오전 다이빙 2회</h3><p>공기통 하나로 1차 다이빙을 하고 수면에서 쉬었다가, 새 공기통으로 2차 다이빙을 하는 코스야. 포인트는 당일 조류를 보고 Shark Point나 Halik 중에서 정해. 점심 무렵 끝나니 오후에는 장비를 정리하고 숙소에서 쉬기 좋아.</p><div class="schedule"><div class="beat"><time>07:30</time><div>다이브숍 집합, 장비 확인, 브리핑</div></div><div class="beat"><time>08:00</time><div><strong>1차 다이빙</strong></div></div><div class="beat"><time>1차 후</time><div>수면 휴식, 물과 간식, 공기통 교체</div></div><div class="beat"><time>10:30</time><div><strong>2차 다이빙</strong></div></div><div class="beat"><time>13:00</time><div>장비 반납, 점심, 숙소 휴식</div></div><div class="beat"><time>저녁</time><div>해변에서 길리 마지막 저녁</div></div></div><div class="choice-note">다이빙 두 번 사이에는 수면 휴식 시간이 있어. 두 번째 입수 시각과 포인트는 다이브숍 운영과 조류에 따라 달라질 수 있어.</div></div></div>
+          <div class="day-main"><div><h3>길리 T 오전 다이빙 2회</h3><p>공기통 하나로 1차 다이빙을 하고 수면에서 쉰 뒤, 새 공기통으로 2차 다이빙을 하는 코스입니다. 포인트는 당일 조류를 보고 Shark Point나 Halik 가운데 정합니다. 점심 무렵 끝나 오후에는 숙소에서 쉬기 좋습니다.</p><div class="schedule"><div class="beat"><time>07:30</time><div>다이브숍 집합, 장비 확인, 브리핑</div></div><div class="beat"><time>08:00</time><div><strong>1차 다이빙</strong></div></div><div class="beat"><time>1차 후</time><div>수면 휴식, 물과 간식, 공기통 교체</div></div><div class="beat"><time>10:30</time><div><strong>2차 다이빙</strong></div></div><div class="beat"><time>13:00</time><div>장비 반납, 점심, 숙소 휴식</div></div><div class="beat"><time>저녁</time><div>해변에서 길리 마지막 저녁</div></div></div><div class="choice-note">다이빙 두 번 사이에는 수면 휴식 시간이 있습니다. 두 번째 입수 시각과 포인트는 다이브숍 운영과 조류에 따라 달라질 수 있습니다.</div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/3</strong><span>토요일</span><em>시데멘 또는 아메드</em></div>
-          <div class="day-main"><div><h3>길리에서 나와 발리 동부로</h3><p>에카자야로 파당바이에 도착한 뒤 시데멘이나 아메드로 가. 시데멘을 고르면 오후 3시 전후 숙소에 도착해서 수영과 짧은 논길 산책까지 할 수 있어. 아메드는 띠르따 강가를 들르면 저녁쯤 도착해.</p><div class="day-options"><div class="day-option"><span>추천안</span><strong>시데멘으로 이동</strong><p>항구에서 미리 예약한 기사를 만나 바로 시데멘으로 가. 체크인 뒤 늦은 점심을 먹고, 숙소 수영장과 가까운 논길만 가볍게 걸어.</p><div class="mini-beats"><div class="mini-beat"><time>출항 1시간 전</time><div>길리 T 에카자야 체크인</div></div><div class="mini-beat"><time>오후</time><div>파당바이 도착과 기사 미팅</div></div><div class="mini-beat"><time>약 1시간 뒤</time><div>시데멘 체크인</div></div><div class="mini-beat"><time>17:00</time><div>논길 산책과 저녁</div></div></div><p><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Sidemen+Bali" target="_blank" rel="noopener">구글 지도</a></p></div><div class="day-option"><span>다이빙안</span><strong>띠르따 강가를 거쳐 아메드</strong><p>파당바이에서 점심을 먹고 띠르따 강가를 본 뒤 아메드로 가. 배가 늦으면 정원은 빼고 숙소로 바로 가면 돼.</p><div class="mini-beats"><div class="mini-beat"><time>오후</time><div>파당바이 도착과 점심</div></div><div class="mini-beat"><time>14:30</time><div>띠르따 강가</div></div><div class="mini-beat"><time>17:00</time><div>아메드 체크인</div></div></div><p><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Tirta+Gangga/Jemeluk+Beach+Amed" target="_blank" rel="noopener">구글 지도</a></p></div></div></div></div>
+          <div class="day-main"><div><h3>길리에서 나와 발리 동부로</h3><p>에카자야로 파당바이에 도착한 뒤 시데멘이나 아메드로 이동합니다. 시데멘을 선택하면 오후 3시 전후 숙소에 도착해 수영과 짧은 논길 산책까지 즐길 수 있습니다. 아메드는 띠르따 강가를 들르면 저녁쯤 도착합니다.</p><div class="day-options"><div class="day-option"><span>추천 일정</span><strong>시데멘으로 이동</strong><p>항구에서 미리 예약한 기사를 만나 바로 시데멘으로 이동합니다. 체크인 뒤 늦은 점심을 먹고 숙소와 가까운 논길을 가볍게 걷습니다.</p><div class="mini-beats"><div class="mini-beat"><time>출항 1시간 전</time><div>길리 T 에카자야 체크인</div></div><div class="mini-beat"><time>오후</time><div>파당바이 도착과 기사 미팅</div></div><div class="mini-beat"><time>약 1시간 뒤</time><div>시데멘 체크인</div></div><div class="mini-beat"><time>17:00</time><div>논길 산책과 저녁</div></div></div><p><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Sidemen+Bali" target="_blank" rel="noopener">구글 지도</a></p></div><div class="day-option"><span>다이빙 일정</span><strong>띠르따 강가를 거쳐 아메드</strong><p>파당바이에서 점심을 먹고 띠르따 강가를 본 뒤 아메드로 이동합니다. 배가 늦으면 정원은 제외하고 숙소로 바로 이동합니다.</p><div class="mini-beats"><div class="mini-beat"><time>오후</time><div>파당바이 도착과 점심</div></div><div class="mini-beat"><time>14:30</time><div>띠르따 강가</div></div><div class="mini-beat"><time>17:00</time><div>아메드 체크인</div></div></div><p><a href="https://www.google.com/maps/dir/Padangbai+Harbour/Tirta+Gangga/Jemeluk+Beach+Amed" target="_blank" rel="noopener">구글 지도</a></p></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/4</strong><span>일요일</span><em>시데멘 또는 아메드</em></div>
-          <div class="day-main"><div><h3>논과 산을 볼지, 난파선으로 들어갈지</h3><p>시데멘은 바다와 완전히 다른 하루고, 아메드는 다이빙이 중심이야. 길리에서 이미 오전 다이빙을 한다면 여행 전체로는 시데멘 쪽이 더 잘 어울려.</p><div class="day-options"><div class="day-option"><span>시데멘</span><strong>논길 산책과 발리 요리</strong><p>선선한 아침에 현지 가이드와 논길을 걷고, 오전 요리 수업에서 점심까지 먹어. 오후는 숙소 수영장과 마사지만 두고 비워두자.</p><div class="mini-beats"><div class="mini-beat"><time>07:30</time><div>논길 산책 1시간 30분</div></div><div class="mini-beat"><time>10:00</time><div>시장과 요리 수업</div></div><div class="mini-beat"><time>13:30</time><div>숙소 복귀와 수영</div></div><div class="mini-beat"><time>17:00</time><div>마사지 또는 카페</div></div></div><p>요리 수업은 프로그램에 따라 IDR 450k에서 550k/인이야.</p></div><div class="day-option"><span>아메드</span><strong>USAT Liberty 다이빙</strong><p>뚤람벤 해변에서 난파선으로 들어가고, 수면에서 쉰 뒤 Coral Garden으로 한 번 더 들어가.</p><div class="mini-beats"><div class="mini-beat"><time>05:45</time><div>다이브숍 픽업</div></div><div class="mini-beat"><time>06:30</time><div>USAT Liberty 1차</div></div><div class="mini-beat"><time>08:00</time><div>수면 휴식과 아침</div></div><div class="mini-beat"><time>09:30</time><div>Coral Garden 2차</div></div></div></div></div></div></div>
+          <div class="day-main"><div><h3>논과 산을 볼지, 난파선으로 들어갈지</h3><p>시데멘은 바다와 전혀 다른 하루를 보내고, 아메드는 다이빙이 중심입니다. 길리에서 이미 오전 다이빙을 한다면 여행 전체에는 시데멘 일정이 더 잘 어울립니다.</p><div class="day-options"><div class="day-option"><span>시데멘</span><strong>논길 산책과 발리 요리</strong><p>선선한 아침에 현지 가이드와 논길을 걷고, 오전 요리 수업에서 점심까지 즐깁니다. 오후는 숙소 수영장과 마사지 중심으로 여유롭게 보냅니다.</p><div class="mini-beats"><div class="mini-beat"><time>07:30</time><div>논길 산책 1시간 30분</div></div><div class="mini-beat"><time>10:00</time><div>시장과 요리 수업</div></div><div class="mini-beat"><time>13:30</time><div>숙소 복귀와 수영</div></div><div class="mini-beat"><time>17:00</time><div>마사지 또는 카페</div></div></div><p>요리 수업은 프로그램에 따라 IDR 450k에서 550k/인입니다.</p></div><div class="day-option"><span>아메드</span><strong>USAT Liberty 다이빙</strong><p>뚤람벤 해변에서 난파선으로 들어가고, 수면에서 쉰 뒤 Coral Garden으로 한 번 더 입수합니다.</p><div class="mini-beats"><div class="mini-beat"><time>05:45</time><div>다이브숍 픽업</div></div><div class="mini-beat"><time>06:30</time><div>USAT Liberty 1차</div></div><div class="mini-beat"><time>08:00</time><div>수면 휴식과 아침</div></div><div class="mini-beat"><time>09:30</time><div>Coral Garden 2차</div></div></div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/5</strong><span>월요일</span><em>시데멘 또는 아메드</em></div>
-          <div class="day-main"><div><h3>한 가지 체험만 고르는 날</h3><p>길리 뒤라서 이날까지 꽉 채울 필요는 없어. 시데멘에서는 직조나 은공예 하나를 고르고, 아메드라면 해안도로만 천천히 보면 돼.</p><div class="day-options"><div class="day-option"><span>시데멘</span><strong>직조, 은공예 또는 래프팅</strong><p>물놀이는 충분했으니 직조 공방이나 은공예 수업이 잘 맞아. 몸을 좀 더 쓰고 싶다면 뜨라가 와자 래프팅을 골라도 돼.</p><div class="mini-beats"><div class="mini-beat"><time>오전</time><div>직조 공방 또는 은공예</div></div><div class="mini-beat"><time>점심</time><div>계곡 전망 식당</div></div><div class="mini-beat"><time>오후</time><div>숙소에서 휴식</div></div><div class="mini-beat"><time>저녁</time><div>울루와뚜 이동 차량 확인</div></div></div></div><div class="day-option"><span>아메드</span><strong>해안도로와 제염장</strong><p>늦게 아침을 먹고 작은 마을과 전망 좋은 카페를 둘러봐. 오후에는 마사지로 다이빙 피로를 풀면 돼.</p><div class="mini-beats"><div class="mini-beat"><time>늦게</time><div>조식과 해변 카페</div></div><div class="mini-beat"><time>13:00</time><div>해안도로 드라이브</div></div><div class="mini-beat"><time>14:30</time><div>전통 제염장</div></div><div class="mini-beat"><time>16:00</time><div>출장 마사지</div></div></div></div></div></div></div>
+          <div class="day-main"><div><h3>한 가지 체험만 고르는 날</h3><p>길리 뒤라 이날까지 일정을 가득 채울 필요는 없습니다. 시데멘에서는 직조나 은공예 하나를 고르고, 아메드에서는 해안도로를 천천히 둘러봅니다.</p><div class="day-options"><div class="day-option"><span>시데멘</span><strong>직조, 은공예 또는 래프팅</strong><p>직조 공방이나 은공예 수업이 잘 맞습니다. 활동적인 하루를 원한다면 뜨라가 와자 래프팅을 선택할 수 있습니다.</p><div class="mini-beats"><div class="mini-beat"><time>오전</time><div>직조 공방 또는 은공예</div></div><div class="mini-beat"><time>점심</time><div>계곡 전망 식당</div></div><div class="mini-beat"><time>오후</time><div>숙소에서 휴식</div></div><div class="mini-beat"><time>저녁</time><div>울루와뚜 이동 차량 확인</div></div></div></div><div class="day-option"><span>아메드</span><strong>해안도로와 제염장</strong><p>늦은 아침 뒤 작은 마을과 전망 좋은 카페를 둘러봅니다. 오후에는 마사지로 다이빙 피로를 풉니다.</p><div class="mini-beats"><div class="mini-beat"><time>늦게</time><div>조식과 해변 카페</div></div><div class="mini-beat"><time>13:00</time><div>해안도로 드라이브</div></div><div class="mini-beat"><time>14:30</time><div>전통 제염장</div></div><div class="mini-beat"><time>16:00</time><div>출장 마사지</div></div></div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/6</strong><span>화요일</span><em>울루와뚜</em></div>
-          <div class="day-main"><div><h3>울루와뚜 절벽 숙소와 일몰</h3><p>시데멘이면 오전 9시 30분에서 10시 사이에 출발해도 점심 무렵 도착할 수 있어. 아메드에서는 한 시간 이상 일찍 나와야 해. 도착한 뒤에는 다른 관광지를 넣지 말고 숙소 수영장과 일몰만 보자.</p><div class="schedule"><div class="beat"><time>08:30</time><div>아메드안 출발</div></div><div class="beat"><time>09:30</time><div>시데멘안 출발</div></div><div class="beat"><time>13:00</time><div>절벽 숙소 도착과 점심</div></div><div class="beat"><time>오후</time><div>체크인과 수영장</div></div><div class="beat"><time>17:30</time><div><strong>숙소에서 일몰</strong></div></div></div><div class="choice-note"><a href="https://www.google.com/maps/dir/Sidemen+Bali/Bingin+Beach+Uluwatu" target="_blank" rel="noopener">시데멘 출발 지도</a>　<a href="https://www.google.com/maps/dir/Jemeluk+Beach+Amed/Bingin+Beach+Uluwatu" target="_blank" rel="noopener">아메드 출발 지도</a></div></div><figure class="day-photo"><img src="assets/trip-2e0d34e1f516ff3a.jpg" alt="울루와뚜 절벽"><span>울루와뚜</span></figure></div>
+          <div class="day-main"><div><h3>울루와뚜 절벽 숙소와 일몰</h3><p>시데멘에서는 오전 9시 30분에서 10시 사이에 출발해도 점심 무렵 도착할 수 있습니다. 아메드에서는 한 시간 이상 일찍 출발해야 합니다. 도착 뒤에는 다른 관광지를 넣지 않고 숙소 수영장과 일몰을 즐깁니다.</p><div class="schedule"><div class="beat"><time>08:30</time><div>아메드 일정 출발</div></div><div class="beat"><time>09:30</time><div>시데멘 일정 출발</div></div><div class="beat"><time>13:00</time><div>절벽 숙소 도착과 점심</div></div><div class="beat"><time>오후</time><div>체크인과 수영장</div></div><div class="beat"><time>17:30</time><div><strong>숙소에서 일몰</strong></div></div></div><div class="choice-note"><a href="https://www.google.com/maps/dir/Sidemen+Bali/Bingin+Beach+Uluwatu" target="_blank" rel="noopener">시데멘 출발 지도</a>　<a href="https://www.google.com/maps/dir/Jemeluk+Beach+Amed/Bingin+Beach+Uluwatu" target="_blank" rel="noopener">아메드 출발 지도</a></div></div><figure class="day-photo"><img src="assets/trip-2e0d34e1f516ff3a.jpg" alt="울루와뚜 절벽"><span>울루와뚜</span></figure></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/7</strong><span>수요일</span><em>라구나</em></div>
-          <div class="day-main"><div><h3>라구나 체크인과 리조트 오후</h3><p>절벽 숙소에서 늦게 아침을 먹고 누사두아로 이동해. 15시에 체크인한 뒤 라군 풀과 해변 바를 둘러보고, 저녁은 리조트 안이나 발리 컬렉션에서 고를 수 있어.</p><div class="schedule"><div class="beat"><time>늦게</time><div>조식과 마지막 절벽 수영</div></div><div class="beat"><time>12:00</time><div>체크아웃과 점심</div></div><div class="beat"><time>15:00</time><div><strong>라구나 체크인</strong></div></div><div class="beat"><time>오후</time><div>라군 풀과 해변 바</div></div><div class="beat"><time>저녁</time><div>리조트 또는 발리 컬렉션</div></div></div><div class="choice-note">체크인 전에 10주년 여행이라고 알려두고 킹베드와 기념 어메니티를 부탁해.</div></div><figure class="day-photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><span>누사두아</span></figure></div>
+          <div class="day-main"><div><h3>라구나 체크인과 리조트 오후</h3><p>절벽 숙소에서 늦은 아침을 먹고 누사두아로 이동합니다. 15시에 체크인한 뒤 라군 풀과 해변 바를 둘러보고, 저녁은 리조트 안이나 발리 컬렉션에서 선택합니다.</p><div class="schedule"><div class="beat"><time>늦게</time><div>조식과 마지막 절벽 수영</div></div><div class="beat"><time>12:00</time><div>체크아웃과 점심</div></div><div class="beat"><time>15:00</time><div><strong>라구나 체크인</strong></div></div><div class="beat"><time>오후</time><div>라군 풀과 해변 바</div></div><div class="beat"><time>저녁</time><div>리조트 또는 발리 컬렉션</div></div></div><div class="choice-note">체크인 전에 10주년 여행임을 알리고 킹베드와 기념 어메니티를 요청합니다.</div></div><figure class="day-photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><span>누사두아</span></figure></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/8</strong><span>목요일</span><em>10주년</em></div>
-          <div class="day-main"><div><h3>라구나에서 보내는 10주년</h3><p>알람 없이 일어나 늦게 아침을 먹고 라군 풀과 해변을 오가며 보내. 오후에는 커플 스파를 받고 객실에서 쉬었다가, 해 질 무렵 칵테일과 기념 저녁으로 하루를 마무리해.</p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 조식</div></div><div class="beat"><time>오전</time><div>라군 풀과 해변</div></div><div class="beat"><time>점심</time><div>리조트 안에서 가벼운 식사</div></div><div class="beat"><time>오후</time><div>커플 스파와 객실 휴식</div></div><div class="beat"><time>일몰</time><div>칵테일과 <strong>기념 저녁</strong></div></div></div></div></div>
+          <div class="day-main"><div><h3>라구나에서 보내는 10주년</h3><p>알람 없이 일어나 늦은 아침을 먹고 라군 풀과 해변을 오가며 보냅니다. 오후에는 커플 스파와 객실 휴식을 즐기고, 해 질 무렵 칵테일과 기념 저녁으로 하루를 마무리합니다.</p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 조식</div></div><div class="beat"><time>오전</time><div>라군 풀과 해변</div></div><div class="beat"><time>점심</time><div>리조트 안에서 가벼운 식사</div></div><div class="beat"><time>오후</time><div>커플 스파와 객실 휴식</div></div><div class="beat"><time>일몰</time><div>칵테일과 <strong>기념 저녁</strong></div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/9</strong><span>금요일</span><em>울루와뚜와 공항</em></div>
-          <div class="day-main"><div><h3>울루와뚜 케착과 짐바란 저녁</h3><p>레이트 체크아웃까지 라구나에서 쉬고, 기사가 짐을 실은 채 울루와뚜 사원과 짐바란을 이어서 이동해. 사원 산책 뒤 18시 케착 공연을 보고 해변에서 저녁을 먹은 다음 공항 앞 호텔로 들어가.</p><div class="schedule"><div class="beat"><time>오전</time><div>조식, 수영장, 짐 정리</div></div><div class="beat"><time>16:00</time><div>라구나 체크아웃과 기사 미팅</div></div><div class="beat"><time>17:15</time><div>울루와뚜 사원 산책</div></div><div class="beat"><time>18:00</time><div><strong>케착 파이어 댄스</strong></div></div><div class="beat"><time>19:40</time><div>짐바란 해변에서 마지막 저녁</div></div><div class="beat"><time>21:15</time><div>힐튼 가든 인 공항 체크인</div></div></div></div><figure class="day-photo"><img src="assets/trip-db717d4c8bc494c3.jpg" alt="울루와뚜 케착"><span>울루와뚜 케착</span></figure></div>
+          <div class="day-main"><div><h3>울루와뚜 케착과 짐바란 저녁</h3><p>레이트 체크아웃까지 라구나에서 쉬고, 기사가 짐을 실은 채 울루와뚜 사원과 짐바란으로 이동합니다. 사원 산책 뒤 18시 케착 공연을 보고 해변에서 저녁을 먹은 다음 공항 앞 호텔로 이동합니다.</p><div class="schedule"><div class="beat"><time>오전</time><div>조식, 수영장, 짐 정리</div></div><div class="beat"><time>16:00</time><div>라구나 체크아웃과 기사 미팅</div></div><div class="beat"><time>17:15</time><div>울루와뚜 사원 산책</div></div><div class="beat"><time>18:00</time><div><strong>케착 파이어 댄스</strong></div></div><div class="beat"><time>19:40</time><div>짐바란 해변에서 마지막 저녁</div></div><div class="beat"><time>21:15</time><div>힐튼 가든 인 공항 체크인</div></div></div></div><figure class="day-photo"><img src="assets/trip-db717d4c8bc494c3.jpg" alt="울루와뚜 케착"><span>울루와뚜 케착</span></figure></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/10</strong><span>토요일</span><em>귀국</em></div>
-          <div class="day-main"><div><h3>발리에서 청두로</h3><p>공항 앞 호텔에서 아침을 먹고 9시 45분에 출발해. 쿠알라룸푸르에서 3시간 환승한 뒤 청두행 야간편을 타고, 자정을 조금 넘겨 톈푸공항에 도착해.</p><div class="schedule"><div class="beat"><time>08:30</time><div>조식과 체크아웃 준비</div></div><div class="beat"><time>09:45</time><div>호텔 출발</div></div><div class="beat"><time>13:05</time><div>MH714 발리 출발</div></div><div class="beat"><time>16:00</time><div>KUL 도착과 환승</div></div><div class="beat"><time>19:00</time><div>MH526으로 청두 출발</div></div></div></div></div>
+          <div class="day-main"><div><h3>발리에서 청두로</h3><p>공항 앞 호텔에서 아침을 먹고 9시 45분에 출발합니다. 쿠알라룸푸르에서 3시간 환승한 뒤 청두행 야간편을 타고, 자정을 조금 넘겨 톈푸공항에 도착합니다.</p><div class="schedule"><div class="beat"><time>08:30</time><div>조식과 체크아웃 준비</div></div><div class="beat"><time>09:45</time><div>호텔 출발</div></div><div class="beat"><time>13:05</time><div>MH714 발리 출발</div></div><div class="beat"><time>16:00</time><div>KUL 도착과 환승</div></div><div class="beat"><time>19:00</time><div>MH526으로 청두 출발</div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/11</strong><span>일요일</span><em>청두</em></div>
-          <div class="day-main"><div><h3>집으로</h3><p>00:05 TFU 도착. 심야라 택시나 디디로 들어가.</p></div></div>
+          <div class="day-main"><div><h3>집으로</h3><p>00:05 TFU 도착입니다. 심야라 택시나 디디로 이동합니다.</p></div></div>
         </article>
       </div>
     </div>
@@ -715,38 +798,38 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
   <section id="stays">
     <div class="wrap">
-      <div class="section-head"><div><h2>숙소 날짜</h2><p>라구나와 힐튼은 예약 완료. 나머지는 아래 날짜와 무료취소 마감을 함께 확인하면 돼.</p></div><a class="section-link" href="gili-a-vs-m.html">길리 숙소 비교 보기</a></div>
+      <div class="section-head"><div><h2>숙소 날짜</h2><p>라구나와 힐튼은 예약이 완료되었습니다. 나머지 숙소는 아래 날짜와 무료취소 마감을 함께 확인합니다.</p></div><a class="section-link" href="gili-a-vs-m.html">길리 숙소 비교 보기</a></div>
       <div class="stay-grid">
-        <article class="stay"><img src="assets/trip-6618cbaec51f0b73.jpg" alt="길리 에어 바다"><div class="stay-body"><span>9/28부터 9/30 또는 10/1</span><h3>길리 에어 2박 또는 3박</h3><p>2박이면 스노클링과 일몰에 집중하고, 3박이면 해변 카페와 수영장만 즐기는 하루가 더 생겨.</p><a href="gili-a-vs-m.html">후보와 가격 보기</a></div></article>
-        <article class="stay"><img src="assets/trip-7ebc1dd2fec3971c.jpg" alt="길리 트라왕안"><div class="stay-body"><span>9/30 또는 10/1부터 10/3</span><h3>삼바 빌라 3박 또는 2박</h3><p>3박이면 자전거와 다이빙을 다른 날에 하고, 2박이면 도착 다음 날 다이빙한 뒤 출발해.</p><a href="https://kr.trip.com/hotels/gili-trawangan-hotel-detail-2563993/samba-villas-beachfront-view/" target="_blank" rel="noopener">트립닷컴 보기</a></div></article>
-        <article class="stay"><img src="assets/trip-80144f550586e2a3.jpg" alt="발리 동부 풍경"><div class="stay-body"><span>10/3부터 10/6</span><h3>시데멘 또는 아메드 3박</h3><p>지금은 시데멘을 먼저 보고 있어. 논과 아궁산이 보이고 식당까지 걸어갈 수 있는 숙소가 좋아. 난파선 다이빙이 꼭 하고 싶어지면 아메드로 다시 바꾸면 돼.</p><a href="#east-choice">두 지역 비교</a></div></article>
-        <article class="stay"><img src="assets/trip-2e0d34e1f516ff3a.jpg" alt="울루와뚜 절벽"><div class="stay-body"><span>10/6 1박</span><h3>절벽 숙소</h3><p>La Joya Biu Biu, Mu Bali, Suarga처럼 수영장과 일몰을 함께 즐길 수 있는 곳이 잘 맞아.</p></div></article>
-        <article class="stay"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><div class="stay-body"><span>10/7부터 10/9</span><h3>라구나 2박</h3><p>킹 라군뷰 예약 완료. 10/8은 라군 풀과 해변, 스파와 기념 저녁을 리조트 안에서 보내.</p></div></article>
-        <article class="stay"><img src="assets/trip-ce1a6f9204146afd.jpg" alt="응우라라이 공항"><div class="stay-body"><span>10/9 1박</span><h3>공항 힐튼</h3><p>15,000포인트 예약 완료. 다음 날 13:05 비행을 편하게 타기 위한 숙소야.</p></div></article>
+        <article class="stay"><img src="assets/trip-6618cbaec51f0b73.jpg" alt="길리 에어 바다"><div class="stay-body"><span>9/28부터 9/30 또는 10/1</span><h3>길리 에어 2박 또는 3박</h3><p>2박이면 스노클링과 일몰에 집중하고, 3박이면 해변 카페와 수영장을 여유롭게 즐기는 하루가 더 생깁니다.</p><a href="gili-a-vs-m.html">후보와 가격 보기</a></div></article>
+        <article class="stay"><img src="assets/trip-7ebc1dd2fec3971c.jpg" alt="길리 트라왕안"><div class="stay-body"><span>9/30 또는 10/1부터 10/3</span><h3>삼바 빌라 3박 또는 2박</h3><p>3박이면 자전거와 다이빙을 다른 날에 하고, 2박이면 도착 다음 날 다이빙한 뒤 출발합니다.</p><a href="https://kr.trip.com/hotels/gili-trawangan-hotel-detail-2563993/samba-villas-beachfront-view/" target="_blank" rel="noopener">트립닷컴 보기</a></div></article>
+        <article class="stay"><img src="assets/trip-80144f550586e2a3.jpg" alt="발리 동부 풍경"><div class="stay-body"><span>10/3부터 10/6</span><h3>시데멘 또는 아메드 3박</h3><p>시데멘은 논과 아궁산이 보이고 식당까지 걸어갈 수 있는 숙소가 잘 맞습니다. 난파선 다이빙을 원한다면 아메드 숙소를 선택할 수 있습니다.</p><a href="#east-choice">두 지역 비교</a></div></article>
+        <article class="stay"><img src="assets/trip-2e0d34e1f516ff3a.jpg" alt="울루와뚜 절벽"><div class="stay-body"><span>10/6 1박</span><h3>절벽 숙소</h3><p>La Joya Biu Biu, Mu Bali, Suarga처럼 수영장과 일몰을 함께 즐길 수 있는 곳이 잘 맞습니다.</p></div></article>
+        <article class="stay"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><div class="stay-body"><span>10/7부터 10/9</span><h3>라구나 2박</h3><p>킹 라군뷰 예약 완료입니다. 10/8은 라군 풀과 해변, 스파와 기념 저녁을 리조트 안에서 즐깁니다.</p></div></article>
+        <article class="stay"><img src="assets/trip-ce1a6f9204146afd.jpg" alt="응우라라이 공항"><div class="stay-body"><span>10/9 1박</span><h3>공항 힐튼</h3><p>15,000포인트 예약 완료입니다. 다음 날 13:05 비행을 편하게 이용하기 위한 숙소입니다.</p></div></article>
       </div>
     </div>
   </section>
 
   <section id="boats">
     <div class="wrap">
-      <div class="section-head"><div><h2>에카자야 예약 조건</h2><p>무료 귀환표를 쓰려면 에카자야 공식 홈페이지에서 누사두아 출발 편도를 먼저 사야 해.</p></div><a class="section-link" href="https://ekajayafastferry.com/" target="_blank" rel="noopener">에카자야 공식 사이트</a></div>
+      <div class="section-head"><div><h2>에카자야 예약 조건</h2><p>무료 귀환표를 사용하려면 에카자야 공식 홈페이지에서 누사두아 출발 편도를 먼저 구매해야 합니다.</p></div><a class="section-link" href="https://ekajayafastferry.com/" target="_blank" rel="noopener">에카자야 공식 사이트</a></div>
       <div class="booking-grid">
-        <article class="booking-card"><h3>가는 배</h3><div class="booking-row"><span>날짜</span><strong>9/28</strong></div><div class="booking-row"><span>구간</span><strong>누사두아 → 길리 에어</strong></div><div class="booking-row"><span>체크인</span><strong>06:30</strong></div><div class="booking-row"><span>운항</span><strong>07:30 → 12:20</strong></div><p class="warning">금요일, 월초 플래시세일, 메가 프라이데이 할인으로 결제하면 무료 귀환 대상에서 빠져.</p></article>
-        <article class="booking-card"><h3>무료 귀환표</h3><div class="booking-row"><span>날짜</span><strong>10/3</strong></div><div class="booking-row"><span>구간</span><strong>길리 T → 파당바이</strong></div><div class="booking-row"><span>체크인</span><strong>09:00</strong></div><div class="booking-row"><span>운항</span><strong>10:00 → 12:00</strong></div><p class="warning">길리 숙박을 2박과 3박 중 어떻게 나눠도 이 귀환표를 쓰면 돼. 예약 메일의 배너에서 14일 안에 신청하자. 발권 뒤에는 날짜와 시간을 바꿀 수 없으니 e티켓을 다시 확인해.</p></article>
+        <article class="booking-card"><h3>가는 배</h3><div class="booking-row"><span>날짜</span><strong>9/28</strong></div><div class="booking-row"><span>구간</span><strong>누사두아 → 길리 에어</strong></div><div class="booking-row"><span>체크인</span><strong>06:30</strong></div><div class="booking-row"><span>운항</span><strong>07:30 → 12:20</strong></div><p class="warning">금요일, 월초 플래시세일, 메가 프라이데이 할인으로 결제하면 무료 귀환 대상에서 제외됩니다.</p></article>
+        <article class="booking-card"><h3>무료 귀환표</h3><div class="booking-row"><span>날짜</span><strong>10/3</strong></div><div class="booking-row"><span>구간</span><strong>길리 T → 파당바이</strong></div><div class="booking-row"><span>체크인</span><strong>09:00</strong></div><div class="booking-row"><span>운항</span><strong>10:00 → 12:00</strong></div><p class="warning">길리 숙박을 2박과 3박 중 어떻게 나눠도 이 귀환표를 사용합니다. 예약 메일의 배너에서 14일 안에 신청해야 합니다. 발권 뒤에는 날짜와 시간을 바꿀 수 없으므로 e티켓을 다시 확인합니다.</p></article>
       </div>
     </div>
   </section>
 
   <section id="practical">
     <div class="wrap">
-      <div class="section-head"><div><h2>출발 전 메모</h2><p>예약이 끝난 뒤 다시 볼 내용만 남겼어.</p></div></div>
+      <div class="section-head"><div><h2>출발 전 확인</h2><p>출발 전에 다시 확인할 내용을 모았습니다.</p></div></div>
       <div class="practical">
-        <div class="practical-row"><strong>수하물</strong><p>에카자야는 1인 최대 2개, 합산 25kg이야. 길리 에어와 T에서는 큰 짐을 선원이나 포터에게 맡기고 귀중품은 직접 들어.</p></div>
-        <div class="practical-row"><strong>현금</strong><p>누사두아에서 출항하기 전에 2인 생활비를 준비해. 길리와 시데멘, 아메드는 카드가 안 되는 곳이 많고 섬 ATM은 현금이 떨어질 때가 있어.</p></div>
-        <div class="practical-row"><strong>입국 서류</strong><p>인도네시아 e-VOA, 발리 관광세, All Indonesia 세관 QR을 출발 전에 저장해. 말레이시아 MDAC와 싱가포르 SGAC도 날짜에 맞춰 제출해.</p></div>
-        <div class="practical-row"><strong>다이빙</strong><p>여행자보험에 스쿠버다이빙과 후송 담보가 있는지 확인해. 마지막 다이빙은 10/4라서 10/10 비행까지 여유가 있어.</p></div>
-        <div class="practical-row"><strong>10주년 요청</strong><p>라구나에 미리 기념 여행이라고 알려. 킹베드, 작은 어메니티, 10/9 레이트 체크아웃을 함께 요청해두자.</p></div>
-        <div class="practical-row"><strong>다시 확인할 날</strong><p>배와 섬 이동 시간은 출발 2주 전, 현지에서는 하루 전에 다시 확인해. 바람과 항만 사정으로 바뀔 수 있어.</p></div>
+        <div class="practical-row"><strong>수하물</strong><p>에카자야는 1인 최대 2개, 합산 25kg입니다. 길리 에어와 T에서는 큰 짐을 선원이나 포터에게 맡기고 귀중품은 직접 보관합니다.</p></div>
+        <div class="practical-row"><strong>현금</strong><p>누사두아에서 출항하기 전에 2인 생활비를 준비합니다. 길리와 시데멘, 아메드는 카드를 받지 않는 곳이 많고 섬 ATM은 현금이 떨어질 때가 있습니다.</p></div>
+        <div class="practical-row"><strong>입국 서류</strong><p>인도네시아 e-VOA, 발리 관광세, All Indonesia 세관 QR을 출발 전에 저장합니다. 말레이시아 MDAC와 싱가포르 SGAC도 날짜에 맞춰 제출합니다.</p></div>
+        <div class="practical-row"><strong>다이빙</strong><p>여행자보험에 스쿠버다이빙과 후송 담보가 있는지 확인합니다. 마지막 다이빙은 10/4라서 10/10 비행까지 여유가 있습니다.</p></div>
+        <div class="practical-row"><strong>10주년 요청</strong><p>라구나에 기념 여행임을 미리 알립니다. 킹베드, 작은 어메니티, 10/9 레이트 체크아웃을 함께 요청합니다.</p></div>
+        <div class="practical-row"><strong>다시 확인할 날</strong><p>배와 섬 이동 시간은 출발 2주 전, 현지에서는 하루 전에 다시 확인합니다. 바람과 항만 사정으로 바뀔 수 있습니다.</p></div>
       </div>
     </div>
   </section>
@@ -754,12 +837,12 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
 <footer>
   <div class="wrap footer-row">
-    <span>시간과 요금은 예약 화면에서 마지막으로 확인해야 해. 확정 예약과 후보 숙소는 구분해서 적었어.</span>
-    <span><a href="index.html">공유용 여행 페이지</a>　<a href="edit.html" rel="nofollow">페이지 편집</a></span>
+    <span>시간과 요금은 예약 화면에서 마지막으로 확인해야 합니다. 확정 예약과 선택 항목은 구분해 안내합니다.</span>
+    <span><a href="index.html">여행 페이지 보기</a></span>
   </div>
 </footer>
 
-<div class="toast" id="toast" role="status" aria-live="polite">주소를 복사했어</div>
+<div class="toast" id="toast" role="status" aria-live="polite">주소를 복사했습니다</div>
 
 <script>
 const tabs = Array.from(document.querySelectorAll('[data-plan]'));
@@ -800,9 +883,9 @@ document.getElementById('shareButton').addEventListener('click', async () => {
       return;
     }
     await navigator.clipboard.writeText(window.location.href);
-    showToast('주소를 복사했어');
+    showToast('주소를 복사했습니다');
   } catch (error) {
-    if (error.name !== 'AbortError') showToast('주소를 복사하지 못했어');
+    if (error.name !== 'AbortError') showToast('주소를 복사하지 못했습니다');
   }
 });
 </script>
