@@ -3,1055 +3,595 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>발리와 길리 16일</title>
+<meta name="theme-color" content="#ffffff">
+<title>10주년 여행 전체 일정</title>
+<meta name="description" content="청두에서 출발해 조호르바루, 싱가포르, 발리와 길리를 여행하는 10주년 일정">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
 <style>
 :root {
-  --ground: #F6F8F8;
-  --surface: #FFFFFF;
-  --sunk: #EDF1F1;
-  --ink: #16242B;
-  --ink-2: #4B5F68;
-  --ink-3: #7B8C93;
-  --rule: #DCE4E5;
-  --rule-strong: #BFCBCD;
-  --accent: #1C6B74;
-  --accent-soft: #E4EFEF;
-  --warn: #8C4728;
-
-  --serif: "Gowun Batang", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
-  --sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ground: #0D1418;
-    --surface: #131C21;
-    --sunk: #18242A;
-    --ink: #E3EAEA;
-    --ink-2: #A3B2B7;
-    --ink-3: #71828A;
-    --rule: #243137;
-    --rule-strong: #35464D;
-    --accent: #67B4B9;
-    --accent-soft: #152A2D;
-    --warn: #CE8560;
-  }
-}
-
-:root[data-theme="dark"] {
-  --ground: #0D1418;
-  --surface: #131C21;
-  --sunk: #18242A;
-  --ink: #E3EAEA;
-  --ink-2: #A3B2B7;
-  --ink-3: #71828A;
-  --rule: #243137;
-  --rule-strong: #35464D;
-  --accent: #67B4B9;
-  --accent-soft: #152A2D;
-  --warn: #CE8560;
+  --pink: #ff385c;
+  --pink-dark: #e00b41;
+  --ink: #222222;
+  --body: #3f3f3f;
+  --muted: #6a6a6a;
+  --line: #dddddd;
+  --line-soft: #ebebeb;
+  --soft: #f7f7f7;
+  --white: #ffffff;
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.08);
+  --font: Inter, "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * { box-sizing: border-box; }
-
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--ground);
+  background: var(--white);
   color: var(--ink);
-  font-family: var(--sans);
-  font-weight: 300;
+  font-family: var(--font);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
+button, a { font: inherit; }
+a { color: inherit; text-underline-offset: 3px; }
+img { display: block; width: 100%; }
 
-.page {
-  max-width: 80rem;
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 72px;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line-soft);
+  backdrop-filter: blur(12px);
+}
+.nav {
+  width: min(1180px, calc(100% - 48px));
+  height: 100%;
   margin: 0 auto;
-  padding: 4.5rem 1.5rem 7rem;
   display: flex;
-  flex-direction: column;
-  gap: 4.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
-
-a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
-a:hover { border-bottom-color: var(--accent); }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-.masthead { display: flex; flex-direction: column; gap: 1.5rem; }
-
-h1 {
-  font-family: var(--serif);
+.brand {
+  color: var(--pink);
   font-weight: 700;
-  font-size: clamp(2.4rem, 6vw, 3.6rem);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-  margin: 0;
-  text-wrap: balance;
+  text-decoration: none;
+  letter-spacing: -.02em;
+}
+.navlinks { display: flex; align-items: center; gap: 24px; }
+.navlinks a { color: var(--muted); font-size: 14px; font-weight: 500; text-decoration: none; }
+.share {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  padding: 9px 16px;
+  cursor: pointer;
 }
 
-.standfirst {
-  font-size: 1.0625rem;
-  color: var(--ink-2);
+.wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+.hero { padding: 56px 0 32px; }
+.eyebrow { color: var(--pink); font-size: 13px; font-weight: 700; margin: 0 0 10px; }
+h1 {
+  max-width: 760px;
   margin: 0;
+  font-size: clamp(34px, 5vw, 54px);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  word-break: keep-all;
 }
-
+.lead { max-width: 680px; margin: 18px 0 0; color: var(--body); font-size: 18px; line-height: 1.65; }
 .facts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
-  gap: 1.75rem 2rem;
-  border-top: 1px solid var(--rule);
-  padding-top: 1.5rem;
-  margin: 0;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 30px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
-.fact { display: flex; flex-direction: column; gap: 0.25rem; }
-.fact dt {
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  font-weight: 500;
-}
-.fact dd {
-  margin: 0;
-  font-family: var(--mono);
-  font-size: 0.9375rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--ink);
-}
+.fact { padding: 16px 22px; border-right: 1px solid var(--line-soft); }
+.fact:last-child { border-right: 0; }
+.fact span { display: block; color: var(--muted); font-size: 12px; }
+.fact strong { display: block; margin-top: 3px; font-size: 14px; font-weight: 600; }
 
-section { display: flex; flex-direction: column; gap: 1.5rem; }
-
-h2 {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 1.3;
-  margin: 0;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--ink);
-}
-
-h3 {
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 1rem;
-  margin: 0;
-  letter-spacing: -0.005em;
-}
-
-p { margin: 0; }
-.note { color: var(--ink-2); font-size: 0.9375rem; }
-
-.scroller { overflow-x: auto; }
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9375rem;
-  min-width: 34rem;
-}
-thead th {
-  text-align: left;
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: var(--ink-3);
-  padding: 0 1rem 0.6rem 0;
-  border-bottom: 1px solid var(--rule-strong);
-  white-space: nowrap;
-}
-tbody td {
-  padding: 0.85rem 1rem 0.85rem 0;
-  border-bottom: 1px solid var(--rule);
-  vertical-align: baseline;
-}
-tbody tr:last-child td { border-bottom: none; }
-td.t { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
-td.code { font-family: var(--mono); color: var(--ink-2); white-space: nowrap; font-size: 0.875rem; }
-.layover td {
-  color: var(--ink-3);
-  font-size: 0.8125rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--rule);
-  background: var(--sunk);
-}
-
-.checks { display: flex; flex-direction: column; gap: 0; }
-.check {
+.collage {
   display: grid;
-  grid-template-columns: 6.5rem 1fr;
-  gap: 0 1.5rem;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--rule);
+  grid-template-columns: 1.45fr .75fr .75fr;
+  grid-template-rows: 220px 220px;
+  gap: 8px;
+  margin-top: 32px;
+  overflow: hidden;
+  border-radius: 20px;
 }
-.check:first-child { border-top: 1px solid var(--rule); }
-.when {
-  font-family: var(--mono);
-  font-size: 0.8125rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--accent);
-  padding-top: 0.15rem;
+.collage figure { position: relative; margin: 0; overflow: hidden; }
+.collage figure:first-child { grid-row: 1 / 3; }
+.collage img { height: 100%; object-fit: cover; }
+.collage figcaption {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.94);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
 }
-.check .body { display: flex; flex-direction: column; gap: 0.3rem; }
-.check p { font-size: 0.9375rem; color: var(--ink-2); }
-.urgent .when { color: var(--warn); font-weight: 500; }
 
-.days { display: flex; flex-direction: column; gap: 0; }
+section { padding: 64px 0; border-top: 1px solid var(--line-soft); }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 26px; }
+h2 { margin: 0; font-size: 28px; line-height: 1.25; letter-spacing: -.03em; }
+.section-head p { max-width: 560px; margin: 8px 0 0; color: var(--muted); }
+.section-link { color: var(--ink); font-size: 14px; font-weight: 600; white-space: nowrap; }
 
+.option-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.option-tab {
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  padding: 18px;
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.option-tab:hover { box-shadow: var(--shadow); }
+.option-tab[aria-selected="true"] { border: 2px solid var(--ink); padding: 17px; }
+.option-tab .tag { display: block; min-height: 18px; color: var(--pink); font-size: 12px; font-weight: 700; }
+.option-tab strong { display: block; margin-top: 7px; font-size: 17px; }
+.option-tab small { display: block; margin-top: 7px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.option-panel {
+  display: none;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 26px;
+  margin-top: 20px;
+  padding: 28px;
+  border-radius: 20px;
+  background: var(--soft);
+}
+.option-panel.active { display: grid; }
+.option-panel h3 { margin: 0; font-size: 22px; letter-spacing: -.025em; }
+.option-panel p { margin: 10px 0 0; color: var(--body); }
+.nights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; align-self: start; }
+.night { padding: 14px; border-radius: 10px; background: var(--white); }
+.night span { display: block; color: var(--muted); font-size: 12px; }
+.night strong { display: block; margin-top: 2px; font-size: 17px; }
+
+.route {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+.stop { min-height: 105px; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius); }
+.stop span { color: var(--muted); font-size: 12px; }
+.stop strong { display: block; margin-top: 7px; font-size: 15px; }
+.stop em { display: block; margin-top: 4px; color: var(--pink); font-size: 12px; font-style: normal; font-weight: 600; }
+
+.status-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.status-card { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); }
+.status-card .state { color: var(--muted); font-size: 12px; font-weight: 600; }
+.status-card.confirmed .state { color: #087e4b; }
+.status-card.now .state { color: var(--pink-dark); }
+.status-card h3 { margin: 10px 0 0; font-size: 17px; }
+.status-card p { margin: 8px 0 0; color: var(--body); font-size: 14px; }
+.status-card a { font-weight: 600; }
+
+.flights { width: 100%; border-collapse: collapse; }
+.flights th { padding: 0 16px 10px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; font-weight: 500; text-align: left; }
+.flights td { padding: 15px 16px 15px 0; border-bottom: 1px solid var(--line-soft); font-size: 14px; vertical-align: top; }
+.flights td:first-child, .flights td:last-child { white-space: nowrap; }
+.layover { color: var(--muted); }
+
+.timeline { border-top: 1px solid var(--line); }
 .day {
   display: grid;
-  grid-template-columns: 8rem 1fr;
-  gap: 0 2rem;
-  padding: 2rem 0;
-  border-top: 1px solid var(--rule);
+  grid-template-columns: 120px 1fr;
+  gap: 34px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line-soft);
 }
-.day:last-child { border-bottom: 1px solid var(--rule); }
+.date { position: sticky; top: 96px; align-self: start; }
+.date strong { display: block; font-size: 24px; line-height: 1.15; letter-spacing: -.035em; }
+.date span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+.date em { display: inline-block; margin-top: 10px; color: var(--pink); font-size: 12px; font-style: normal; font-weight: 600; }
+.day-main { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 28px; }
+.day h3 { margin: 0; font-size: 21px; letter-spacing: -.025em; }
+.day p { margin: 8px 0 0; color: var(--body); }
+.schedule { margin-top: 18px; border-top: 1px solid var(--line-soft); }
+.beat { display: grid; grid-template-columns: 72px 1fr; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line-soft); font-size: 14px; }
+.beat:last-child { border-bottom: 0; }
+.beat time { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.beat strong { font-weight: 600; }
+.day-photo { align-self: start; overflow: hidden; border-radius: var(--radius); }
+.day-photo img { aspect-ratio: 4 / 3; object-fit: cover; }
+.day-photo span { display: block; padding-top: 8px; color: var(--muted); font-size: 12px; }
+.choice-note { margin-top: 15px; padding: 14px 16px; border-left: 3px solid var(--pink); background: var(--soft); color: var(--body); font-size: 14px; }
 
-.stamp { display: flex; flex-direction: column; gap: 0.35rem; }
-.stamp .date {
-  font-family: var(--mono);
-  font-size: 1.125rem;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
-}
-.stamp .dow { font-size: 0.8125rem; color: var(--ink-3); }
-.stamp .place {
-  font-size: 0.8125rem;
-  color: var(--accent);
-  letter-spacing: 0.02em;
-  border-top: 1px solid var(--rule);
-  padding-top: 0.35rem;
-  margin-top: 0.15rem;
-}
+.stay-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.stay { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--white); }
+.stay img { aspect-ratio: 16 / 10; object-fit: cover; }
+.stay-body { padding: 18px; }
+.stay-body span { color: var(--pink); font-size: 12px; font-weight: 600; }
+.stay-body h3 { margin: 7px 0 0; font-size: 18px; }
+.stay-body p { margin: 8px 0 0; color: var(--body); font-size: 14px; }
+.stay-body a { display: inline-block; margin-top: 13px; font-size: 13px; font-weight: 600; }
 
-.content { display: flex; flex-direction: column; gap: 1rem; }
-.content h3 + p { margin-top: -0.35rem; }
+.booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.booking-card { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); }
+.booking-card h3 { margin: 0; font-size: 18px; }
+.booking-row { display: grid; grid-template-columns: 105px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line-soft); font-size: 14px; }
+.booking-row:last-child { border-bottom: 0; }
+.booking-row span { color: var(--muted); }
+.booking-card .warning { margin: 14px 0 0; color: var(--body); font-size: 13px; }
 
-.beats { display: flex; flex-direction: column; gap: 0.7rem; margin: 0; padding: 0; list-style: none; }
-.beats li { display: grid; grid-template-columns: 4.25rem 1fr; gap: 0 1rem; font-size: 0.9375rem; }
-.beats .hh {
-  font-family: var(--mono);
-  font-size: 0.8125rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--ink-3);
-  padding-top: 0.15rem;
-  white-space: nowrap;
-}
-.beats strong { font-weight: 500; }
-.beats .mv {
-  display: block;
-  font-size: 0.8125rem;
-  color: var(--ink-3);
-  font-family: var(--mono);
-  margin-top: 0.1rem;
-}
+.practical { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 32px; }
+.practical-row { padding: 18px 0; border-top: 1px solid var(--line-soft); }
+.practical-row strong { display: block; font-size: 15px; }
+.practical-row p { margin: 6px 0 0; color: var(--body); font-size: 14px; }
 
-.aside {
-  border-left: 2px solid var(--rule-strong);
-  padding: 0.15rem 0 0.15rem 1rem;
-  font-size: 0.875rem;
-  color: var(--ink-2);
+footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: var(--muted); font-size: 13px; }
+.footer-row { display: flex; justify-content: space-between; gap: 24px; }
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 30;
+  transform: translate(-50%, 18px);
+  padding: 11px 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transition: .2s ease;
 }
-.aside.flag { border-left-color: var(--warn); }
-.aside.swap { border-left-color: var(--accent); }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-.panel {
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
-.panel h3 { font-size: 1.125rem; }
-
-.picks { display: flex; flex-direction: column; gap: 0.6rem; margin: 0; padding: 0; list-style: none; }
-.picks li { font-size: 0.9375rem; }
-.picks li strong { font-weight: 500; }
-.picks li span { color: var(--ink-2); }
-
-.budget { min-width: 26rem; }
-.budget td.n {
-  font-family: var(--mono);
-  font-variant-numeric: tabular-nums;
-  text-align: right;
-  white-space: nowrap;
-  padding-right: 0;
-}
-.budget tfoot td {
-  border-top: 2px solid var(--ink);
-  border-bottom: none;
-  padding-top: 0.85rem;
-  font-weight: 600;
-}
-.budget td.free { color: var(--accent); font-weight: 500; }
-
-figure { margin: 0; }
-figure svg { max-width: 100%; height: auto; display: block; }
-figcaption {
-  font-size: 0.8125rem;
-  color: var(--ink-3);
-  margin-top: 0.5rem;
-}
-.map-svg text { font-family: var(--sans); }
-
-.photo img {
-  width: 100%;
-  aspect-ratio: 21 / 9;
-  object-fit: cover;
-  display: block;
-  border: 1px solid var(--rule);
+@media (max-width: 900px) {
+  .navlinks a { display: none; }
+  .facts { grid-template-columns: repeat(2, 1fr); border-radius: 20px; }
+  .fact:nth-child(2) { border-right: 0; }
+  .fact:nth-child(-n+2) { border-bottom: 1px solid var(--line-soft); }
+  .collage { grid-template-columns: 1.4fr 1fr; }
+  .collage figure:nth-child(4) { display: none; }
+  .option-tabs, .status-grid, .stay-grid { grid-template-columns: 1fr; }
+  .option-panel { grid-template-columns: 1fr; }
+  .route { grid-template-columns: repeat(4, 1fr); }
+  .day-main { grid-template-columns: 1fr; }
+  .day-photo { display: none; }
 }
 
-footer {
-  border-top: 1px solid var(--rule);
-  padding-top: 1.5rem;
-  font-size: 0.8125rem;
-  color: var(--ink-3);
-}
-
-@media (max-width: 40rem) {
-  .page { padding: 3rem 1.25rem 5rem; gap: 3.5rem; }
-  .day { grid-template-columns: 1fr; gap: 1rem; }
-  .stamp { flex-direction: row; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
-  .stamp .place { border-top: none; padding-top: 0; margin-top: 0; }
-  .check { grid-template-columns: 1fr; gap: 0.4rem; }
-  .beats li { grid-template-columns: 3.75rem 1fr; gap: 0 0.75rem; }
+@media (max-width: 640px) {
+  .topbar { height: 64px; }
+  .nav, .wrap { width: min(100% - 32px, 1120px); }
+  .hero { padding-top: 36px; }
+  .lead { font-size: 16px; }
+  .facts { display: grid; }
+  .fact { padding: 13px 15px; }
+  .collage { grid-template-columns: 1fr 1fr; grid-template-rows: 230px 150px; border-radius: 14px; }
+  .collage figure:first-child { grid-column: 1 / 3; grid-row: auto; }
+  .collage figure:nth-child(4) { display: none; }
+  section { padding: 48px 0; }
+  .section-head { align-items: start; flex-direction: column; margin-bottom: 22px; }
+  h2 { font-size: 24px; }
+  .option-tabs { display: flex; overflow-x: auto; padding-bottom: 4px; scroll-snap-type: x mandatory; }
+  .option-tab { min-width: 250px; scroll-snap-align: start; }
+  .option-panel { padding: 20px; border-radius: 14px; }
+  .nights { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .night { padding: 10px; }
+  .route { display: flex; overflow-x: auto; padding-bottom: 4px; }
+  .stop { min-width: 145px; }
+  .flights { min-width: 680px; }
+  .table-scroll { overflow-x: auto; }
+  .day { grid-template-columns: 1fr; gap: 14px; padding: 28px 0; }
+  .date { position: static; }
+  .date strong { font-size: 21px; }
+  .beat { grid-template-columns: 62px 1fr; gap: 10px; }
+  .booking-grid, .practical { grid-template-columns: 1fr; }
+  .footer-row { flex-direction: column; }
 }
 </style>
 </head>
 <body>
 
-<div class="page">
+<header class="topbar">
+  <nav class="nav" aria-label="페이지 메뉴">
+    <a class="brand" href="#top">10 years away</a>
+    <div class="navlinks">
+      <a href="#options">일정 비교</a>
+      <a href="#days">하루하루</a>
+      <a href="#stays">숙소</a>
+      <button class="share" id="shareButton" type="button">공유</button>
+    </div>
+  </nav>
+</header>
 
-  <header class="masthead">
-    <h1>발리와 길리 16일</h1>
-    <p class="standfirst">청두에서 출발해 조호르바루 3박, 발리와 길리 13박을 도는 일정이야. 시간과 교통편, 요금까지 적어둔 계획이니까 마음에 안 드는 조각은 빼면 돼. 절벽 하룻밤을 거쳐 라구나 럭셔리 컬렉션 2박, 공항 앞 1박(힐튼)으로 마무리해.</p>
-    <dl class="facts">
-      <div class="fact"><dt>기간</dt><dd>9.23 – 10.11</dd></div>
-      <div class="fact"><dt>인원</dt><dd>2인</dd></div>
-      <div class="fact"><dt>항공</dt><dd>말레이시아항공</dd></div>
-      
-      <div class="fact"><dt>예산</dt><dd>200만 / 1인</dd></div>
-    </dl>
-  </header>
+<main id="top">
+  <div class="wrap hero">
+    <p class="eyebrow">우리 10주년 여행</p>
+    <h1>길리에서 한밤 더 자고, 마지막은 라구나에서 느리게</h1>
+    <p class="lead">조호르바루와 싱가포르를 거쳐 발리로 들어가. 누사두아에서 길리 에어로 건너가 3박, 길리 T에서 2박을 보내고 아메드와 울루와뚜를 지나 라구나에서 여행을 마무리해.</p>
+    <div class="facts" aria-label="여행 요약">
+      <div class="fact"><span>전체 기간</span><strong>9/23부터 10/11</strong></div>
+      <div class="fact"><span>발리와 길리</span><strong>13박</strong></div>
+      <div class="fact"><span>여행 인원</span><strong>2인</strong></div>
+      <div class="fact"><span>현재 추천</span><strong>길리 5박</strong></div>
+    </div>
+    <div class="collage" aria-label="여행 사진">
+      <figure><img src="assets/trip-7ebc1dd2fec3971c.jpg" alt="길리 해변과 보트"><figcaption>길리 5박</figcaption></figure>
+      <figure><img src="assets/trip-688108b38e02533b.jpg" alt="USAT 리버티 난파선"><figcaption>아메드 3박</figcaption></figure>
+      <figure><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><figcaption>라구나 2박</figcaption></figure>
+      <figure><img src="assets/trip-db717d4c8bc494c3.jpg" alt="울루와뚜 절벽"><figcaption>울루와뚜</figcaption></figure>
+    </div>
+  </div>
 
-  <section>
-    <h2>확정 항공</h2>
-    <p class="note">발권은 끝났어. 수하물은 전 구간 연결 처리라 환승할 때 다시 부치지 않아도 돼.</p>
-    <div class="scroller">
-      <table>
-        <thead>
-          <tr><th>날짜</th><th>구간</th><th>출발</th><th>도착</th><th>편명</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="t">9.24 목</td><td>청두 TFU → 쿠알라룸푸르</td>
-            <td class="t">01:05</td><td class="t">06:10</td><td class="code">MH527</td>
-          </tr>
-          <tr class="layover"><td colspan="5">쿠알라룸푸르 환승 11시간 55분 — 국내선 연결이라 말레이시아 입국심사를 거쳐. 시내에 반나절 다녀올 수 있어.</td></tr>
-          <tr>
-            <td class="t"></td><td>쿠알라룸푸르 → 조호르바루 JHB</td>
-            <td class="t">18:05</td><td class="t">19:05</td><td class="code">MH1057</td>
-          </tr>
-          <tr>
-            <td class="t">9.27 일</td><td>조호르바루 → 쿠알라룸푸르</td>
-            <td class="t">11:15</td><td class="t">12:10</td><td class="code">MH1052</td>
-          </tr>
-          <tr class="layover"><td colspan="5">쿠알라룸푸르 환승 3시간</td></tr>
-          <tr>
-            <td class="t"></td><td>쿠알라룸푸르 → 발리 DPS</td>
-            <td class="t">15:10</td><td class="t">18:30</td><td class="code">MH853</td>
-          </tr>
-          <tr>
-            <td class="t">10.10 토</td><td>발리 DPS → 쿠알라룸푸르</td>
-            <td class="t">13:05</td><td class="t">16:00</td><td class="code">MH714</td>
-          </tr>
-          <tr class="layover"><td colspan="5">쿠알라룸푸르 환승 3시간 — 국제선 환승이라 입국심사는 없어</td></tr>
-          <tr>
-            <td class="t"></td><td>쿠알라룸푸르 → 청두 TFU</td>
-            <td class="t">19:00</td><td class="t">10.11 00:05</td><td class="code">MH526</td>
-          </tr>
-        </tbody>
-      </table>
+  <section id="options">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>세 가지 일정으로 비교해봤어</h2><p>전체 13박은 그대로 두고 길리와 아메드의 밤 수만 바꿨어. 아래 안을 누르면 차이가 보여.</p></div>
+      </div>
+      <div class="option-tabs" role="tablist" aria-label="일정 선택">
+        <button class="option-tab" type="button" role="tab" aria-selected="true" aria-controls="plan-balanced" data-plan="balanced">
+          <span class="tag">지금 추천</span><strong>길리 5박, 아메드 3박</strong><small>에어 3박과 T 2박. 바다와 휴식의 균형이 가장 좋아.</small>
+        </button>
+        <button class="option-tab" type="button" role="tab" aria-selected="false" aria-controls="plan-east" data-plan="east">
+          <span class="tag">기존에 가까운 안</span><strong>길리 4박, 아메드 4박</strong><small>에어 2박과 T 2박. 아메드 다이빙과 동부 일정이 넉넉해.</small>
+        </button>
+        <button class="option-tab" type="button" role="tab" aria-selected="false" aria-controls="plan-island" data-plan="island">
+          <span class="tag">바다에 더 오래</span><strong>길리 6박, 아메드 2박</strong><small>에어 3박과 T 3박. 좋지만 아메드가 이동 여행처럼 짧아져.</small>
+        </button>
+      </div>
+
+      <div class="option-panel active" id="plan-balanced" role="tabpanel" data-panel="balanced">
+        <div><h3>에어에서 아무것도 안 하는 하루가 생겨</h3><p>9/28 도착일은 배에서 거의 다 보내니까 3박이어야 섬을 제대로 느낄 수 있어. 메노 동상은 이미 다녀왔으니 다시 가지 않고, 에어 동쪽 바다와 한스 리프 또는 에어 월을 봐. 아메드는 리버티 다이빙 하루와 쉬는 하루면 충분해.</p></div>
+        <div class="nights"><div class="night"><span>길리 에어</span><strong>3박</strong></div><div class="night"><span>길리 T</span><strong>2박</strong></div><div class="night"><span>아메드</span><strong>3박</strong></div></div>
+      </div>
+      <div class="option-panel" id="plan-east" role="tabpanel" data-panel="east">
+        <div><h3>다이빙을 여러 번 할 생각이면 이쪽</h3><p>길리 에어의 온전한 자유일이 하루 줄고 아메드가 하루 늘어. 리버티 외에 Amed Wall이나 Pyramids까지 보고 싶을 때 맞아. 길리에서 한밤 더 있고 싶다는 지금 마음에는 첫 번째 안이 더 잘 맞아.</p></div>
+        <div class="nights"><div class="night"><span>길리 에어</span><strong>2박</strong></div><div class="night"><span>길리 T</span><strong>2박</strong></div><div class="night"><span>아메드</span><strong>4박</strong></div></div>
+      </div>
+      <div class="option-panel" id="plan-island" role="tabpanel" data-panel="island">
+        <div><h3>길리는 좋지만 아메드가 너무 짧아져</h3><p>10/4에 아메드에 들어가면 리버티 다이빙과 울루와뚜 이동 사이에 여유가 거의 없어. 이번 여행에서 길리 5박이면 이미 충분히 긴 편이라 6박까지 늘리지는 않는 게 좋아.</p></div>
+        <div class="nights"><div class="night"><span>길리 에어</span><strong>3박</strong></div><div class="night"><span>길리 T</span><strong>3박</strong></div><div class="night"><span>아메드</span><strong>2박</strong></div></div>
+      </div>
     </div>
   </section>
 
   <section>
-    <h2>동선 지도</h2>
-    <p class="note">실선은 차량과 열차, 점선은 보트, 긴 점선은 비행을 뜻해. 굵은 테두리 원은 자는 곳이고 작은 점은 들르는 곳이야.</p>
-
-    <figure>
-      <svg class="map-svg" viewBox="0 0 1280 768" role="img" aria-label="발리와 길리 실제 지도 위 전체 동선 — 공항, 사누르, 보트로 길리, 파당바이, 동부, 아메드, 부킷 반도"><defs><marker id="mkA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1C6B74"/></marker></defs><image x="0" y="0" width="256" height="256" href="assets/trip-3302166e625ab11b.png"/><image x="0" y="256" width="256" height="256" href="assets/trip-baa7066941a477c4.png"/><image x="0" y="512" width="256" height="256" href="assets/trip-8eeee3c52b1f00f5.png"/><image x="256" y="0" width="256" height="256" href="assets/trip-cf9816cac893d8e9.png"/><image x="256" y="256" width="256" height="256" href="assets/trip-277418e0c724eafe.png"/><image x="256" y="512" width="256" height="256" href="assets/trip-c227f447c668cc3f.png"/><image x="512" y="0" width="256" height="256" href="assets/trip-2a7e50826a1349fd.png"/><image x="512" y="256" width="256" height="256" href="assets/trip-fb12f23eee1c0188.png"/><image x="512" y="512" width="256" height="256" href="assets/trip-a83405c687ef6513.png"/><image x="768" y="0" width="256" height="256" href="assets/trip-ebb80accff4c55ea.png"/><image x="768" y="256" width="256" height="256" href="assets/trip-79e10fe18f76c4dc.png"/><image x="768" y="512" width="256" height="256" href="assets/trip-6b962e1995a00a89.png"/><image x="1024" y="0" width="256" height="256" href="assets/trip-3275dbe86ae47991.png"/><image x="1024" y="256" width="256" height="256" href="assets/trip-0ecf07f75a7a8d00.png"/><image x="1024" y="512" width="256" height="256" href="assets/trip-ab22b9d52591a021.png"/><rect x="0" y="0" width="1280" height="768" fill="#FFFFFF" opacity="0.22"/><path d="M406.1,504.0 L476.0,455.4" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-linecap="round"/><path d="M406.1,504.0 L476.0,455.4" fill="none" stroke="#1C6B74" stroke-width="2.4" marker-end="url(#mk)"/><path d="M476.0,455.4 Q779.6,294.9 1041.0,213.2" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-dasharray="7 5" stroke-linecap="round"/><path d="M476.0,455.4 Q779.6,294.9 1041.0,213.2" fill="none" stroke="#1C6B74" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#mk)"/><path d="M1041.0,213.2 Q830.6,317.0 654.4,347.9" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-dasharray="7 5" stroke-linecap="round"/><path d="M1041.0,213.2 Q830.6,317.0 654.4,347.9" fill="none" stroke="#1C6B74" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#mk)"/><path d="M654.4,347.9 L624.5,361.9 L595.4,299.3 L711.9,259.6 L767.2,203.6" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-linecap="round"/><path d="M654.4,347.9 L624.5,361.9 L595.4,299.3 L711.9,259.6 L767.2,203.6" fill="none" stroke="#1C6B74" stroke-width="2.4" marker-end="url(#mk)"/><path d="M767.2,203.6 L735.9,287.5 L619.4,361.2 L532.0,412.7 L466.5,471.6 L406.1,504.0 L403.1,537.9 L365.3,549.0" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-linecap="round"/><path d="M767.2,203.6 L735.9,287.5 L619.4,361.2 L532.0,412.7 L466.5,471.6 L406.1,504.0 L403.1,537.9 L365.3,549.0" fill="none" stroke="#1C6B74" stroke-width="2.4" marker-end="url(#mk)"/><path d="M365.3,549.0 Q408.2,567.4 454.1,543.8" fill="none" stroke="#FFFFFF" stroke-width="4.3" stroke-opacity="0.75" stroke-linecap="round"/><path d="M365.3,549.0 Q408.2,567.4 454.1,543.8" fill="none" stroke="#1C6B74" stroke-width="1.7" marker-end="url(#mk)"/><path d="M454.1,543.8 L401.7,580.7 L346.3,566.7 L403.1,537.9 L410.1,507.0" fill="none" stroke="#FFFFFF" stroke-width="4.3" stroke-opacity="0.75" stroke-linecap="round"/><path d="M454.1,543.8 L401.7,580.7 L346.3,566.7 L403.1,537.9 L410.1,507.0" fill="none" stroke="#1C6B74" stroke-width="1.7" marker-end="url(#mk)"/><circle cx="441.05" cy="464.7" r="9.5" fill="#1C6B74" stroke="#FFFFFF" stroke-width="1.6"/><text x="441.05" y="468.5" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF">1</text><circle cx="779.6" cy="288.9" r="9.5" fill="#1C6B74" stroke="#FFFFFF" stroke-width="1.6"/><text x="779.6" y="292.7" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF">2</text><circle cx="830.6" cy="327.0" r="9.5" fill="#1C6B74" stroke="#FFFFFF" stroke-width="1.6"/><text x="830.6" y="330.8" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF">3</text><circle cx="502.9" cy="386.9" r="9.5" fill="#1C6B74" stroke="#FFFFFF" stroke-width="1.6"/><text x="502.9" y="390.7" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF">4</text><polygon points="654.4,199.8 646.4,213.8 662.4,213.8" fill="none" stroke="#33454E" stroke-width="1.8"/><text x="654.4" y="194.8" font-size="11" font-weight="400" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">아궁산</text><circle cx="476.0" cy="455.4" r="6.5" fill="#FFFFFF" stroke="#1C6B74" stroke-width="2.6"/><circle cx="1041.0" cy="213.2" r="6.5" fill="#FFFFFF" stroke="#1C6B74" stroke-width="2.6"/><circle cx="767.2" cy="203.6" r="6.5" fill="#FFFFFF" stroke="#1C6B74" stroke-width="2.6"/><circle cx="365.3" cy="549.0" r="6.5" fill="#FFFFFF" stroke="#1C6B74" stroke-width="2.6"/><circle cx="454.1" cy="543.8" r="6.5" fill="#FFFFFF" stroke="#1C6B74" stroke-width="2.6"/><circle cx="654.4" cy="347.9" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="624.5" cy="361.9" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="595.4" cy="299.3" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="711.9" cy="259.6" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="716.3" cy="158.0" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="403.1" cy="537.9" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="346.3" cy="566.7" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="401.7" cy="580.7" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="1054.9" cy="214.7" r="3" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="1073.1" cy="219.8" r="3" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="406.1" cy="504.0" r="4.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><text x="487.0" y="456.4" font-size="12" font-weight="600" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">사누르 (9/27밤, 보트항)</text><text x="1035.0" y="200.2" font-size="12" font-weight="600" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">길리 트라왕안 (9/28–10/2밤)</text><text x="778.2" y="199.6" font-size="12" font-weight="600" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">아메드 (10/2–10/6밤)</text><text x="354.3" y="543.0" font-size="12" font-weight="600" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">절벽 숙소 (10/6밤)</text><text x="465.1" y="548.8" font-size="12" font-weight="600" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">라구나 (10/7-8밤)</text><text x="395.1" y="499.0" font-size="11" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">DPS 공항, 힐튼(10/9밤)</text><text x="393.1" y="549.9" font-size="11" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">짐바란</text><text x="342.3" y="584.7" font-size="11" font-weight="400" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">울루와뚜 사원, 케착</text><text x="408.7" y="594.7" font-size="11" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">멜라스티</text><text x="663.4" y="350.9" font-size="11" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">파당바이</text><text x="616.5" y="375.9" font-size="11" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">고아 라와</text><text x="586.4" y="301.3" font-size="11" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">시데멘</text><text x="720.9" y="262.6" font-size="11" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">띠르따 강가</text><text x="725.3" y="156.0" font-size="11" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">뚤람벤 (리버티 난파선)</text><text x="1070.0" y="236.8" font-size="11" font-weight="400" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">메노, 에어</text><text x="1216.5" y="412.7" font-size="11.5" font-weight="400" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#6A7A82">롬복</text><text x="1272" y="760" font-size="9.5" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#57646B">© OpenStreetMap contributors</text><rect x="0.5" y="0.5" width="1279" height="767" fill="none" stroke="#BFCBCD"/></svg>
-      <figcaption>발리와 길리 전체 동선이야. 시계 반대 방향으로 한 바퀴 돌고 배는 딱 두 번 타. 부킷 반도 안쪽은 아래 확대 지도를 보면 돼.</figcaption>
-    </figure>
-
-    <ul class="picks">
-      <li><strong>① 9/27</strong> <span>공항 → 사누르, 차 30분. <a href="https://www.google.com/maps/dir/I+Gusti+Ngurah+Rai+International+Airport/Maison+Aurelia+Sanur">실제 지도</a></span></li>
-      <li><strong>② 9/28</strong> <span>사누르 → 길리 트라왕안, 직행 보트 2시간 30분 (해상 구간이라 경로 링크는 없어).</span></li>
-      <li><strong>③ 10/2</strong> <span>길리 → 파당바이 보트 후, 기사와 고아 라와 → 시데멘 → 띠르따 강가를 들러 아메드까지. <a href="https://www.google.com/maps/dir/Padangbai+Harbour/Goa+Lawah+Temple/Sidemen+Bali/Tirta+Gangga/Jemeluk+Beach+Amed">실제 지도</a></span></li>
-      <li><strong>④ 10/6</strong> <span>아메드 → 울루와뚜 절벽, 차 3시간~3시간 30분. <a href="https://www.google.com/maps/dir/Jemeluk+Beach+Amed/Bingin+Beach+Uluwatu">실제 지도</a></span></li>
-      <li><strong>⑤ 10/7</strong> <span>절벽 → 발랑안 → 라구나. <a href="https://www.google.com/maps/dir/Bingin+Beach+Uluwatu/Balangan+Beach/The+Laguna+a+Luxury+Collection+Resort+%26+Spa+Nusa+Dua">실제 지도</a></span></li>
-      <li><strong>⑥ 10/9</strong> <span>라구나 → 울루와뚜 사원(케착) → 짐바란(메네가) → 공항 앞 힐튼. <a href="https://www.google.com/maps/dir/The+Laguna+a+Luxury+Collection+Resort+%26+Spa+Nusa+Dua/Uluwatu+Temple/Menega+Cafe/Hilton+Garden+Inn+Bali+Ngurah+Rai+Airport">실제 지도</a></span></li>
-      <li><strong>9/26 싱가포르</strong> <span>JB → 우드랜즈 → USS → 가든스 바이 더 베이. <a href="https://www.google.com/maps/dir/R%26F+Princess+Cove+Johor+Bahru/Woodlands+Checkpoint/Universal+Studios+Singapore/Gardens+by+the+Bay">실제 지도</a></span></li>
-    </ul>
-
-    <figure>
-      <svg class="map-svg" viewBox="0 0 1280 1024" role="img" aria-label="부킷 반도 확대 실제 지도 — 절벽 숙소, 발랑안, 라구나, 울루와뚜 케착, 짐바란, 공항 힐튼"><defs><marker id="mkB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1C6B74"/></marker></defs><image x="0" y="0" width="256" height="256" href="assets/trip-73ee1db9260aeed5.png"/><image x="0" y="256" width="256" height="256" href="assets/trip-395a734e9d4fa7ce.png"/><image x="0" y="512" width="256" height="256" href="assets/trip-3e6d88d50cd48d44.png"/><image x="0" y="768" width="256" height="256" href="assets/trip-967c9358e0946ede.png"/><image x="256" y="0" width="256" height="256" href="assets/trip-1c77b348765c6629.png"/><image x="256" y="256" width="256" height="256" href="assets/trip-6914f866b085328b.png"/><image x="256" y="512" width="256" height="256" href="assets/trip-759fa765558b58cf.png"/><image x="256" y="768" width="256" height="256" href="assets/trip-7643f8238aafc623.png"/><image x="512" y="0" width="256" height="256" href="assets/trip-2c17771b1285a546.png"/><image x="512" y="256" width="256" height="256" href="assets/trip-14116aff883b2a5c.png"/><image x="512" y="512" width="256" height="256" href="assets/trip-aced53b38dd98013.png"/><image x="512" y="768" width="256" height="256" href="assets/trip-075333939fc8128f.png"/><image x="768" y="0" width="256" height="256" href="assets/trip-51d8cf7c60e3568b.png"/><image x="768" y="256" width="256" height="256" href="assets/trip-c96612c05debbdb2.png"/><image x="768" y="512" width="256" height="256" href="assets/trip-b1f42e0699b9a2bc.png"/><image x="768" y="768" width="256" height="256" href="assets/trip-5211d3b237a70082.png"/><image x="1024" y="0" width="256" height="256" href="assets/trip-892c1ed0fced4814.png"/><image x="1024" y="256" width="256" height="256" href="assets/trip-8ac1041ef275e107.png"/><image x="1024" y="512" width="256" height="256" href="assets/trip-93d5adacaee1e510.png"/><image x="1024" y="768" width="256" height="256" href="assets/trip-75b03a18a0e133e3.png"/><rect x="0" y="0" width="1280" height="1024" fill="#FFFFFF" opacity="0.22"/><path d="M717.5,14 L717.5,192.4 L666.3,467.1 L363.3,549.6" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-linecap="round"/><path d="M717.5,14 L717.5,192.4 L666.3,467.1 L363.3,549.6" fill="none" stroke="#1C6B74" stroke-width="2.4" marker-end="url(#mk)"/><path d="M363.3,549.6 L652.3,807.2" fill="none" stroke="#FFFFFF" stroke-width="4.3" stroke-opacity="0.75" stroke-dasharray="2 5" stroke-linecap="round"/><path d="M363.3,549.6 L652.3,807.2" fill="none" stroke="#1C6B74" stroke-width="1.7" stroke-dasharray="2 5" marker-end="url(#mk)"/><path d="M363.3,549.6 L229.4,610.3" fill="none" stroke="#FFFFFF" stroke-width="4.3" stroke-opacity="0.75" stroke-dasharray="2 5" stroke-linecap="round"/><path d="M363.3,549.6 L229.4,610.3" fill="none" stroke="#1C6B74" stroke-width="1.7" stroke-dasharray="2 5" marker-end="url(#mk)"/><path d="M363.3,549.6 L440.2,474.7 L1072.3,514.8" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-linecap="round"/><path d="M363.3,549.6 L440.2,474.7 L1072.3,514.8" fill="none" stroke="#1C6B74" stroke-width="2.4" marker-end="url(#mk)"/><path d="M1072.3,514.8 Q720,800 210.1,694.0" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-linecap="round"/><path d="M1072.3,514.8 Q720,800 210.1,694.0" fill="none" stroke="#1C6B74" stroke-width="2.4" marker-end="url(#mk)"/><path d="M210.1,694.0 L666.3,467.1 L713.5,198.4" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-linecap="round"/><path d="M210.1,694.0 L666.3,467.1 L713.5,198.4" fill="none" stroke="#1C6B74" stroke-width="2.4" marker-end="url(#mk)"/><circle cx="756.25" cy="478.75" r="9.5" fill="#1C6B74" stroke="#FFFFFF" stroke-width="1.6"/><text x="756.25" y="482.55" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF">5</text><circle cx="700" cy="758" r="9.5" fill="#1C6B74" stroke="#FFFFFF" stroke-width="1.6"/><text x="700" y="761.8" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF">6</text><text x="729.5" y="36" font-size="11" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">10/6 아메드에서</text><circle cx="363.3" cy="549.6" r="6.5" fill="#FFFFFF" stroke="#1C6B74" stroke-width="2.6"/><circle cx="1072.3" cy="514.8" r="6.5" fill="#FFFFFF" stroke="#1C6B74" stroke-width="2.6"/><circle cx="717.5" cy="192.4" r="5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="440.2" cy="474.7" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="229.4" cy="610.3" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="210.1" cy="694.0" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="652.3" cy="807.2" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="666.3" cy="467.1" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="691.3" cy="583.8" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><text x="351.3" y="547.6" font-size="12.5" font-weight="600" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">빙인 절벽 숙소 (10/6밤)</text><text x="450.2" y="467.7" font-size="11.5" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">발랑안 (10/7 서핑)</text><text x="219.4" y="613.3" font-size="11.5" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">술루반, 싱글핀</text><text x="213.1" y="714.0" font-size="12" font-weight="600" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">울루와뚜 사원, 케착 (10/9)</text><text x="661.3" y="820.2" font-size="11.5" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">멜라스티</text><text x="677.3" y="469.1" font-size="11.5" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">짐바란, 메네가</text><text x="700.3" y="594.8" font-size="11" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">GWK</text><text x="1068.3" y="501.79999999999995" font-size="12.5" font-weight="600" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">라구나 (10/7-8밤)</text><text x="729.5" y="196.4" font-size="12" font-weight="600" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">공항, 힐튼 (10/9밤)</text><text x="1272" y="1016" font-size="9.5" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#57646B">© OpenStreetMap contributors</text><rect x="0.5" y="0.5" width="1279" height="1023" fill="none" stroke="#BFCBCD"/></svg>
-      <figcaption>부킷 반도를 확대한 지도야. 10/6 저녁부터 10/10 아침까지를 담았어. 케착이 끝나면 짐바란에서 저녁을 먹고 공항 앞에서 자.</figcaption>
-    </figure>
-
-    <figure>
-      <svg class="map-svg" viewBox="0 0 1024 1024" role="img" aria-label="말레이시아와 싱가포르 실제 지도 — 쿠알라룸푸르 반나절, 조호르바루 베이스, 싱가포르 당일치기"><defs><marker id="mkC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1C6B74"/></marker></defs><image x="0" y="0" width="256" height="256" href="assets/trip-0b696f85eacfbf77.png"/><image x="0" y="256" width="256" height="256" href="assets/trip-16bdb6bc6f3a0bf5.png"/><image x="0" y="512" width="256" height="256" href="assets/trip-6c12ad08f9709a09.png"/><image x="0" y="768" width="256" height="256" href="assets/trip-33703089c10f1a60.png"/><image x="256" y="0" width="256" height="256" href="assets/trip-24fc5d1bbb606b51.png"/><image x="256" y="256" width="256" height="256" href="assets/trip-212239b413ca8d88.png"/><image x="256" y="512" width="256" height="256" href="assets/trip-c5b926c2387b99a8.png"/><image x="256" y="768" width="256" height="256" href="assets/trip-5489c7f7efde8d92.png"/><image x="512" y="0" width="256" height="256" href="assets/trip-f8a76b3f49e3ee5d.png"/><image x="512" y="256" width="256" height="256" href="assets/trip-5f2f4ebca3d83d91.png"/><image x="512" y="512" width="256" height="256" href="assets/trip-36a82f7e7a19c5f2.png"/><image x="512" y="768" width="256" height="256" href="assets/trip-39c1a52140c36146.png"/><image x="768" y="0" width="256" height="256" href="assets/trip-c364f07667b0f562.png"/><image x="768" y="256" width="256" height="256" href="assets/trip-569d36943c18f231.png"/><image x="768" y="512" width="256" height="256" href="assets/trip-8c9947283acbc076.png"/><image x="768" y="768" width="256" height="256" href="assets/trip-571f246dc305c6bf.png"/><rect x="0" y="0" width="1024" height="1024" fill="#FFFFFF" opacity="0.22"/><path d="M167.4,26 L167.4,280.0" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-dasharray="12 7" stroke-linecap="round"/><path d="M167.4,26 L167.4,280.0" fill="none" stroke="#1C6B74" stroke-width="2.4" stroke-dasharray="12 7" marker-end="url(#mk)"/><path d="M167.4,280.0 L168.2,131.8" fill="none" stroke="#FFFFFF" stroke-width="4.3" stroke-opacity="0.75" stroke-linecap="round"/><path d="M167.4,280.0 L168.2,131.8" fill="none" stroke="#1C6B74" stroke-width="1.7" marker-start="url(#mk)" marker-end="url(#mk)"/><path d="M167.4,280.0 L881.1,682.5" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-dasharray="12 7" stroke-linecap="round"/><path d="M167.4,280.0 L881.1,682.5" fill="none" stroke="#1C6B74" stroke-width="2.4" stroke-dasharray="12 7" marker-end="url(#mk)"/><path d="M881.1,682.5 L916.9,747.5" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-linecap="round"/><path d="M881.1,682.5 L916.9,747.5" fill="none" stroke="#1C6B74" stroke-width="2.4" marker-end="url(#mk)"/><path d="M916.9,747.5 L923.3,756.7" fill="none" stroke="#FFFFFF" stroke-width="4.6" stroke-opacity="0.75" stroke-linecap="round"/><path d="M916.9,747.5 L923.3,756.7" fill="none" stroke="#1C6B74" stroke-width="2.0" marker-end="url(#mk)"/><path d="M923.3,756.7 L937.2,823.4" fill="none" stroke="#FFFFFF" stroke-width="4.6" stroke-opacity="0.75" stroke-linecap="round"/><path d="M923.3,756.7 L937.2,823.4" fill="none" stroke="#1C6B74" stroke-width="2.0" marker-end="url(#mk)"/><path d="M937.2,823.4 L951.7,813.2" fill="none" stroke="#FFFFFF" stroke-width="4.3" stroke-opacity="0.75" stroke-linecap="round"/><path d="M937.2,823.4 L951.7,813.2" fill="none" stroke="#1C6B74" stroke-width="1.7" marker-end="url(#mk)"/><path d="M881.1,682.5 L943.1,985" fill="none" stroke="#FFFFFF" stroke-width="5.0" stroke-opacity="0.75" stroke-dasharray="12 7" stroke-linecap="round"/><path d="M881.1,682.5 L943.1,985" fill="none" stroke="#1C6B74" stroke-width="2.4" stroke-dasharray="12 7" marker-end="url(#mk)"/><text x="179.4" y="52" font-size="11" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">9/23 밤, 청두 MH527</text><text x="178.4" y="209.9" font-size="11" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">KLIA Ekspres 28분</text><text x="524.25" y="471.25" font-size="11" font-weight="400" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">9/24 MH1057</text><text x="889.0" y="719.0" font-size="11" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">그랩 35분</text><text x="902.9" y="769.5" font-size="10.5" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">9/26 KTM 셔틀 5분</text><text x="940.25" y="790.05" font-size="10.5" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">MRT 55분</text><text x="951.1" y="1002" font-size="11" font-weight="400" text-anchor="middle" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">9/27 → 발리 (KUL 경유)</text><circle cx="167.4" cy="280.0" r="5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="168.2" cy="131.8" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="881.1" cy="682.5" r="4.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="916.9" cy="747.5" r="6.5" fill="#FFFFFF" stroke="#1C6B74" stroke-width="2.6"/><circle cx="923.3" cy="756.7" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="937.2" cy="823.4" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><circle cx="951.7" cy="813.2" r="3.5" fill="#33454E" stroke="#FFFFFF" stroke-width="1.4"/><text x="179.4" y="284.0" font-size="11.5" font-weight="600" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">KUL 공항 (라운지, 짐 보관)</text><text x="179.2" y="135.8" font-size="11.5" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">KLCC, 부킷빙탕</text><text x="870.1" y="684.5" font-size="11.5" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">세나이 공항</text><text x="904.9" y="749.5" font-size="12" font-weight="600" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#16242B">JB 에어비앤비 (3박)</text><text x="932.3" y="752.7" font-size="11" font-weight="400" text-anchor="start" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">우드랜즈</text><text x="928.2" y="838.4" font-size="11.5" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">센토사 USS</text><text x="943.7" y="804.2" font-size="11" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#44555E">가든스, MBS 야경</text><text x="1016" y="1016" font-size="9.5" font-weight="400" text-anchor="end" paint-order="stroke" stroke="#FFFFFF" stroke-width="3.2" stroke-opacity="0.88" fill="#57646B">© OpenStreetMap contributors</text><rect x="0.5" y="0.5" width="1023" height="1023" fill="none" stroke="#BFCBCD"/></svg>
-      <figcaption>말레이시아와 싱가포르 구간이야. 조호르바루 에어비앤비를 베이스로 삼아 KL 반나절과 싱가포르 하루를 붙였어.</figcaption>
-    </figure>
-  </section>
-
-  <section>
-    <h2>마감이 있는 준비</h2>
-    <p class="note">마감이 이른 순서로 정리했어. 위쪽 셋은 이번 주 안에 해둬야 해.</p>
-    <div class="checks">
-
-      <div class="check urgent">
-        <div class="when">오늘</div>
-        <div class="body">
-          <h3>라구나, 힐튼 예약 완료 — 남은 건 현금 숙소 4곳</h3>
-          <p><strong>라구나 10.7–10.9(킹 라군뷰, 포인트+숙박권)</strong>와 <strong>힐튼 가든 인 공항 10.9</strong>는 예약을 마쳤어. 구예약이 취소 상태인지만 확인하면 돼. 남은 예약은 현금으로 잡을 4곳, 사누르, 길리, 아메드, 절벽 1박(10.6)이야. 라구나 레이트 체크아웃(10.9)은 예약 요청란에 미리 적어두자.</p>
-        </div>
+    <div class="wrap">
+      <div class="section-head"><div><h2>지금 기준으로 잡은 발리 동선</h2><p>이 아래 전체 일정은 첫 번째 안을 기준으로 적었어.</p></div></div>
+      <div class="route" aria-label="발리 숙박 동선">
+        <div class="stop"><span>9/27</span><strong>누사두아</strong><em>1박</em></div>
+        <div class="stop"><span>9/28부터</span><strong>길리 에어</strong><em>3박</em></div>
+        <div class="stop"><span>10/1부터</span><strong>길리 T</strong><em>2박</em></div>
+        <div class="stop"><span>10/3부터</span><strong>아메드</strong><em>3박</em></div>
+        <div class="stop"><span>10/6</span><strong>울루와뚜</strong><em>1박</em></div>
+        <div class="stop"><span>10/7부터</span><strong>라구나</strong><em>2박</em></div>
+        <div class="stop"><span>10/9</span><strong>공항 힐튼</strong><em>1박</em></div>
       </div>
-
-      <div class="check urgent">
-        <div class="when">8.27 경</div>
-        <div class="body">
-          <h3>KTM Shuttle Tebrau 9.26 티켓 — 05:30 전후 남행</h3>
-          <p>JB Sentral에서 우드랜즈까지 5분, 남행은 RM5야. 양국 심사를 JB Sentral에서 한 번에 끝내 코즈웨이 정체를 통째로 피할 수 있는 방법은 이것뿐이야. 예약은 탑승 30일 전에 <a href="https://shuttleonline.ktmb.com.my/">KTMB Shuttle Online</a>에서 열리고 몇 분 안에 매진돼. 9.26분은 8.27 전후에 열리니까 알람을 걸어두자. 놓치면 CW 버스를 타면 돼.</p>
-        </div>
-      </div>
-
-      <div class="check urgent">
-        <div class="when">지금</div>
-        <div class="body">
-          <h3>현금 숙소 4곳 — 사누르, 아메드, 길리, 울루와뚜 절벽</h3>
-          <p>사누르 9.27, <strong>길리 9.28–10.2, 아메드 10.2–10.6</strong>(아메드 항 폐쇄로 순서를 교체했어), 울루와뚜 절벽은 <strong>10.6</strong> 하룻밤이야. 아래 숙소 후보 가운데 1지망으로 바로 걸면 돼. 전부 더블, 킹으로 지정해 두고.</p>
-        </div>
-      </div>
-
-      <div class="check">
-        <div class="when">지금</div>
-        <div class="body">
-          <h3>USS 입장권과 Express Pass</h3>
-          <p>9.26(토) 날짜지정권 2매를 <a href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore">공식 사이트</a>나 Klook에서 사두자. 토요일 대기를 생각하면 Express Pass도 붙일 만해.</p>
-        </div>
-      </div>
-
-      <div class="check">
-        <div class="when">지금</div>
-        <div class="body">
-          <h3>여권, 국제운전면허증, eSIM</h3>
-          <p>여권은 만료일이 <strong>2027.3.27 이후</strong>여야 하고 빈 면도 1면 남아 있어야 해. 국제운전면허증은 스쿠터를 타려면 필요해(경찰이 실제로 확인해). eSIM은 말레이, 싱가포르, 인도네시아 3국을 커버하는 걸로 미리 준비해 둬. MDAC 재제출과 그랩 호출이 전부 데이터에 걸려 있거든.</p>
-        </div>
-      </div>
-
-      <div class="check">
-        <div class="when">9월 초</div>
-        <div class="body">
-          <h3>e-VOA와 다이빙, 보트, 케착 예약</h3>
-          <p>e-VOA는 <a href="https://evisa.imigrasi.go.id/">공식 imigrasi.go.id</a>에서 신청하고 1인 IDR 500,000이야. 같은 주에 사누르→길리 보트(9.28 아침), 길리→파당바이 보트(10.2 오전)와 파당바이 픽업 기사, 아메드→울루와뚜 기사(10.6), Eco Dive 뚤람벤(10.3), 길리 2탱크(9.30), 케착(10.9)까지 한 번에 걸어두면 편해.</p>
-        </div>
-      </div>
-
-      <div class="check">
-        <div class="when">9.21 이후</div>
-        <div class="body">
-          <h3>MDAC 1차</h3>
-          <p>9.24 KUL 입국분이야. <a href="https://imigresen-online.imi.gov.my/mdac/main">공식 IMI 포털</a>에서 무료로 하고 도착 3일 전부터 열려.</p>
-        </div>
-      </div>
-
-      <div class="check">
-        <div class="when">9.23 이후</div>
-        <div class="body">
-          <h3>SGAC와 MDAC 2차</h3>
-          <p>9.26 싱가포르 입국분은 <a href="https://www.ica.gov.sg/enter-transit-depart/entering-singapore/sg-arrival-card">ICA 공식</a>에서 하면 돼. 저녁에 말레이시아로 돌아올 때 쓸 MDAC도 <strong>같은 날 미리</strong> 제출해 두자. 국경 앞에서 폰 붙잡고 하려면 늦어.</p>
-        </div>
-      </div>
-
-      <div class="check">
-        <div class="when">9월 하순</div>
-        <div class="body">
-          <h3>발리 관광세, 세관신고서, 여행자보험</h3>
-          <p>관광세는 1인 IDR 150,000이고 <a href="https://lovebali.baliprov.go.id/">Love Bali</a>(.go.id만 공식)에서 결제한 뒤 QR을 보관해 둬. All Indonesia 세관신고 QR도 도착 전에 작성해 두자. 보험은 다이빙 보장과 후송 담보가 들어 있는지 확인해. 길리엔 병원이 없어.</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <section>
-    <h2>하루하루</h2>
-    <p class="note">시간은 전부 현지 시각이야. 이동 줄에 적은 요금은 2인 합계 기준 추정치야. 굵은 항목이 그날의 축이고 나머지는 빼도 일정이 무너지지 않아.</p>
-
-    <div class="days">
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">9.23</span>
-          <span class="dow">수요일</span>
-          <span class="place">청두 → 공항</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-7c4ee41ae3b1ac62.jpg" alt="청두 톈푸 국제공항"><figcaption>청두 톈푸 국제공항</figcaption></figure>
-          <h3>출국 전야</h3>
-          <ul class="beats">
-            <li><span class="hh">20:30</span><span>집에서 출발. 지하철 18호선(South Railway역 기준 약 40분) 또는 택시 60분, ¥150~200.<span class="mv">지하철 막차 시간대 주의 — 21시 이후 출발이면 택시로</span></span></li>
-            <li><span class="hh">22:00</span><span>TFU T1 도착. MH527 카운터는 출발 3시간 전(22:05) 오픈, 60분 전 마감. 수하물은 <strong>조호르바루까지 최종 태그</strong> 확인.</span></li>
-            <li><span class="hh">23:00</span><span>출국심사, 보안검색. 심야라 한산하지만 국제선 구역 식당은 닫혀 있으니 물, 간식은 미리. <strong>TFU 국제선(T1)엔 라운지키 제휴 라운지가 없어</strong> — 제휴는 T2 국내선 쪽뿐이라 이 공항만 라운지 없이 가.</span></li>
-            <li><span class="hh">00:25</span><span>탑승 시작.</span></li>
-          </ul>
-          <p class="aside">오늘 밤 잘 수 있는 시간은 기내 5시간뿐이야. 목베개와 안대를 챙기고 탑승하자마자 자두자. 기내식은 착륙 전에 나와.</p>
-        </div>
+  <section id="bookings">
+    <div class="wrap">
+      <div class="section-head"><div><h2>먼저 잡아야 하는 것</h2><p>확정된 예약과 아직 결제하지 않은 항목을 섞지 않았어.</p></div></div>
+      <div class="status-grid">
+        <article class="status-card confirmed"><span class="state">예약 완료</span><h3>항공, 라구나, 공항 힐튼</h3><p>말레이시아항공은 발권 완료. 라구나는 10/7부터 2박 킹 라군뷰, 힐튼 가든 인 공항은 10/9 1박이야.</p></article>
+        <article class="status-card now"><span class="state">지금 예약</span><h3>에카자야와 길리 숙소</h3><p>9/28 누사두아 출발편을 먼저 사고 무료 귀환표로 10/3 길리 T에서 파당바이로 나와. 에어 3박과 삼바 2박도 같은 날짜로 맞춰.</p></article>
+        <article class="status-card"><span class="state">숙소 다음</span><h3>아메드, 절벽 숙소, 현지 투어</h3><p>아메드는 10/3부터 3박. 절벽 숙소는 10/6 1박. 다이빙과 기사는 무료취소 숙소를 잡은 뒤 예약해.</p></article>
       </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">9.24</span>
-          <span class="dow">목요일</span>
-          <span class="place">KL 반나절 → JHB</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-6e1a5c5d839dff66.jpg" alt="쿠알라룸푸르 부킷빙탕 거리"><figcaption>쿠알라룸푸르 부킷빙탕</figcaption></figure>
-          <h3>쿠알라룸푸르 8시간</h3>
-          <p>밤을 새운 뒤라 동선을 KLCC–부킷빙탕 한 축으로만 잡았어. 걷는 거리는 합쳐서 3km 이하야.</p>
-          <ul class="beats">
-            <li><span class="hh">06:10</span><span>KUL T1 도착. 입국심사(MDAC QR 제시) → 세관. 짐 없이 통과.</span></li>
-            <li><span class="hh">07:15</span><span><strong>KLIA Ekspres</strong> 탑승 → KL Sentral.<span class="mv">28분, 편도 RM55/인, 15~20분 간격</span></span></li>
-            <li><span class="hh">07:50</span><span>KL Sentral 도착. 기내용 가방은 역사 내 수하물 보관소에.<span class="mv">RM10~20/개, 'Luggage Storage' 표지 따라</span></span></li>
-            <li><span class="hh">08:10</span><span>LRT 켈라나자야선 → KLCC역.<span class="mv">15분, RM~2.5/인, 컨택리스 카드로 태그 승차</span></span></li>
-            <li><span class="hh">08:30</span><span>KLCC 수리아 지하 푸드코트에서 조식 — 카야토스트 + 화이트커피.</span></li>
-            <li><span class="hh">09:30</span><span><strong>페트로나스 트윈타워</strong> 외관 + KLCC 공원 산책. 호수 분수 쪽이 사진 자리. 전망대는 생략(예약제, 들이는 시간 대비 별로).</span></li>
-            <li><span class="hh">11:30</span><span>부킷빙탕으로.<span class="mv">KLCC-부킷빙탕 에어컨 스카이워크 도보 20분 또는 그랩 RM10</span></span></li>
-            <li><span class="hh">12:00</span><span>점심 — 파빌리온 <strong>Madam Kwan's</strong>, 나시르막 + 사테. 2인 RM70 선.</span></li>
-            <li><span class="hh">13:30</span><span><strong>Thai Odyssey</strong>(파빌리온 내) 발+어깨 60분. 2인 RM~180, 예약 없이 갈 수 있어.</span></li>
-            <li><span class="hh">15:00</span><span>커피 한 잔, 휴식. 한 군데 더 욕심내지 않기.</span></li>
-            <li><span class="hh">15:45</span><span>그랩으로 KL Sentral, 가방 회수.<span class="mv">15분, RM12</span></span></li>
-            <li><span class="hh">16:15</span><span>KLIA Ekspres → KUL 17:00 도착, 국내선 체크인.</span></li>
-            <li><span class="hh">18:05</span><span>MH1057 → 19:05 세나이 도착.</span></li>
-            <li><span class="hh">19:20</span><span>그랩으로 R&amp;F Princess Cove.<span class="mv">35분, RM55~65</span></span></li>
-            <li><span class="hh">20:15</span><span>체크인. 저녁은 단지 하부 상가 또는 도보 12분 시티스퀘어에서 간단히. 22:30 취침 목표.</span></li>
-          </ul>
-          <p class="aside swap">바꿔 넣을 카드로는 바투 케이브(KTM 30분, 계단 272개)가 있어. 넣으려면 마사지를 빼고 09:00에 가야 하는데 밤샘한 몸으로는 권하지 않아.</p>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">9.25</span>
-          <span class="dow">금요일</span>
-          <span class="place">조호르바루</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-412593ed915bc0e8.jpg" alt="조호르바루 R&F Princess Cove 단지"><figcaption>조호르바루 R&amp;F Princess Cove — 우리 숙소 단지</figcaption></figure>
-          <h3>쉬면서 구시가 산책</h3>
-          <p>알람 없이 쉬는 날이야. 동선은 전부 숙소 반경 1.5km 안에서 걸어 다니면 돼.</p>
-          <ul class="beats">
-            <li><span class="hh">10:30</span><span>브런치 — <strong>Restoran Hua Mui</strong>(Jalan Trus). 치킨찹 + 카야토스트, 2인 RM40.<span class="mv">도보 15분</span></span></li>
-            <li><span class="hh">12:00</span><span><strong>Jalan Tan Hiok Nee → Jalan Dhoby</strong> 옛 상점가. 벽화, 화교문화관(무료), 1937년 문 연 베이커리 Salahuddin.</span></li>
-            <li><span class="hh">14:00</span><span>더위 피해 시티스퀘어로(도보 10분). <strong>Thai Odyssey</strong> 전신 90분 — 2인 RM~260. 내일 종일 걷는 날이라 오늘 받는 게 맞아.</span></li>
-            <li><span class="hh">16:30</span><span>숙소 복귀, 수영장이나 낮잠.</span></li>
-            <li><span class="hh">18:00</span><span>저녁 — <strong>Kam Long Fish Head Curry</strong>(도보 10분). 2인 RM50, <strong>일찍 닫는 날이 많으니 6시엔 도착.</strong> 대안은 San Low Seafood(그랩 15분).</span></li>
-            <li><span class="hh">19:30</span><span>내일 준비: SGAC 확인, MDAC 2차 제출, USS 티켓, 여권 가방에, SGD 현금.</span></li>
-            <li><span class="hh">21:30</span><span>취침. 내일 05:00 기상.</span></li>
-          </ul>
-          <p class="aside">말레이시아 구간에서는 공공장소 스킨십을 접어두는 쪽이 편해. 발리는 사정이 달라서 거기선 신경 쓰지 않아도 돼.</p>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">9.26</span>
-          <span class="dow">토요일</span>
-          <span class="place">싱가포르, USS</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-b6deb3f9d2c66c21.jpg" alt="가든스 바이 더 베이 슈퍼트리"><figcaption>가든스 바이 더 베이 슈퍼트리</figcaption></figure>
-          <h3>싱가포르 당일치기</h3>
-          <p>제일 빡빡한 하루야. 꼭 지킬 건 06시 전 국경, 10시 USS 개장, 21시 Spectra 이 셋이고 나머지는 유동적이야.</p>
-          <ul class="beats">
-            <li><span class="hh">05:00</span><span>기상, 짐은 데이팩 하나.</span></li>
-            <li><span class="hh">05:20</span><span>숙소 → JB Sentral 도보 10분.</span></li>
-            <li><span class="hh">05:45</span><span><strong>1안 — Shuttle Tebrau</strong> 05:30 전후 편. JB Sentral에서 말, 싱 심사 다 마치고 5분 만에 우드랜즈.<span class="mv">RM5/인, 지정 편만 탑승 가능</span></span></li>
-            <li><span class="hh">05:45</span><span><strong>2안 — CIQ 도보 통과</strong> 후 CW1 버스로 크란지 MRT.<span class="mv">06시 전이면 토요일도 대개 1시간 안에 통과</span></span></li>
-            <li><span class="hh">07:15</span><span>MRT로 하버프론트.<span class="mv">TE선 → Outram Park 환승 → NE선, 약 55분, SGD~2.5/인</span></span></li>
-            <li><span class="hh">08:15</span><span>비보시티 지하 푸드코트 조식.</span></li>
-            <li><span class="hh">09:15</span><span><strong>센토사 익스프레스</strong>(비보시티 3층) → Resorts World.<span class="mv">SGD 4/인, 섬 안 무제한</span></span></li>
-            <li><span class="hh">09:30</span><span>USS 게이트 대기. <strong>개장 전에 서 있으면 토요일 기준 한 시간을 벌어.</strong></span></li>
-            <li><span class="hh">10:00</span><span>개장. 순서는 <strong>Transformers → Battlestar Galactica → Revenge of the Mummy</strong> — 3대 라이드를 오전에 끝내. 싱글라이더 줄도 적극 활용.</span></li>
-            <li><span class="hh">13:00</span><span>파크 안 점심(뉴욕 존). 오후엔 Jurassic Rapids(옷 젖으니 오후가 맞아), WaterWorld는 당일 회차표 보고 한 회.</span></li>
-            <li><span class="hh">17:00</span><span>퇴장 → 비보시티 → MRT Bayfront.<span class="mv">약 30분</span></span></li>
-            <li><span class="hh">18:15</span><span>가든스 바이 더 베이, <strong>Satay by the Bay</strong> 저녁 — 2인 SGD 50 선.</span></li>
-            <li><span class="hh">19:45</span><span><strong>Garden Rhapsody</strong>(슈퍼트리, 무료, 15분).</span></li>
-            <li><span class="hh">20:15</span><span>드래곤플라이 다리 건너 MBS 이벤트 플라자까지 도보 15분.</span></li>
-            <li><span class="hh">21:00</span><span><strong>Spectra</strong>(무료, 15분). 22시 회차도 있지만 국경이 남았으니 21시 회차로.</span></li>
-            <li><span class="hh">21:20</span><span>귀환. Bayfront → DT선 → Newton 환승 → NS선 크란지.<span class="mv">약 50분</span></span></li>
-            <li><span class="hh">22:15</span><span>CW1 → 우드랜즈 출국 → 코즈웨이 → JB 입국(MDAC 2차 QR).<span class="mv">토요일 밤 남행 1~1.5시간 잡아</span></span></li>
-            <li><span class="hh">23:45</span><span>숙소 도보 10분. 바로 취침.</span></li>
-          </ul>
-          <p class="aside flag">돌아오는 길에 쓸 MDAC를 안 냈으면 국경에서 막혀. 9.25 저녁에 제출하고 스크린샷까지 받아두는 편이 안전해.</p>
-          <p class="aside swap">체력이 무너지면 오후 파트를 버리고 15:30에 나와서 멀라이언 산책을 넣은 다음 같은 야경 코스로 합류하면 돼. 쇼 두 개는 지키자.</p>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">9.27</span>
-          <span class="dow">일요일</span>
-          <span class="place">→ 발리, 사누르</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-b8403e52644dcf0a.jpg" alt="사누르 해변"><figcaption>사누르 해변</figcaption></figure>
-          <h3>발리로 넘어가는 날</h3>
-          <ul class="beats">
-            <li><span class="hh">07:30</span><span>기상, 체크아웃. 조식은 공항 라운지에서.</span></li>
-            <li><span class="hh">08:20</span><span>그랩으로 세나이 공항.<span class="mv">35분, RM55~65</span></span></li>
-            <li><span class="hh">09:00</span><span>체크인. <strong>수하물 DPS 최종 태그 재확인.</strong></span></li>
-            <li><span class="hh">09:20</span><span><strong>Plaza Premium 라운지</strong>(보안 통과 후 1층, 05:00 오픈) — 라운지키 입장, 최대 2시간. 조식 여기서.</span></li>
-            <li><span class="hh">11:15</span><span>MH1052 → 12:10 KUL. 환승 3시간 — 국제선 구역 <strong>Plaza Premium 라운지</strong>(컨택트 피어 L5, 새틀라이트, 24시간, 라운지키)에서 점심과 샤워.</span></li>
-            <li><span class="hh">15:10</span><span>MH853 → 18:30 DPS 도착.</span></li>
-            <li><span class="hh">18:45</span><span>입국: e-VOA 레인 → 수하물 → 세관(All Indonesia QR). 성수기 일요일 저녁이라 60~75분 잡아.</span></li>
-            <li><span class="hh">20:00</span><span>그랩 픽업존에서 사누르로.<span class="mv">30분, IDR 150~200k</span></span></li>
-            <li><span class="hh">20:45</span><span><strong>Maison Aurelia</strong>(또는 확정 숙소) 체크인.</span></li>
-            <li><span class="hh">21:15</span><span>늦은 저녁은 Jalan Danau Tamblingan 거리의 워룽에서 먹어. 나시고렝에 빈땅 한 병이면 충분한 밤이야.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">9.28</span>
-          <span class="dow">월요일</span>
-          <span class="place">→ 길리 트라왕안</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-7ebc1dd2fec3971c.jpg" alt="길리 트라왕안 동쪽 해변의 보트"><figcaption>길리 트라왕안 동쪽 해변</figcaption></figure>
-          <h3>보트 타고 길리로</h3>
-          <p>아메드 항이 닫힌 지금은 길리를 먼저 가는 쪽이 동선에 맞아. 사누르 항이 숙소에서 5분이라 아침 배도 부담이 없어. 예약할 때는 <strong>직행(direct) 표기</strong>를 확인해. 소요 2시간 30분대가 직행이고 3시간 30분대는 누사페니다 경유편이야. 첫 배(08:00) 대신 10시대 편을 잡은 건 막벵이 8시에 열기 때문이야. 시간표와 예약은 <a href="https://www.gilibookings.com/sanur-to-gili-trawangan">Gilibookings</a>에서 바로 확인할 수 있어.</p>
-          <ul class="beats">
-            <li><span class="hh">06:15</span><span><strong>사누르 해변 일출</strong> — 발리 동해안이라 해가 바다에서 떠. 숙소에서 도보 5분.</span></li>
-            <li><span class="hh">08:00</span><span>조식 — <strong>Warung Mak Beng</strong> 오픈런(생선튀김 + 생선머리수프 단일 메뉴, 2인 IDR 130k). 8시 정각에 열고, 일찍 갈수록 줄이 없어.</span></li>
-            <li><span class="hh">08:45</span><span>은행 ATM에서 <strong>2인 IDR 5,000,000 인출</strong>(길리+아메드 현금 생활비). 은행 부스 안 기기만.</span></li>
-            <li><span class="hh">09:15</span><span>체크아웃, 사누르 항으로.<span class="mv">그랩 5분, 신항만이라 부두 승선 — 짐 안 젖어</span></span></li>
-            <li><span class="hh">09:30</span><span>항구 체크인 — 출항 45분~1시간 전 도착이 규정이야.</span></li>
-            <li><span class="hh">10:30</span><span><strong>사누르 → 길리 직행 보트</strong> 출항.<span class="mv">2시간 30분, US$40/인 선, 예약 시 시간 확정, 멀미약 30분 전</span></span></li>
-            <li><span class="hh">13:00</span><span>길리 트라왕안 도착. 항구 → 숙소, 남쪽이면 도보 10분 또는 치도모(마차) IDR 100~150k.</span></li>
-            <li><span class="hh">13:30</span><span>늦은 점심 — 항구 근처 <strong>Jali Kitchen</strong>.</span></li>
-            <li><span class="hh">15:00</span><span><strong>자전거 2대 대여</strong>(IDR 60~75k/일, 대, 4일치 흥정) + 내일 스노클링 투어를 부두 앞 부스에서 예약(공용 보트 09:30발, IDR 200k/인 선, 장비 포함 확인).</span></li>
-            <li><span class="hh">17:30</span><span><strong>Sunset Beach</strong> — 물 위 그네와 아궁산 실루엣.<span class="mv">자전거 15분, 남쪽 길로(북쪽은 모래밭)</span></span></li>
-            <li><span class="hh">19:30</span><span>저녁 — <strong>나이트마켓</strong>: 생선 골라 그릴, 2인 IDR 250k.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">9.29</span>
-          <span class="dow">화요일</span>
-          <span class="place">길리, 3섬 투어</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-6618cbaec51f0b73.jpg" alt="바다거북"><figcaption>바다거북 — Turtle Point의 주인공</figcaption></figure>
-          <h3>거북과 수중 조각상</h3>
-          <ul class="beats">
-            <li><span class="hh">08:00</span><span>조식 — <strong>Kayu Cafe</strong>, 스무디볼. 2인 IDR 200k.</span></li>
-            <li><span class="hh">09:15</span><span>부두 집결, 공용 스노클링 보트.</span></li>
-            <li><span class="hh">09:45</span><span><strong>Turtle Point</strong> — 바다거북을 못 보고 나오는 일이 드물어.</span></li>
-            <li><span class="hh">11:15</span><span><strong>길리 메노 수중 조각상</strong>(Nest, 수심 3m) — 스노클링으로 충분해.</span></li>
-            <li><span class="hh">12:30</span><span>길리 에어 상륙 점심.</span></li>
-            <li><span class="hh">15:00</span><span>복귀, 해변 빈백에서 휴식.</span></li>
-            <li><span class="hh">17:30</span><span>일몰 — Ombak Sunset 그네. 사진은 일몰 30분 전이 제일 잘 나와.</span></li>
-            <li><span class="hh">19:30</span><span>저녁 — <strong>Pituq Waroeng</strong>(로컬 가격) 또는 <strong>Regina</strong> 화덕피자.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">9.30</span>
-          <span class="dow">수요일</span>
-          <span class="place">길리, 다이빙</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-833cbc2154072759.jpg" alt="블랙팁 리프 상어"><figcaption>블랙팁 리프 상어 — Shark Point의 단골</figcaption></figure>
-          <h3>다이빙하고 자전거로 섬 한 바퀴</h3>
-          <ul class="beats">
-            <li><span class="hh">07:00</span><span>가벼운 조식.</span></li>
-            <li><span class="hh">08:00</span><span><strong>2탱크 다이브</strong> — Shark Point(블랙팁과 거북) &amp; Halik(산호벽). 샵은 <strong>Manta Dive / Blue Marlin / Trawangan Dive</strong> 중 숙소 가까운 곳 — 요금은 셋 다 같아(2탱크 2인 IDR 2,600k 선).</span></li>
-            <li><span class="hh">12:30</span><span>점심 든든하게 — 다이브샵 부근 워룽.</span></li>
-            <li><span class="hh">13:30</span><span>낮잠 + 해변.</span></li>
-            <li><span class="hh">16:30</span><span><strong>자전거 섬 일주</strong> 5.5km — 반시계 방향, 북쪽 모래 구간은 끌고 5분. 총 1.5시간.</span></li>
-            <li><span class="hh">19:30</span><span>저녁 — 메인 스트립 씨푸드 BBQ.</span></li>
-          </ul>
-          <p class="aside">다이빙과 비행 사이 24시간 규칙은 이 순서에서는 여유가 넉넉해. 마지막 다이빙을 아메드 10.5로 잡아도 비행(10.10)까지 닷새가 남아.</p>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.1</span>
-          <span class="dow">목요일</span>
-          <span class="place">길리 메노/에어</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-81f74a9171b3744e.jpg" alt="길리 메노 서쪽 해변"><figcaption>길리 메노 서쪽 해변</figcaption></figure>
-          <h3>더 조용한 섬</h3>
-          <ul class="beats">
-            <li><span class="hh">09:00</span><span>늦은 조식.</span></li>
-            <li><span class="hh">10:00</span><span>공용 호핑 보트 → <strong>길리 메노</strong>.<span class="mv">15분, IDR 40k/인, 오전 1~2편, 전날 시간 확인</span></span></li>
-            <li><span class="hh">10:30</span><span>메노 서쪽 해변은 아무것도 없어서 좋은 곳이야. 수영하고 그늘에서 쉬면 돼.</span></li>
-            <li><span class="hh">13:00</span><span>메노 해변 워룽 점심.</span></li>
-            <li><span class="hh">15:00</span><span>트라왕안 복귀.</span></li>
-            <li><span class="hh">16:30</span><span>커플 스파 90분 — 메인 스트립 워크인, 2인 IDR 700k 선.</span></li>
-            <li><span class="hh">18:00</span><span>길리 마지막 일몰. 저녁 후 짐 정리 + 내일 보트, 기사 확인 문자. 보트는 젖는 승선이라 전자기기 방수팩 분리.</span></li>
-          </ul>
-          <p class="aside flag">현금을 점검할 자리야. 아메드도 카드가 거의 안 되는 동네라 남은 일정 기준으로 <strong>2인 IDR 3,000k 이상</strong>은 들고 있어야 해. 섬 ATM은 자주 비니까 모자랄 것 같으면 아침에 미리 뽑아두자.</p>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.2</span>
-          <span class="dow">금요일</span>
-          <span class="place">→ 아메드, 동부 관광</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-80144f550586e2a3.jpg" alt="띠르따 강가 수궁"><figcaption>띠르따 강가 수궁</figcaption></figure>
-          <h3>파당바이로 건너 동부 한 바퀴</h3>
-          <p>보트가 닿는 항구가 마침 동부 관광의 입구야. 고아 라와는 파당바이에서 10분이면 가. 기사 반일 대절(IDR 700k 선)을 파당바이 픽업으로 예약해 두면 환승과 관광이 하루로 합쳐져. 우붓 대신 시데멘을 넣은 건 같은 논 풍경인데 인파가 없어서야.</p>
-          <ul class="beats">
-            <li><span class="hh">07:00</span><span>조식, 체크아웃, 부두로.</span></li>
-            <li><span class="hh">08:00</span><span><strong>길리 → 파당바이 보트.</strong><span class="mv">1시간 30분~2시간, US$35~45/인, 오전 편으로 예약</span></span></li>
-            <li><span class="hh">10:00</span><span>파당바이 도착, 예약 기사 픽업.</span></li>
-            <li><span class="hh">10:20</span><span><strong>Goa Lawah</strong> 박쥐 사원.<span class="mv">10분, 입장 IDR 30k/인, 사롱 포함</span> 30분.</span></li>
-            <li><span class="hh">11:15</span><span><strong>시데멘</strong> 논 계단 — 뷰포인트 두어 곳 세워가며 전망 드라이브.</span></li>
-            <li><span class="hh">12:30</span><span>시데멘 전망 워룽 점심, 아궁산 보이는 자리로. 2인 IDR 200k.</span></li>
-            <li><span class="hh">14:00</span><span><strong>띠르따 강가</strong> 수궁. 입장 IDR 60k/인, 징검다리와 잉어밥. 1시간.</span></li>
-            <li><span class="hh">15:30</span><span>아메드로, 해안 능선길 45분.</span></li>
-            <li><span class="hh">16:15</span><span>체크인, 스쿠터 2대 대여(IDR 70k/일, 대).</span></li>
-            <li><span class="hh">17:45</span><span><strong>Jemeluk 전망대</strong> 일몰 — 만과 아궁산이 한 화면에 들어와.</span></li>
-            <li><span class="hh">19:00</span><span>저녁 — Jemeluk 해변 워룽 생선구이, 2인 IDR 250k.</span></li>
-          </ul>
-          <p class="aside swap">렘푸양 "천국의 문"을 넣고 싶으면 시데멘 대신 렘푸양(대기 1~2시간) → 띠르따 강가 → 아메드 순서로 돌면 돼. 그 유명한 물 반사 사진은 유리판을 대주는 연출이라는 점은 알고 결정하자.</p>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.3</span>
-          <span class="dow">토요일</span>
-          <span class="place">아메드, 뚤람벤</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-688108b38e02533b.jpg" alt="USAT 리버티호"><figcaption>USAT 리버티 — 1942년 침몰 전의 실제 모습</figcaption></figure>
-          <h3>리버티 난파선</h3>
-          <ul class="beats">
-            <li><span class="hh">05:45</span><span>기상. <strong>Eco Dive Bali</strong>(Jemeluk) 픽업 — 뚤람벤 왕복 2탱크, 2인 IDR 2,200k 선. 9시면 단체 다이버로 물이 흐려지니 이 시간에 들어가는 게 요점이야.</span></li>
-            <li><span class="hh">06:30</span><span><strong>USAT Liberty 1차.</strong> 해변에서 걸어 들어가는 엔트리, 수심 5~30m. 스노클링으로도 상부가 보여.</span></li>
-            <li><span class="hh">08:30</span><span>수면 휴식 + 뚤람벤 워룽 조식.</span></li>
-            <li><span class="hh">09:30</span><span>2차 — <strong>Coral Garden</strong>(얕은 산호 정원과 인공어초).</span></li>
-            <li><span class="hh">11:30</span><span>아메드 복귀, 로그 작성.</span></li>
-            <li><span class="hh">12:30</span><span>점심 후 낮잠, 수영장. <strong>오후 4시까지는 일정이 없어.</strong></span></li>
-            <li><span class="hh">16:00</span><span><strong>Jemeluk 만 스노클링</strong> — 드롭오프 산호와 수중 우체통. 장비 해변 대여 IDR 50k.</span></li>
-            <li><span class="hh">18:00</span><span>일몰 맥주, Jemeluk 절벽 카페.</span></li>
-            <li><span class="hh">19:30</span><span>저녁 — <strong>Warung Celagi</strong>, 2인 IDR 150k.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.4</span>
-          <span class="dow">일요일</span>
-          <span class="place">아메드</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-22e6399f56bdb5d4.jpg" alt="아메드 해변과 전통 어선"><figcaption>아메드 해변</figcaption></figure>
-          <h3>프리다이빙과 해안도로 드라이브</h3>
-          <ul class="beats">
-            <li><span class="hh">08:30</span><span>늦은 조식 — <strong>Blue Earth Village</strong> 카페(Jemeluk 언덕, 만 전망).</span></li>
-            <li><span class="hh">09:30</span><span><strong>Apneista 프리다이빙 입문</strong>(반나절, 2인 IDR 1,600k 선) — 호흡법부터 수심 10~15m까지. 안 끌리면 요가 클래스(IDR 130k)나 스노클링으로.</span></li>
-            <li><span class="hh">13:00</span><span>점심 — Blue Earth 그대로.</span></li>
-            <li><span class="hh">14:30</span><span>출장 마사지 60분 — IDR 150k/인, 전날 숙소에 부탁해 두면 연결해줘.</span></li>
-            <li><span class="hh">16:00</span><span><strong>스쿠터 해안도로</strong> — 아메드 → Lipah 만(20분). 중간 전통 <strong>제염장</strong>에서 한 번 정차 — 바닷물을 화산모래에 말리는 방식은 여기서만 봐.</span></li>
-            <li><span class="hh">17:30</span><span>Sunset Point 일몰(해가 산 뒤로 지는 쪽).</span></li>
-            <li><span class="hh">19:00</span><span>Lipah 쪽 저녁, 어두워지기 전 복귀. 야간 스쿠터는 최소로.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.5</span>
-          <span class="dow">월요일</span>
-          <span class="place">아메드</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-404c8b8b59b11059.jpg" alt="아궁산"><figcaption>아궁산 — Jemeluk 전망대의 배경</figcaption></figure>
-          <h3>비워둔 날</h3>
-          <p>기본은 무계획이야. 수영장과 책, 해변 정도면 돼. 13박에 이런 날이 하나는 있어야 해.</p>
-          <ul class="beats">
-            <li><span class="hh">오전</span><span>다이빙이 좋았으면 <strong>Amed Wall / Pyramids 2탱크</strong> 추가(Eco Dive, 아메드 앞바다). 마지막 다이빙 가능일이 오늘 — 비행(10.10)까지 닷새라 여유 있어. 아니면 통째로 휴식.</span></li>
-            <li><span class="hh">15:00</span><span>내일 준비: 아메드 → 울루와뚜 기사(09:00 출발, 편도 IDR 600k 선) 확인 문자, 스쿠터 반납, 현금 소진 계획 — 10.7부터는 카드 되는 동네야.</span></li>
-            <li><span class="hh">17:30</span><span>Jemeluk 전망대 한 번 더 — 이번엔 자리 잡고 앉아서.</span></li>
-            <li><span class="hh">19:00</span><span>저녁 + 짐 정리.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.6</span>
-          <span class="dow">화요일</span>
-          <span class="place">→ 울루와뚜 절벽</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-2e0d34e1f516ff3a.jpg" alt="울루와뚜 사원 절벽"><figcaption>울루와뚜 사원 절벽</figcaption></figure>
-          <h3>동부에서 절벽 방갈로로</h3>
-          <p>아메드에서 부킷 반도까지 차로 세 시간 반이야. 오늘은 절벽에서 자고 내일 오후에 라구나로 들어가는 순서라서 제일 좋은 숙소가 여행 마지막에 와.</p>
-          <ul class="beats">
-            <li><span class="hh">07:30</span><span>조식, 체크아웃.</span></li>
-            <li><span class="hh">09:00</span><span>예약 기사 픽업, <strong>아메드 → 울루와뚜.</strong><span class="mv">3시간~3시간 30분, 편도 대절 IDR 600k 선, 배 없이 끝나는 이동이라 변수가 없어</span></span></li>
-            <li><span class="hh">12:30</span><span>절벽 숙소 도착, 짐 맡기고(체크인 14~15시) 점심 — 빙인 절벽 <strong>The Cashew Tree</strong>.</span></li>
-            <li><span class="hh">14:30</span><span>체크인, 스쿠터 2대 대여(IDR 140~160k).</span></li>
-            <li><span class="hh">15:30</span><span><strong>Melasti Beach</strong>.<span class="mv">15분, 입장 IDR 10k/인</span> 절벽을 깎아 만든 진입로. 수영 한 시간.</span></li>
-            <li><span class="hh">17:00</span><span><strong>Suluban(Blue Point)</strong> 동굴 해변 — 썰물이면 동굴 안까지. 바로 위가 <strong>Single Fin</strong>, 일몰 1시간 전 자리 잡기. 음료 2인 IDR 300k.</span></li>
-            <li><span class="hh">18:10</span><span>일몰. 평일이라 일요일 파티 인파 없이 풍경만 있어.</span></li>
-            <li><span class="hh">19:30</span><span>저녁 — 빙인 절벽 위 워룽. 파도 소리 들으며 취침.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.7</span>
-          <span class="dow">수요일</span>
-          <span class="place">→ 라구나 입성</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><figcaption>누사두아 해변</figcaption></figure>
-          <h3>서핑하고 라구나 체크인</h3>
-          <p>오늘 밤부터 이틀은 라구나 킹 라군뷰야.</p>
-          <ul class="beats">
-            <li><span class="hh">08:00</span><span>조식.</span></li>
-            <li><span class="hh">08:30</span><span>(선택) <strong>서핑 레슨 2시간 — Balangan Beach</strong>(초급용 모래 바닥). 2인 IDR 900k 선, 보드 포함.<span class="mv">스쿠터 15분, 접으면 빙인 해변 아침 수영</span></span></li>
-            <li><span class="hh">11:00</span><span>복귀, 샤워. 12시 체크아웃 + 스쿠터 반납.</span></li>
-            <li><span class="hh">12:30</span><span>점심 — <strong>Suka Espresso</strong>. 플랫화이트 + 스매시드 아보, 2인 IDR 250k.</span></li>
-            <li><span class="hh">14:00</span><span>그랩으로 누사두아.<span class="mv">40분, IDR 250k</span></span></li>
-            <li><span class="hh">15:00</span><span><strong>라구나 체크인</strong> — 챙길 것 셋: <strong>플래티넘 웰컴 기프트는 조식으로</strong>(2인 조식이 여기선 제일 값이 나가), 스위트 업그레이드 문의(평일이라 해볼 만해), <strong>10.9 레이트 체크아웃(16시)</strong> 요청.</span></li>
-            <li><span class="hh">16:00</span><span>라군 풀 첫 세션이야. 객실동 사이로 라군이 흐르는 구조라 리조트 이름값을 하는 시간이지.</span></li>
-            <li><span class="hh">18:00</span><span>해변 바에서 일몰 칵테일.</span></li>
-            <li><span class="hh">19:30</span><span>저녁 — 리조트 다이닝.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.8</span>
-          <span class="dow">목요일</span>
-          <span class="place">라구나, 리조트 데이</span>
-        </div>
-        <div class="content">
-          <h3>아무 데도 안 가는 날</h3>
-          <p>13박 중 가장 느린 날이야. 열이틀 움직인 몸을 여기서 풀면 돼.</p>
-          <ul class="beats">
-            <li><span class="hh">늦게</span><span>알람 없이 자. 조식은 마감 직전에 느긋하게.</span></li>
-            <li><span class="hh">10:30</span><span><strong>라군 풀.</strong> 방 앞이 곧 물인 구조라 오전 내내 여기.</span></li>
-            <li><span class="hh">13:00</span><span>점심 — 리조트 또는 누사두아 단지 안.</span></li>
-            <li><span class="hh">14:30</span><span><strong>전용 해변.</strong> 누사두아 바다는 파도가 잔잔해서 수영은 이 동네가 제일 편해.</span></li>
-            <li><span class="hh">16:30</span><span>리조트 스파(예약제) 또는 해변 산책.</span></li>
-            <li><span class="hh">18:00</span><span>해변 바에서 일몰 칵테일.</span></li>
-            <li><span class="hh">19:30</span><span>저녁 — 리조트 다이닝. 프런트에 내일 <strong>레이트 체크아웃 한 번 더</strong> 확인.</span></li>
-          </ul>
-          <p class="aside flag">다이빙은 여기 오기 전에 끝나고(마지막 10.5 옵션) 이후는 물놀이만 하니까 비행 제한은 걱정하지 않아도 돼.</p>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.9</span>
-          <span class="dow">금요일</span>
-          <span class="place">라구나 16시 → 케착 → 공항 앞</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-db717d4c8bc494c3.jpg" alt="울루와뚜 절벽의 케착 댄스"><figcaption>울루와뚜 절벽의 케착 파이어 댄스</figcaption></figure>
-          <h3>케착과 짐바란으로 마무리</h3>
-          <p>마지막 온전한 날은 라구나에서 16시까지 써. 케착 → 짐바란 저녁 → 공항 앞이 한 방향이라 대절 기사(15:45~21:30, IDR 450k 선)가 짐을 실은 채 따라와.</p>
-          <ul class="beats">
-            <li><span class="hh">늦게</span><span>알람 없이 자. 조식은 느긋하게.</span></li>
-            <li><span class="hh">10:30</span><span>라군 풀 — 이 여행의 마지막 수영. 짐은 미리 싸두고.</span></li>
-            <li><span class="hh">13:00</span><span>점심 — 리조트 안에서 가볍게.</span></li>
-            <li><span class="hh">15:00</span><span>씻고 정리, <strong>16:00 레이트 체크아웃.</strong><span class="mv">불발 시 12:00 체크아웃 후 짐 맡기고 풀, 해변 이용 — 그 경우 오후에 누사두아 해변 산책으로 대체</span></span></li>
-            <li><span class="hh">16:10</span><span>대절 기사 출발, <strong>울루와뚜 사원</strong>으로.<span class="mv">50~60분, 입장 IDR 50k/인, 사롱 포함</span> 안경, 모자, 귀걸이는 입장 전에 가방으로 — 원숭이가 진짜 낚아채.</span></li>
-            <li><span class="hh">17:15</span><span>사원 절벽길 산책 30분, <strong>17:45 케착 착석.</strong></span></li>
-            <li><span class="hh">18:00</span><span><strong>케착 파이어 댄스</strong>(일몰 배경, 60분). IDR 150k/인 — <a href="https://uluwatukecakdance.com/"><strong>온라인 사전 구매</strong></a> 필수. 기사는 주차장 대기.</span></li>
-            <li><span class="hh">19:40</span><span><strong>짐바란 Menega Cafe</strong> 마지막 저녁. kg 단위로 골라 잠발 소스에 구워줘, 2인 IDR 600k 선.<span class="mv">사원에서 30분</span></span></li>
-            <li><span class="hh">21:15</span><span><strong>힐튼 가든 인 응우라라이 공항</strong> 체크인.<span class="mv">Menega에서 10분, 힐튼 포인트 예약</span> 짐 최종 정리 — 젖은 것 비닐 분리, 기내 액체 정리.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.10</span>
-          <span class="dow">토요일</span>
-          <span class="place">귀환</span>
-        </div>
-        <div class="content">
-          <figure class="photo"><img src="assets/trip-ce1a6f9204146afd.jpg" alt="응우라라이 국제공항"><figcaption>응우라라이 국제공항</figcaption></figure>
-          <ul class="beats">
-            <li><span class="hh">08:30</span><span>조식 느긋하게 — 공항이 길 건너라 서두를 게 없어.</span></li>
-            <li><span class="hh">09:45</span><span>체크아웃, 그랩 또는 호텔 셔틀로 DPS.<span class="mv">5~10분</span></span></li>
-            <li><span class="hh">10:05</span><span>국제선 체크인(13:05 출발, 60분 전 마감). 성수기 줄 감안해도 여유 있어.</span></li>
-            <li><span class="hh">10:45</span><span><strong>Premier 라운지</strong>(국제선 메자닌, 24시간, 라운지키 — 옆의 Concordia도 제휴). 12:15까지 쉬다 게이트로.</span></li>
-            <li><span class="hh">13:05</span><span>MH714 → 16:00 KUL. 트랜짓 — <strong>Plaza Premium 라운지</strong>에서 저녁(24시간, 라운지키). MH526 기내식은 자정께라 여기서 든든히.</span></li>
-            <li><span class="hh">19:00</span><span>MH526 출발.</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="stamp">
-          <span class="date">10.11</span>
-          <span class="dow">일요일</span>
-          <span class="place">청두</span>
-        </div>
-        <div class="content">
-          <ul class="beats">
-            <li><span class="hh">00:05</span><span>TFU 도착. 심야라 지하철이 없으니 <strong>택시/디디를 착륙 전 와이파이로 예약.</strong> 시내 ¥150~200. 힐튼 20,000포인트가 2만 이하로 뜨면 TFU 공항 힐튼에서 자고 아침에 들어가는 것도 방법이야.</span></li>
-          </ul>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <section>
-    <h2>숙소 — 확정 셋, 후보 넷</h2>
-    <p class="note">조호르바루(에어비앤비 R&amp;F)와 라구나 2박(숙박권+포인트), 공항 앞 1박(힐튼)은 확정이야. 현금으로 잡을 곳은 사누르, 아메드, 길리, 절벽 하룻밤이고 각각 1지망에 바로 걸면 돼. 전부 더블, 킹으로 지정해.</p>
-
-    <div class="panel">
-      <h3>사누르, 1박 (9.27)</h3>
-      <p class="note">밤에 들어와 아침에 나가는 하루라 위치와 침대만 보면 돼.</p>
-      <ul class="picks">
-        <li><strong>1지망 — Maison Aurelia</strong> <span>부티크, 중심가. 하룻밤 용도로 가격 대비 방 상태가 좋아.</span></li>
-        <li><strong>2지망 — Segara Village</strong> <span>해변 쪽. 일출 산책하려면 이쪽.</span></li>
-        <li><strong>3지망 — Puri Santrian</strong> <span>클래식 대안.</span></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>아메드, 4박 (10.2–10.6)</h3>
-      <p class="note">기준은 Jemeluk 만 도보권이야. 스노클링과 프리다이빙, 전망대, 보트 승선이 다 거기서 이뤄져. 원래 싼 동네라 조금만 올려도 급이 달라져.</p>
-      <ul class="picks">
-        <li><strong>1지망 — Seamount Hotel</strong> <span>Jemeluk–Lipah 사이 해변 바로 앞, 도로에서 내려앉아 조용하고 풀이 커.</span></li>
-        <li><strong>2지망 — Hotel Kebun Wayan(Amed Cafe)</strong> <span>Jemeluk, 아메드 해변 양쪽 200m.</span></li>
-        <li><strong>3지망 — Kubu Kangin Resort</strong> <span>조용한 중급 기본값.</span></li>
-        <li><strong>업그레이드 — 아궁산 뷰 풀빌라</strong> <span>남부 3성값에 프라이빗 풀과 화산 전망. 예산 여유를 쓴다면 여기부터.</span></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>길리 트라왕안, 4박 (9.28–10.2)</h3>
-      <p class="note">메인 스트립은 밤이 시끄러워. 커플이면 남쪽이 맞아.</p>
-      <ul class="picks">
-        <li><strong>1지망 — Pondok Santi Estate</strong> <span>남쪽 코코넛 농장 방갈로, 커플 평판 섬에서 제일, 항구 도보권.</span></li>
-        <li><strong>2지망 — PinkCoco</strong> <span>남서쪽 일몰 방향 부티크, 값도 합리적.</span></li>
-        <li><strong>3지망 — Kardia Resort</strong> <span>US$80 선 풀빌라형, 가성비로는 최선.</span></li>
-        <li><strong>4지망 — Vila Ombak</strong> <span>스트립 남단 4성 — 편의성 우선일 때만, 주말 소음은 감수.</span></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>울루와뚜 절벽, 1박 (10.6)</h3>
-      <p class="note">이날 도는 해변(Melasti, 술루반)이 전부 반경 15분 안이라 하룻밤이어도 값을 해. 다음 날 오전 서핑까지 하고 오후에 라구나로 들어가.</p>
-      <ul class="picks">
-        <li><strong>1지망 — La Joya Biu Biu</strong> <span>빙인 절벽의 보헤미안 방갈로, 절벽 풀에서 바다가 바로 내려다보여. 2인 1박 15~20만원대.</span></li>
-        <li><strong>같은 결 — Mu Bali</strong> <span>빙인 절벽 위 초가 방갈로와 풀. La Joya가 차면 이쪽.</span></li>
-        <li><strong>한 단계 위 — Suarga Padang Padang</strong> <span>파당파당 절벽의 목조, 대나무 디자인 리조트, 일몰 방향. 2인 1박 30~40만원대.</span></li>
-        <li><strong>리조트급 — Anantara Uluwatu</strong> <span>절벽 정면 올스위트. 하룻밤을 크게 쓰고 싶으면 여기.</span></li>
-      </ul>
-      <p class="note">공항 앞 10.9는 힐튼 가든 인 응우라라이로 예약을 마쳤어(15,000포인트).</p>
+  <section id="flights">
+    <div class="wrap">
+      <div class="section-head"><div><h2>확정 항공</h2><p>발권 정보는 기존 일정에서 그대로 가져왔어. 수하물 최종 태그는 체크인할 때 다시 확인해.</p></div></div>
+      <div class="table-scroll">
+        <table class="flights">
+          <thead><tr><th>날짜</th><th>구간</th><th>출발</th><th>도착</th><th>편명</th></tr></thead>
+          <tbody>
+            <tr><td>9/24 목</td><td>청두 TFU → 쿠알라룸푸르</td><td>01:05</td><td>06:10</td><td>MH527</td></tr>
+            <tr class="layover"><td></td><td>쿠알라룸푸르 환승</td><td></td><td>11시간 55분</td><td></td></tr>
+            <tr><td>9/24 목</td><td>쿠알라룸푸르 → 조호르바루</td><td>18:05</td><td>19:05</td><td>MH1057</td></tr>
+            <tr><td>9/27 일</td><td>조호르바루 → 쿠알라룸푸르</td><td>11:15</td><td>12:10</td><td>MH1052</td></tr>
+            <tr><td>9/27 일</td><td>쿠알라룸푸르 → 발리 DPS</td><td>15:10</td><td>18:30</td><td>MH853</td></tr>
+            <tr><td>10/10 토</td><td>발리 DPS → 쿠알라룸푸르</td><td>13:05</td><td>16:00</td><td>MH714</td></tr>
+            <tr><td>10/10 토</td><td>쿠알라룸푸르 → 청두 TFU</td><td>19:00</td><td>10/11 00:05</td><td>MH526</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>예산</h2>
-    <p class="note">1인 기준이고 항공권과 조호르바루 숙소는 제외했어. 숙소비는 2인 1실의 절반으로 잡았어.</p>
-    <div class="scroller">
-      <table class="budget">
-        <thead>
-          <tr><th>항목</th><th style="text-align:right">1인 (만원)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>숙소 — 사누르 1박, 아메드 4박, 길리 4박</td><td class="n">41</td></tr>
-          <tr><td>라구나 2박, 공항 앞 1박</td><td class="n free">0 (숙박권, 포인트, 힐튼)</td></tr>
-          <tr><td>울루와뚜 절벽 1박</td><td class="n">10</td></tr>
-          <tr><td>식비 16일</td><td class="n">60</td></tr>
-          <tr><td>다이빙, 프리다이빙, 서핑 레슨</td><td class="n">25</td></tr>
-          <tr><td>패스트보트 2편</td><td class="n">15</td></tr>
-          <tr><td>기사 대절, 그랩, 스쿠터, 열차</td><td class="n">15</td></tr>
-          <tr><td>USS + Express, 싱가포르 하루</td><td class="n">15</td></tr>
-          <tr><td>KL 시내(KLIA Ekspres, 식사, 마사지)</td><td class="n">5</td></tr>
-          <tr><td>e-VOA, 관광세, 입장료들</td><td class="n">5</td></tr>
-          <tr><td>여행자보험</td><td class="n">5</td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td>합계</td><td class="n">196</td></tr>
-        </tfoot>
-      </table>
+  <section id="days">
+    <div class="wrap">
+      <div class="section-head"><div><h2>하루하루</h2><p>굵은 일정만 지키고 나머지는 컨디션에 따라 빼도 돼. 10주년 여행이라 빈 날을 일부러 남겼어.</p></div></div>
+      <div class="timeline">
+        <article class="day">
+          <div class="date"><strong>9/23</strong><span>수요일</span><em>청두</em></div>
+          <div class="day-main"><div><h3>출국 전야</h3><p>심야 비행이라 공항에 일찍 가서 바로 잘 준비만 하면 돼.</p><div class="schedule"><div class="beat"><time>20:30</time><div>집에서 출발</div></div><div class="beat"><time>22:00</time><div>TFU T1 체크인. <strong>수하물 JHB 최종 태그 확인</strong></div></div><div class="beat"><time>01:05</time><div>MH527 출발</div></div></div></div><figure class="day-photo"><img src="assets/trip-7c4ee41ae3b1ac62.jpg" alt="청두 톈푸 국제공항"><span>청두 톈푸 국제공항</span></figure></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>9/24</strong><span>목요일</span><em>쿠알라룸푸르와 JB</em></div>
+          <div class="day-main"><div><h3>쿠알라룸푸르에서 반나절</h3><p>환승 시간이 길어서 시내에 다녀올 수 있어. 무리해서 많이 보지 말고 밥과 마사지 정도로 잡자.</p><div class="schedule"><div class="beat"><time>06:10</time><div>KUL 도착, 입국심사</div></div><div class="beat"><time>오전</time><div>KLIA Ekspres로 시내. 아침, 산책, 마사지</div></div><div class="beat"><time>15:00</time><div>공항 복귀</div></div><div class="beat"><time>18:05</time><div>MH1057로 조호르바루 이동</div></div></div></div></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>9/25</strong><span>금요일</span><em>조호르바루</em></div>
+          <div class="day-main"><div><h3>늦게 일어나 구시가 산책</h3><p>여행 초반이라 힘을 아껴. 카페와 식사, 마사지 정도면 충분해.</p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상</div></div><div class="beat"><time>오후</time><div>구시가 산책과 카페</div></div><div class="beat"><time>저녁</time><div>싱가포르 입국 준비와 짐 정리</div></div></div></div></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>9/26</strong><span>토요일</span><em>싱가포르</em></div>
+          <div class="day-main"><div><h3>USS와 야경</h3><p>하루가 길어. USS를 본 뒤 가든스 바이 더 베이와 Spectra까지만 지키고 나머지는 줄여도 돼.</p><div class="schedule"><div class="beat"><time>아침</time><div>JB에서 우드랜즈로 이동</div></div><div class="beat"><time>오전</time><div><strong>Universal Studios Singapore</strong></div></div><div class="beat"><time>19:45</time><div>Garden Rhapsody</div></div><div class="beat"><time>21:00</time><div>Spectra 관람 후 JB 복귀</div></div></div><div class="choice-note">전자담배 기기와 팟은 전부 JB 숙소에 두고 가.</div></div></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>9/27</strong><span>일요일</span><em>누사두아</em></div>
+          <div class="day-main"><div><h3>발리 도착, 잠만 자는 밤</h3><p>사누르 대신 에카자야 선착장 가까운 딴중베노아로 가. 좋은 숙소보다 다음 날 이동이 편한 위치가 중요해.</p><div class="schedule"><div class="beat"><time>11:15</time><div>MH1052로 KUL 이동</div></div><div class="beat"><time>15:10</time><div>MH853 출발</div></div><div class="beat"><time>18:30</time><div>DPS 도착, 입국과 수하물 수령</div></div><div class="beat"><time>20:15</time><div>딴중베노아 숙소 체크인과 늦은 저녁</div></div></div></div><figure class="day-photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><span>누사두아</span></figure></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>9/28</strong><span>월요일</span><em>길리 에어</em></div>
+          <div class="day-main"><div><h3>누사두아에서 길리 에어로</h3><p>배에 오래 있는 날이야. 도착 후에는 아무 일정도 넣지 말자.</p><div class="schedule"><div class="beat"><time>05:45</time><div>호텔 출발</div></div><div class="beat"><time>06:30</time><div>에카자야 누사두아 카운터 체크인</div></div><div class="beat"><time>07:30</time><div><strong>누사두아 출항</strong></div></div><div class="beat"><time>12:20</time><div>길리 에어 도착, 숙소 이동</div></div><div class="beat"><time>저녁</time><div>서쪽 해변 일몰과 가벼운 저녁</div></div></div><div class="choice-note">멀미약은 출항 30분 전에 먹고 여권과 전자기기는 작은 방수 가방에 직접 들어.</div></div><figure class="day-photo"><img src="assets/trip-6618cbaec51f0b73.jpg" alt="바다거북"><span>길리 바다</span></figure></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>9/29</strong><span>화요일</span><em>길리 에어</em></div>
+          <div class="day-main"><div><h3>에어 동쪽 바다에서 시작</h3><p>메노 동상은 이미 봤으니 3섬 투어는 하지 않아. 중간이나 만조 시간에 에어 동쪽으로 들어가 거북이와 산호를 봐.</p><div class="schedule"><div class="beat"><time>07:30</time><div>동쪽 Turtle Beach 스노클링</div></div><div class="beat"><time>10:00</time><div>늦은 조식과 카페</div></div><div class="beat"><time>오후</time><div>수영, 낮잠, 마사지</div></div><div class="beat"><time>17:30</time><div>서쪽 해변 일몰</div></div></div></div></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>9/30</strong><span>수요일</span><em>길리 에어</em></div>
+          <div class="day-main"><div><h3>한밤 더 머무는 이유</h3><p>기본은 무계획이야. 다이빙이 당기면 한스 리프나 에어 월 중 그날 조류가 좋은 곳으로 한 번만 들어가.</p><div class="schedule"><div class="beat"><time>오전</time><div>선택: 한스 리프 또는 에어 월 다이빙</div></div><div class="beat"><time>점심</time><div>해변 카페에서 천천히</div></div><div class="beat"><time>오후</time><div>수영장과 낮잠</div></div><div class="beat"><time>저녁</time><div>일몰이 보이는 자리에서 저녁</div></div></div></div></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/1</strong><span>목요일</span><em>길리 T</em></div>
+          <div class="day-main"><div><h3>섬 하나만 가볍게 이동</h3><p>체크아웃을 서두르지 말고 11시 전후 보트로 T에 들어가. 정확한 출항 시각과 짐 이동은 전날 숙소에 부탁해.</p><div class="schedule"><div class="beat"><time>아침</time><div>조식과 마지막 산책</div></div><div class="beat"><time>11시 전후</time><div><strong>길리 에어 → 길리 T</strong></div></div><div class="beat"><time>점심</time><div>삼바 빌라에 짐 맡기고 점심</div></div><div class="beat"><time>17:30</time><div>자전거로 서쪽 일몰</div></div></div></div><figure class="day-photo"><img src="assets/trip-7ebc1dd2fec3971c.jpg" alt="길리 트라왕안 해변"><span>길리 트라왕안</span></figure></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/2</strong><span>금요일</span><em>길리 T</em></div>
+          <div class="day-main"><div><h3>다이빙과 섬 한 바퀴</h3><p>Shark Point나 Halik으로 2탱크 다이빙을 하고 오후에는 쉬어. 저녁은 삼바에 해변 가까운 자리를 부탁해두자.</p><div class="schedule"><div class="beat"><time>08:00</time><div><strong>2탱크 다이빙</strong></div></div><div class="beat"><time>13:00</time><div>점심과 낮잠</div></div><div class="beat"><time>16:30</time><div>자전거로 섬 한 바퀴</div></div><div class="beat"><time>저녁</time><div>길리 마지막 저녁</div></div></div></div></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/3</strong><span>토요일</span><em>아메드</em></div>
+          <div class="day-main"><div><h3>파당바이로 나와 동부로</h3><p>기존처럼 고아 라와와 시데멘까지 모두 넣지 않아. 보트가 늦어질 수 있으니 띠르따 강가 한 곳만 보고 아메드로 가.</p><div class="schedule"><div class="beat"><time>09:00</time><div>길리 T 에카자야 체크인</div></div><div class="beat"><time>10:00</time><div><strong>길리 T → 파당바이</strong></div></div><div class="beat"><time>12:00</time><div>파당바이 도착, 기사 픽업과 점심</div></div><div class="beat"><time>14:30</time><div>띠르따 강가</div></div><div class="beat"><time>17:00</time><div>아메드 체크인</div></div></div></div><figure class="day-photo"><img src="assets/trip-80144f550586e2a3.jpg" alt="띠르따 강가"><span>띠르따 강가</span></figure></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/4</strong><span>일요일</span><em>아메드와 뚤람벤</em></div>
+          <div class="day-main"><div><h3>USAT 리버티</h3><p>사람이 몰리기 전에 첫 입수를 하고 오후는 비워둬.</p><div class="schedule"><div class="beat"><time>05:45</time><div>다이브숍 픽업</div></div><div class="beat"><time>06:30</time><div><strong>USAT Liberty 1차</strong></div></div><div class="beat"><time>09:30</time><div>Coral Garden 2차</div></div><div class="beat"><time>오후</time><div>숙소에서 휴식</div></div><div class="beat"><time>17:30</time><div>제멜룩 전망대 일몰</div></div></div></div><figure class="day-photo"><img src="assets/trip-688108b38e02533b.jpg" alt="USAT 리버티"><span>USAT 리버티</span></figure></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/5</strong><span>월요일</span><em>아메드</em></div>
+          <div class="day-main"><div><h3>하나만 고르는 날</h3><p>프리다이빙, 제멜룩 스노클링, 해안도로 드라이브 중 하나만 제대로 해. 오후에는 마사지와 수영으로 마무리하자.</p><div class="schedule"><div class="beat"><time>오전</time><div>프리다이빙 또는 스노클링</div></div><div class="beat"><time>14:30</time><div>출장 마사지</div></div><div class="beat"><time>16:30</time><div>해안도로와 제염장</div></div><div class="beat"><time>저녁</time><div>짐 정리와 기사 확인</div></div></div></div></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/6</strong><span>화요일</span><em>울루와뚜</em></div>
+          <div class="day-main"><div><h3>절벽 숙소가 일정인 날</h3><p>멜라스티와 술루반, 싱글핀을 전부 돌지 않아. 해변은 한 곳만 고르고 일몰 전에는 숙소로 돌아와.</p><div class="schedule"><div class="beat"><time>09:00</time><div>아메드 출발</div></div><div class="beat"><time>13:00</time><div>절벽 숙소 도착과 점심</div></div><div class="beat"><time>15:30</time><div>선택한 해변 한 곳</div></div><div class="beat"><time>17:30</time><div><strong>숙소 수영장과 일몰</strong></div></div></div></div><figure class="day-photo"><img src="assets/trip-2e0d34e1f516ff3a.jpg" alt="울루와뚜 절벽"><span>울루와뚜</span></figure></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/7</strong><span>수요일</span><em>라구나</em></div>
+          <div class="day-main"><div><h3>라구나에 들어가는 날</h3><p>아침 서핑은 선택이야. 늦은 조식 후 누사두아로 이동해 15시에 체크인하자.</p><div class="schedule"><div class="beat"><time>늦게</time><div>조식과 마지막 절벽 수영</div></div><div class="beat"><time>12:00</time><div>체크아웃과 점심</div></div><div class="beat"><time>15:00</time><div><strong>라구나 체크인</strong></div></div><div class="beat"><time>오후</time><div>라군 풀과 해변 바</div></div></div><div class="choice-note">체크인 전에 10주년 여행이라고 알려두고 킹베드와 기념 어메니티를 부탁해.</div></div><figure class="day-photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><span>누사두아</span></figure></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/8</strong><span>목요일</span><em>10주년</em></div>
+          <div class="day-main"><div><h3>아무 데도 안 가는 날</h3><p>이날이 여행의 중심이야. 리조트 밖으로 나가지 말고 늦은 조식부터 저녁까지 천천히 보내.</p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 조식</div></div><div class="beat"><time>오전</time><div>라군 풀</div></div><div class="beat"><time>오후</time><div>해변과 커플 스파</div></div><div class="beat"><time>일몰</time><div>칵테일과 <strong>기념 저녁</strong></div></div></div></div></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/9</strong><span>금요일</span><em>울루와뚜와 공항</em></div>
+          <div class="day-main"><div><h3>케착과 짐바란으로 마무리</h3><p>라구나 레이트 체크아웃 후 한 방향으로 움직여. 기사가 짐을 싣고 따라오는 일정이 편해.</p><div class="schedule"><div class="beat"><time>16:00</time><div>라구나 체크아웃</div></div><div class="beat"><time>17:15</time><div>울루와뚜 사원 산책</div></div><div class="beat"><time>18:00</time><div><strong>케착 파이어 댄스</strong></div></div><div class="beat"><time>19:40</time><div>짐바란 마지막 저녁</div></div><div class="beat"><time>21:15</time><div>힐튼 가든 인 공항 체크인</div></div></div></div><figure class="day-photo"><img src="assets/trip-db717d4c8bc494c3.jpg" alt="울루와뚜 케착"><span>울루와뚜 케착</span></figure></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/10</strong><span>토요일</span><em>귀국</em></div>
+          <div class="day-main"><div><h3>느긋하게 공항으로</h3><p>공항 앞에서 자니까 아침에 서두를 필요가 없어.</p><div class="schedule"><div class="beat"><time>08:30</time><div>조식</div></div><div class="beat"><time>09:45</time><div>호텔 출발</div></div><div class="beat"><time>13:05</time><div>MH714 출발</div></div><div class="beat"><time>19:00</time><div>MH526으로 청두 출발</div></div></div></div></div>
+        </article>
+
+        <article class="day">
+          <div class="date"><strong>10/11</strong><span>일요일</span><em>청두</em></div>
+          <div class="day-main"><div><h3>집으로</h3><p>00:05 TFU 도착. 심야라 택시나 디디로 들어가.</p></div></div>
+        </article>
+      </div>
     </div>
-    <p class="note">상한 250만원 대비 <strong>54만원 여유</strong>가 있어. 숙박권과 마리엇 포인트, 힐튼 포인트가 남부에서 약 100만원(2인 합)을 대신 냈어. 절벽 1박은 La Joya 기준이고 Suarga, 아난타라로 올려도 여유분 안이야. 남는 돈을 쓸 곳이라면 ① 아메드 풀빌라 ② 길리 Pondok Santi ③ USS Express ④ 다이빙 추가야.</p>
   </section>
 
-  <section>
-    <h2>현지 실무</h2>
-    <ul class="picks">
-      <li><strong>현금 계획</strong> <span>KL에서는 RM300, 싱가포르는 카드 위주로 쓰고 SGD100만 챙겨. 발리는 9.28 아침 보트를 타기 전에 사누르 은행 ATM에서 2인 IDR 5,000k를 뽑고(길리+아메드 생활비) 아메드 구간에서는 IDR 3,000k 이상을 유지해. 10.6부터는 카드가 되는 동네야. ATM은 은행 부스 안에 있는 기기만 써(스키밍 조심).</span></li>
-      <li><strong>데이터</strong> <span>3국을 커버하는 eSIM은 출국 전에 설치해 둬. MDAC, SGAC 재제출과 그랩, 보트 확인 문자가 전부 데이터에 걸려 있어.</span></li>
-      <li><strong>라운지키</strong> <span>세나이(Plaza Premium, 최대 2시간), KUL T1(Plaza Premium 컨택트 피어, 새틀라이트, 24시간), DPS 국제선(Premier, Concordia)이 전부 제휴라 이 여행에서 라운지 식사가 네 끼야. TFU 국제선만 제휴가 없어. 입장할 때는 당일 탑승권이 필요하고 동반 1인 무료 여부는 카드 조건에서 확인해 둬.</span></li>
-      <li><strong>전자담배 — 싱가포르 절대 금지</strong> <span>2026년 5월 시행된 신법(TVCA)으로 <strong>소지하거나 쓰기만 해도 최대 S$10,000 벌금</strong>이야. 외국인은 기기를 압수당하고 약식 벌금(초범 S$700 선)을 물고 재범이면 입국 금지까지 가. 공항 환승 짐 속에 있는 것까지 걸려. <strong>9.26 당일치기 때는 기기와 팟을 전부 JB 숙소에 두고 가.</strong> 같은 날 일반 담배도 싱가포르는 면세 반입이 없어서 한 갑부터 신고 대상이고 껌도 반입이 제한돼. 발리와 말레이시아는 전자담배가 합법이야(공공장소 흡연 구역 제한만 있어).</span></li>
-      <li><strong>날씨</strong> <span>9월 말에서 10월 초는 건기 끝자락이라 발리와 길리를 다니기에 가장 좋은 때야. 우기는 11월부터야.</span></li>
-      <li><strong>축제</strong> <span>2026년 녜피는 3월이고 갈룽안, 쿠닝안은 6월이라 이번 기간에 겹치는 대형 의례는 없어.</span></li>
-      <li><strong>사원 복장</strong> <span>울루와뚜와 띠르따 강가, 고아 라와는 모두 사롱이 필요해. 보통 입장료에 포함돼 있고 하나 사두면 편해.</span></li>
-      <li><strong>숙소 침대</strong> <span>성인 남성 2인은 트윈으로 배정되는 일이 잦아. 예약할 때 더블, 킹을 명시하고 확인 메일도 챙겨봐. 라구나 2박과 공항 힐튼은 킹으로 확보돼 있어.</span></li>
-      <li><strong>인도네시아 신형법</strong> <span>동거 조항은 배우자나 부모, 자녀가 고소해야 성립하는 친고죄야. 관광객에게 적용될 구조가 아니고 발리 관광지는 실제로 편안해.</span></li>
-      <li><strong>청두 재입국</strong> <span>트립닷컴 예약서에 중국 입국신고서 안내가 있어. 체류 신분에 따라 필요 여부가 갈리니 따로 확인해 둬.</span></li>
-    </ul>
+  <section id="stays">
+    <div class="wrap">
+      <div class="section-head"><div><h2>숙소 날짜는 이렇게 맞추면 돼</h2><p>라구나와 힐튼을 제외한 숙소는 아직 후보야. 예약 화면의 무료취소 마감은 결제 직전에 다시 확인해.</p></div><a class="section-link" href="gili-a-vs-m.html">길리 숙소 비교 보기</a></div>
+      <div class="stay-grid">
+        <article class="stay"><img src="assets/trip-6618cbaec51f0b73.jpg" alt="길리 에어 바다"><div class="stay-body"><span>9/28부터 10/1</span><h3>길리 에어 3박</h3><p>해변 가까운 중저가 숙소. 첫날은 이동일이라 실제로 쉬는 날을 이틀 확보해.</p><a href="gili-a-vs-m.html">후보와 가격 보기</a></div></article>
+        <article class="stay"><img src="assets/trip-7ebc1dd2fec3971c.jpg" alt="길리 트라왕안"><div class="stay-body"><span>10/1부터 10/3</span><h3>삼바 빌라 2박</h3><p>해변 앞이고 항구와 식당가가 가까워. 길리 T는 이동 편의와 바다를 같이 보자.</p><a href="https://kr.trip.com/hotels/gili-trawangan-hotel-detail-2563993/samba-villas-beachfront-view/" target="_blank" rel="noopener">트립닷컴 보기</a></div></article>
+        <article class="stay"><img src="assets/trip-22e6399f56bdb5d4.jpg" alt="아메드 해변"><div class="stay-body"><span>10/3부터 10/6</span><h3>아메드 3박</h3><p>제멜룩 만 도보권을 우선해. 리버티 다이빙과 해안도로를 하기 편한 위치가 좋아.</p></div></article>
+        <article class="stay"><img src="assets/trip-2e0d34e1f516ff3a.jpg" alt="울루와뚜 절벽"><div class="stay-body"><span>10/6 1박</span><h3>절벽 숙소</h3><p>La Joya Biu Biu를 먼저 보고, 없으면 Mu Bali나 Suarga를 비교해.</p></div></article>
+        <article class="stay"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><div class="stay-body"><span>10/7부터 10/9</span><h3>라구나 2박</h3><p>킹 라군뷰 예약 완료. 10주년 메인 숙소라 리조트 밖 일정을 넣지 않아.</p></div></article>
+        <article class="stay"><img src="assets/trip-ce1a6f9204146afd.jpg" alt="응우라라이 공항"><div class="stay-body"><span>10/9 1박</span><h3>공항 힐튼</h3><p>15,000포인트 예약 완료. 다음 날 13:05 비행을 편하게 타기 위한 숙소야.</p></div></article>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>참고 자료</h2>
-    <ul class="picks">
-      <li><strong>입국 서류</strong> <span><a href="https://evisa.imigrasi.go.id/">인도네시아 e-VOA</a>, <a href="https://imigresen-online.imi.gov.my/mdac/main">말레이시아 MDAC</a>, <a href="https://www.ica.gov.sg/enter-transit-depart/entering-singapore/sg-arrival-card">싱가포르 SGAC</a>, <a href="https://lovebali.baliprov.go.id/">발리 관광세 Love Bali</a> — 전부 공식 사이트야.</span></li>
-      <li><strong>예약</strong> <span><a href="https://shuttleonline.ktmb.com.my/">KTM 셔틀 테브라우</a>, <a href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore">USS 공식 티켓</a>, <a href="https://www.gilibookings.com/sanur-to-gili-trawangan">사누르→길리 보트</a>, <a href="https://uluwatukecakdance.com/">울루와뚜 케착 예매</a></span></li>
-      <li><strong>경로 지도</strong> <span>구간별 구글맵 링크는 위 "동선 지도"의 이동 목록에 걸어뒀어.</span></li>
-      <li><strong>공유용 가이드</strong> <span>같은 일정을 사진과 실지도로 정리한 웹 버전 — <a href="https://jbee-dev.github.io/bali-trip-2026-pages/">jbee-dev.github.io/bali-trip-2026-pages</a>. 예약번호 같은 민감한 정보는 뺀 판이라 그대로 공유해도 돼.</span></li>
-    </ul>
+  <section id="boats">
+    <div class="wrap">
+      <div class="section-head"><div><h2>배 예약에서 틀리면 안 되는 부분</h2><p>무료 귀환표를 쓰려면 에카자야 공식 홈페이지에서 누사두아 출발 편도를 먼저 사야 해.</p></div><a class="section-link" href="https://ekajayafastferry.com/" target="_blank" rel="noopener">에카자야 공식 사이트</a></div>
+      <div class="booking-grid">
+        <article class="booking-card"><h3>가는 배</h3><div class="booking-row"><span>날짜</span><strong>9/28</strong></div><div class="booking-row"><span>구간</span><strong>누사두아 → 길리 에어</strong></div><div class="booking-row"><span>체크인</span><strong>06:30</strong></div><div class="booking-row"><span>운항</span><strong>07:30 → 12:20</strong></div><p class="warning">금요일, 월초 플래시세일, 메가 프라이데이 할인으로 결제하면 무료 귀환 대상에서 빠져.</p></article>
+        <article class="booking-card"><h3>무료 귀환표</h3><div class="booking-row"><span>날짜</span><strong>10/3</strong></div><div class="booking-row"><span>구간</span><strong>길리 T → 파당바이</strong></div><div class="booking-row"><span>체크인</span><strong>09:00</strong></div><div class="booking-row"><span>운항</span><strong>10:00 → 12:00</strong></div><p class="warning">가는 배 예약 메일의 배너로 14일 안에 신청해. 무료표는 발권 뒤 날짜와 시간을 바꿀 수 없어.</p></article>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    항공은 트립닷컴 발권 기준이야. 입국 요건과 보트, 열차 시간표는 출발 2주 전에 한 번 더 확인하자. 요금은 2인 합계 추정치로 적었어. 사진은 위키미디어 공용(Wikimedia Commons), 지도 타일은 © OpenStreetMap contributors에서 가져와 문서 안에 담았어.
-    <p><a href="edit.html" rel="nofollow">페이지 편집</a></p>
-  </footer>
+  <section id="practical">
+    <div class="wrap">
+      <div class="section-head"><div><h2>출발 전 메모</h2><p>예약이 끝난 뒤 다시 볼 내용만 남겼어.</p></div></div>
+      <div class="practical">
+        <div class="practical-row"><strong>수하물</strong><p>에카자야는 1인 최대 2개, 합산 25kg이야. 길리 에어와 T에서는 큰 짐을 선원이나 포터에게 맡기고 귀중품은 직접 들어.</p></div>
+        <div class="practical-row"><strong>현금</strong><p>누사두아에서 출항하기 전에 2인 생활비를 준비해. 길리와 아메드는 카드가 안 되는 곳이 많고 섬 ATM은 현금이 떨어질 때가 있어.</p></div>
+        <div class="practical-row"><strong>입국 서류</strong><p>인도네시아 e-VOA, 발리 관광세, All Indonesia 세관 QR을 출발 전에 저장해. 말레이시아 MDAC와 싱가포르 SGAC도 날짜에 맞춰 제출해.</p></div>
+        <div class="practical-row"><strong>다이빙</strong><p>여행자보험에 스쿠버다이빙과 후송 담보가 있는지 확인해. 마지막 다이빙은 10/5 이전이라 10/10 비행까지 여유가 있어.</p></div>
+        <div class="practical-row"><strong>10주년 요청</strong><p>라구나에 미리 기념 여행이라고 알려. 킹베드, 작은 어메니티, 10/9 레이트 체크아웃을 함께 요청해두자.</p></div>
+        <div class="practical-row"><strong>다시 확인할 날</strong><p>배와 섬 이동 시간은 출발 2주 전, 현지에서는 하루 전에 다시 확인해. 바람과 항만 사정으로 바뀔 수 있어.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
 
-</div>
+<footer>
+  <div class="wrap footer-row">
+    <span>시간과 요금은 예약 화면에서 마지막으로 확인해야 해. 확정 예약과 후보 숙소는 구분해서 적었어.</span>
+    <span><a href="index.html">공유용 여행 페이지</a>　<a href="edit.html" rel="nofollow">페이지 편집</a></span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">주소를 복사했어</div>
+
+<script>
+const tabs = Array.from(document.querySelectorAll('[data-plan]'));
+const panels = Array.from(document.querySelectorAll('[data-panel]'));
+tabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const selected = tab.dataset.plan;
+    tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab)));
+    panels.forEach((panel) => panel.classList.toggle('active', panel.dataset.panel === selected));
+  });
+});
+
+const toast = document.getElementById('toast');
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add('show');
+  window.setTimeout(() => toast.classList.remove('show'), 1800);
+}
+
+document.getElementById('shareButton').addEventListener('click', async () => {
+  const data = { title: document.title, text: '우리 10주년 여행 일정', url: window.location.href };
+  try {
+    if (navigator.share) {
+      await navigator.share(data);
+      return;
+    }
+    await navigator.clipboard.writeText(window.location.href);
+    showToast('주소를 복사했어');
+  } catch (error) {
+    if (error.name !== 'AbortError') showToast('주소를 복사하지 못했어');
+  }
+});
+</script>
 </body>
 </html>
