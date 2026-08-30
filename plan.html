@@ -41,17 +41,16 @@ a { color: inherit; text-underline-offset: 3px; }
 img { display: block; width: 100%; }
 
 .topbar {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 20;
-  height: 72px;
-  background: rgba(255,255,255,.96);
+  min-height: 72px;
+  padding-top: env(safe-area-inset-top);
+  background: var(--white);
   border-bottom: 1px solid var(--line-soft);
-  backdrop-filter: blur(12px);
 }
 .nav {
   width: min(1180px, calc(100% - 48px));
-  height: 100%;
+  height: 72px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -317,7 +316,8 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 }
 
 @media (max-width: 640px) {
-  .topbar { height: 64px; }
+  .topbar { min-height: 64px; }
+  .nav { height: 64px; }
   .nav, .wrap { width: min(100% - 32px, 1120px); }
   .hero { padding-top: 36px; }
   .lead { font-size: 16px; }
