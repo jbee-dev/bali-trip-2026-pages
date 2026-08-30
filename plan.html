@@ -218,6 +218,10 @@ h2 { margin: 0; font-size: 28px; line-height: 1.25; letter-spacing: -.03em; }
 .day-option span { color: var(--pink); font-size: 12px; font-weight: 600; }
 .day-option strong { display: block; margin-top: 5px; font-size: 16px; }
 .day-option p { margin: 7px 0 0; color: var(--body); font-size: 13px; line-height: 1.55; }
+.mini-beats { margin-top: 13px; border-top: 1px solid var(--line-soft); }
+.mini-beat { display: grid; grid-template-columns: 68px 1fr; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line-soft); font-size: 12px; }
+.mini-beat:last-child { border-bottom: 0; padding-bottom: 0; }
+.mini-beat time { color: var(--muted); font-variant-numeric: tabular-nums; }
 
 .stay-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .stay { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--white); }
@@ -346,7 +350,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
       </div>
       <div class="option-tabs" role="tablist" aria-label="일정 선택">
         <button class="option-tab" type="button" role="tab" aria-selected="true" aria-controls="plan-balanced" data-plan="balanced">
-          <span class="tag">옵션 A</span><strong>에어 2박, T 3박</strong><small>9/30에 T로 이동. 식당과 다이빙, 섬 산책에 이틀을 쓸 수 있어.</small>
+          <span class="tag">옵션 A</span><strong>에어 2박, T 3박</strong><small>9/30에 T로 이동. 자전거 타는 날과 오전 다이빙 2회를 다른 날로 나눌 수 있어.</small>
         </button>
         <button class="option-tab" type="button" role="tab" aria-selected="false" aria-controls="plan-east" data-plan="east">
           <span class="tag">옵션 B</span><strong>에어 3박, T 2박</strong><small>10/1에 T로 이동. 에어에서 일정 없는 하루를 하나 더 보내.</small>
@@ -357,7 +361,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
       </div>
 
       <div class="option-panel active" id="plan-balanced" role="tabpanel" data-panel="balanced">
-        <div><h3>9/30부터 길리 T 3박</h3><p>9/28 오후에 에어에 도착하고 9/29에는 동쪽 해변에서 스노클링해. 9/30에 T로 넘어가면 10/1은 자전거와 해변, 10/2는 2탱크 다이빙으로 나눌 수 있어. T에서 보내는 온전한 하루가 이틀이야.</p></div>
+        <div><h3>9/30부터 길리 T 3박</h3><p>9/28 오후에 에어에 도착하고 9/29에는 동쪽 해변에서 스노클링해. 9/30에 T로 넘어가면 10/1은 자전거와 해변, 10/2 오전은 다이빙 2회로 나눌 수 있어. T에서 보내는 온전한 하루가 이틀이야.</p></div>
         <div class="nights"><div class="night"><span>길리 에어</span><strong>2박</strong></div><div class="night"><span>길리 T</span><strong>3박</strong></div><div class="night"><span>아메드</span><strong>3박</strong></div></div>
       </div>
       <div class="option-panel" id="plan-east" role="tabpanel" data-panel="east">
@@ -423,27 +427,27 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
       <div class="timeline">
         <article class="day">
           <div class="date"><strong>9/23</strong><span>수요일</span><em>청두</em></div>
-          <div class="day-main"><div><h3>출국 전야</h3><p>심야 비행이라 공항에 일찍 가서 바로 잘 준비만 하면 돼.</p><div class="schedule"><div class="beat"><time>20:30</time><div>집에서 출발</div></div><div class="beat"><time>22:00</time><div>TFU T1 체크인. <strong>수하물 JHB 최종 태그 확인</strong></div></div><div class="beat"><time>01:05</time><div>MH527 출발</div></div></div></div><figure class="day-photo"><img src="assets/trip-7c4ee41ae3b1ac62.jpg" alt="청두 톈푸 국제공항"><span>청두 톈푸 국제공항</span></figure></div>
+          <div class="day-main"><div><h3>출국 전야</h3><p>심야 비행이라 저녁을 먹고 공항으로 가. 체크인할 때 수하물 태그의 최종 도착지가 JHB인지 확인하고, 기내에서 바로 잘 수 있게 세면도구와 목베개는 작은 가방에 따로 챙겨.</p><div class="schedule"><div class="beat"><time>20:30</time><div>집에서 출발</div></div><div class="beat"><time>22:00</time><div>TFU T1 체크인. <strong>수하물 JHB 최종 태그 확인</strong></div></div><div class="beat"><time>23:00</time><div>출국심사 후 물과 간식 준비</div></div><div class="beat"><time>01:05</time><div>MH527 출발</div></div></div></div><figure class="day-photo"><img src="assets/trip-7c4ee41ae3b1ac62.jpg" alt="청두 톈푸 국제공항"><span>청두 톈푸 국제공항</span></figure></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/24</strong><span>목요일</span><em>쿠알라룸푸르와 JB</em></div>
-          <div class="day-main"><div><h3>쿠알라룸푸르에서 반나절</h3><p>환승 시간이 길어서 시내에 다녀올 수 있어. 무리해서 많이 보지 말고 밥과 마사지 정도로 잡자.</p><div class="schedule"><div class="beat"><time>06:10</time><div>KUL 도착, 입국심사</div></div><div class="beat"><time>오전</time><div>KLIA Ekspres로 시내. 아침, 산책, 마사지</div></div><div class="beat"><time>15:00</time><div>공항 복귀</div></div><div class="beat"><time>18:05</time><div>MH1057로 조호르바루 이동</div></div></div></div></div>
+          <div class="day-main"><div><h3>쿠알라룸푸르에서 반나절</h3><p>환승 시간이 11시간 55분이라 입국심사를 마친 뒤 시내에 다녀올 수 있어. KLIA Ekspres로 이동해 아침을 먹고 가까운 구역을 산책한 뒤 마사지까지 받고, 국내선 출발 3시간 전에는 공항으로 돌아오는 일정이야.</p><div class="schedule"><div class="beat"><time>06:10</time><div>KUL 도착과 입국심사</div></div><div class="beat"><time>08:00</time><div>KLIA Ekspres로 시내 이동</div></div><div class="beat"><time>오전</time><div>아침, 산책, 마사지</div></div><div class="beat"><time>15:00</time><div>공항 복귀와 국내선 체크인</div></div><div class="beat"><time>18:05</time><div>MH1057로 조호르바루 이동</div></div><div class="beat"><time>19:05</time><div>JHB 도착과 숙소 이동</div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/25</strong><span>금요일</span><em>조호르바루</em></div>
-          <div class="day-main"><div><h3>늦게 일어나 구시가 산책</h3><p>여행 초반이라 힘을 아껴. 카페와 식사, 마사지 정도면 충분해.</p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상</div></div><div class="beat"><time>오후</time><div>구시가 산책과 카페</div></div><div class="beat"><time>저녁</time><div>싱가포르 입국 준비와 짐 정리</div></div></div></div></div>
+          <div class="day-main"><div><h3>늦게 일어나 구시가 산책</h3><p>전날 심야 비행과 환승이 길었으니 오전은 숙소에서 쉬어. 늦은 점심 뒤 구시가와 카페를 걷고 마사지를 받은 다음, 저녁에는 다음 날 싱가포르 육로 입국에 필요한 서류와 작은 가방을 정리해.</p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 늦은 아침</div></div><div class="beat"><time>오후</time><div>구시가 산책, 카페, 마사지</div></div><div class="beat"><time>저녁</time><div>조호르바루에서 저녁 식사</div></div><div class="beat"><time>밤</time><div>싱가포르 입국 서류와 당일 짐 확인</div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/26</strong><span>토요일</span><em>싱가포르</em></div>
-          <div class="day-main"><div><h3>USS와 야경</h3><p>하루가 길어. USS를 본 뒤 가든스 바이 더 베이와 Spectra까지만 지키고 나머지는 줄여도 돼.</p><div class="schedule"><div class="beat"><time>아침</time><div>JB에서 우드랜즈로 이동</div></div><div class="beat"><time>오전</time><div><strong>Universal Studios Singapore</strong></div></div><div class="beat"><time>19:45</time><div>Garden Rhapsody</div></div><div class="beat"><time>21:00</time><div>Spectra 관람 후 JB 복귀</div></div></div><div class="choice-note">전자담배 기기와 팟은 전부 JB 숙소에 두고 가.</div></div></div>
+          <div class="day-main"><div><h3>USS와 싱가포르 야경</h3><p>아침에 육로 국경을 넘어 센토사로 이동해 USS를 보고, 저녁에는 가든스 바이 더 베이와 마리나 베이 야경을 이어서 봐. 마지막 Spectra가 끝나면 우드랜즈를 거쳐 조호르바루 숙소로 돌아가.</p><div class="schedule"><div class="beat"><time>아침</time><div>JB에서 우드랜즈로 이동과 입국심사</div></div><div class="beat"><time>오전</time><div><strong>Universal Studios Singapore</strong></div></div><div class="beat"><time>저녁</time><div>가든스 바이 더 베이로 이동과 식사</div></div><div class="beat"><time>19:45</time><div>Garden Rhapsody</div></div><div class="beat"><time>21:00</time><div>Spectra 관람 후 JB 복귀</div></div></div><div class="choice-note">전자담배 기기와 팟은 전부 JB 숙소에 두고 가.</div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/27</strong><span>일요일</span><em>누사두아</em></div>
-          <div class="day-main"><div><h3>발리 도착, 잠만 자는 밤</h3><p>사누르 대신 에카자야 선착장 가까운 딴중베노아로 가. 좋은 숙소보다 다음 날 이동이 편한 위치가 중요해.</p><div class="schedule"><div class="beat"><time>11:15</time><div>MH1052로 KUL 이동</div></div><div class="beat"><time>15:10</time><div>MH853 출발</div></div><div class="beat"><time>18:30</time><div>DPS 도착, 입국과 수하물 수령</div></div><div class="beat"><time>20:15</time><div>딴중베노아 숙소 체크인과 늦은 저녁</div></div></div></div><figure class="day-photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><span>누사두아</span></figure></div>
+          <div class="day-main"><div><h3>조호르바루에서 발리로</h3><p>오전에 JHB에서 쿠알라룸푸르로 이동하고 같은 날 발리행으로 갈아타. DPS에 도착하면 입국심사와 수하물 수령을 마친 뒤, 다음 날 에카자야 출항 장소와 가까운 딴중베노아 숙소로 이동해 늦은 저녁을 먹어.</p><div class="schedule"><div class="beat"><time>11:15</time><div>MH1052로 KUL 이동</div></div><div class="beat"><time>12:10</time><div>KUL 도착과 환승</div></div><div class="beat"><time>15:10</time><div>MH853 발리행 출발</div></div><div class="beat"><time>18:30</time><div>DPS 도착, 입국과 수하물 수령</div></div><div class="beat"><time>20:15</time><div>딴중베노아 숙소 체크인과 늦은 저녁</div></div><div class="beat"><time>밤</time><div>다음 날 배표, 멀미약, 방수 가방 준비</div></div></div></div><figure class="day-photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><span>누사두아</span></figure></div>
         </article>
 
         <article class="day">
@@ -458,17 +462,17 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
         <article class="day">
           <div class="date"><strong>9/30</strong><span>수요일</span><em>에어 또는 T</em></div>
-          <div class="day-main"><div><h3>에어에 남거나 T로 이동</h3><p>에어 2박이면 이날 T로 이동하고, 에어 3박이면 섬에서 하루를 더 보내. 낮 시간은 이동과 체크인, 해변 휴식에 쓰는 일정이야.</p><div class="day-options"><div class="day-option"><span>옵션 A</span><strong>길리 T로 이동</strong><p>아침을 먹고 11시 전후 보트로 넘어가. 삼바에 짐을 맡긴 뒤 항구 주변에서 점심을 먹고, 저녁에는 동쪽 해변을 걸어봐.</p></div><div class="day-option"><span>옵션 B</span><strong>길리 에어에서 하루 더</strong><p>알람 없이 일어나 해변 카페에서 아침을 먹어. 오후는 수영장과 마사지, 서쪽 해변 일몰로 느긋하게 보내.</p></div></div></div></div>
+          <div class="day-main"><div><h3>에어에 남거나 T로 이동</h3><p>에어 2박이면 이날 T로 이동하고, 에어 3박이면 섬에서 하루를 더 보내. 두 옵션 모두 물놀이보다는 이동과 휴식에 시간을 쓰는 날이야.</p><div class="day-options"><div class="day-option"><span>옵션 A</span><strong>길리 T로 이동</strong><p>에어에서 아침을 먹고 섬 사이 보트로 T에 넘어가. 체크인 뒤에는 항구와 동쪽 해변 주변에서 천천히 보내.</p><div class="mini-beats"><div class="mini-beat"><time>08:30</time><div>조식과 체크아웃</div></div><div class="mini-beat"><time>11시 전후</time><div>길리 에어에서 T로 이동</div></div><div class="mini-beat"><time>12:00</time><div>삼바에 짐 맡기고 점심</div></div><div class="mini-beat"><time>오후</time><div>항구 주변 산책과 카페</div></div><div class="mini-beat"><time>17:30</time><div>동쪽 해변 산책과 저녁</div></div></div></div><div class="day-option"><span>옵션 B</span><strong>길리 에어에서 하루 더</strong><p>스노클링 다음 날을 온전히 쉬는 날로 써. 북쪽과 서쪽 해변을 걷고 숙소 수영장과 마사지를 즐기면 돼.</p><div class="mini-beats"><div class="mini-beat"><time>09:00</time><div>늦은 조식과 해변 카페</div></div><div class="mini-beat"><time>11:30</time><div>북쪽 해변 산책</div></div><div class="mini-beat"><time>오후</time><div>수영장, 낮잠, 마사지</div></div><div class="mini-beat"><time>17:30</time><div>서쪽 해변 일몰</div></div><div class="mini-beat"><time>저녁</time><div>해변 식당에서 저녁</div></div></div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/1</strong><span>목요일</span><em>길리 T</em></div>
-          <div class="day-main"><div><h3>T에서 보내는 시간</h3><p>옵션 A는 길리 T에서 하루를 온전히 쓸 수 있고, 옵션 B는 오전까지 에어에 머문 뒤 T로 이동해. 저녁부터는 같은 일정이야.</p><div class="day-options"><div class="day-option"><span>옵션 A</span><strong>자전거로 섬 한 바퀴</strong><p>해변에서 늦게 아침을 먹고 북쪽과 서쪽을 천천히 돌아봐. 오후에는 숙소에서 쉬다가 서쪽 해변에서 일몰을 보면 돼.</p></div><div class="day-option"><span>옵션 B</span><strong>에어에서 T로 이동</strong><p>에어에서 아침과 마지막 산책을 즐긴 뒤 11시 전후 보트로 넘어가. 체크인 후 동쪽 해변에서 저녁을 먹어.</p></div></div></div></div>
+          <div class="day-main"><div><h3>T에서 보내는 시간</h3><p>옵션 A는 길리 T에서 하루를 온전히 쓸 수 있고, 옵션 B는 오전까지 에어에 머문 뒤 T로 이동해. 저녁부터는 같은 일정이야.</p><div class="day-options"><div class="day-option"><span>옵션 A</span><strong>자전거로 섬 한 바퀴</strong><p>오전에는 항구 북쪽의 조용한 길을 달리고, 더운 시간에는 숙소에서 쉬어. 해 질 무렵 서쪽 해변으로 다시 나가면 돼.</p><div class="mini-beats"><div class="mini-beat"><time>09:30</time><div>해변에서 늦은 아침</div></div><div class="mini-beat"><time>11:00</time><div>자전거로 북쪽 해안 이동</div></div><div class="mini-beat"><time>13:00</time><div>점심 후 숙소 휴식</div></div><div class="mini-beat"><time>16:30</time><div>서쪽 해변으로 자전거 이동</div></div><div class="mini-beat"><time>17:30</time><div>일몰과 저녁</div></div></div></div><div class="day-option"><span>옵션 B</span><strong>에어에서 T로 이동</strong><p>에어에서 마지막 아침을 보내고 T로 넘어가. 체크인과 늦은 점심 뒤에는 동쪽 해변과 식당가를 둘러봐.</p><div class="mini-beats"><div class="mini-beat"><time>08:30</time><div>조식과 체크아웃</div></div><div class="mini-beat"><time>11시 전후</time><div>길리 에어에서 T로 이동</div></div><div class="mini-beat"><time>12:00</time><div>삼바 체크인과 점심</div></div><div class="mini-beat"><time>오후</time><div>수영장과 동쪽 해변 산책</div></div><div class="mini-beat"><time>저녁</time><div>해변 식당에서 저녁</div></div></div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/2</strong><span>금요일</span><em>길리 T</em></div>
-          <div class="day-main"><div><h3>길리 T 2탱크 다이빙</h3><p>오전 두 번의 다이빙은 당일 조류를 보고 Shark Point나 Halik 중에서 정해. 보통 점심 무렵 끝나니 오후에는 장비를 정리하고 숙소에서 쉬기 좋아. 저녁은 해변 가까운 자리에서 길리 마지막 밤을 보내.</p><div class="schedule"><div class="beat"><time>07:30</time><div>다이브숍 집합과 브리핑</div></div><div class="beat"><time>08:00</time><div><strong>1차 다이빙</strong></div></div><div class="beat"><time>10:30</time><div><strong>2차 다이빙</strong></div></div><div class="beat"><time>13:00</time><div>점심과 휴식</div></div><div class="beat"><time>저녁</time><div>해변에서 마지막 저녁</div></div></div></div></div>
+          <div class="day-main"><div><h3>길리 T 오전 다이빙 2회</h3><p>공기통 하나로 1차 다이빙을 하고 수면에서 쉬었다가, 새 공기통으로 2차 다이빙을 하는 코스야. 포인트는 당일 조류를 보고 Shark Point나 Halik 중에서 정해. 점심 무렵 끝나니 오후에는 장비를 정리하고 숙소에서 쉬기 좋아.</p><div class="schedule"><div class="beat"><time>07:30</time><div>다이브숍 집합, 장비 확인, 브리핑</div></div><div class="beat"><time>08:00</time><div><strong>1차 다이빙</strong></div></div><div class="beat"><time>1차 후</time><div>수면 휴식, 물과 간식, 공기통 교체</div></div><div class="beat"><time>10:30</time><div><strong>2차 다이빙</strong></div></div><div class="beat"><time>13:00</time><div>장비 반납, 점심, 숙소 휴식</div></div><div class="beat"><time>저녁</time><div>해변에서 길리 마지막 저녁</div></div></div><div class="choice-note">다이빙 두 번 사이에는 수면 휴식 시간이 있어. 두 번째 입수 시각과 포인트는 다이브숍 운영과 조류에 따라 달라질 수 있어.</div></div></div>
         </article>
 
         <article class="day">
@@ -498,17 +502,17 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
         <article class="day">
           <div class="date"><strong>10/8</strong><span>목요일</span><em>10주년</em></div>
-          <div class="day-main"><div><h3>아무 데도 안 가는 날</h3><p>이날이 여행의 중심이야. 리조트 밖으로 나가지 말고 늦은 조식부터 저녁까지 천천히 보내.</p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 조식</div></div><div class="beat"><time>오전</time><div>라군 풀</div></div><div class="beat"><time>오후</time><div>해변과 커플 스파</div></div><div class="beat"><time>일몰</time><div>칵테일과 <strong>기념 저녁</strong></div></div></div></div></div>
+          <div class="day-main"><div><h3>라구나에서 보내는 10주년</h3><p>알람 없이 일어나 늦게 아침을 먹고 라군 풀과 해변을 오가며 보내. 오후에는 커플 스파를 받고 객실에서 쉬었다가, 해 질 무렵 칵테일과 기념 저녁으로 하루를 마무리해.</p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 조식</div></div><div class="beat"><time>오전</time><div>라군 풀과 해변</div></div><div class="beat"><time>점심</time><div>리조트 안에서 가벼운 식사</div></div><div class="beat"><time>오후</time><div>커플 스파와 객실 휴식</div></div><div class="beat"><time>일몰</time><div>칵테일과 <strong>기념 저녁</strong></div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/9</strong><span>금요일</span><em>울루와뚜와 공항</em></div>
-          <div class="day-main"><div><h3>케착과 짐바란으로 마무리</h3><p>라구나 레이트 체크아웃 후 한 방향으로 움직여. 기사가 짐을 싣고 따라오는 일정이 편해.</p><div class="schedule"><div class="beat"><time>16:00</time><div>라구나 체크아웃</div></div><div class="beat"><time>17:15</time><div>울루와뚜 사원 산책</div></div><div class="beat"><time>18:00</time><div><strong>케착 파이어 댄스</strong></div></div><div class="beat"><time>19:40</time><div>짐바란 마지막 저녁</div></div><div class="beat"><time>21:15</time><div>힐튼 가든 인 공항 체크인</div></div></div></div><figure class="day-photo"><img src="assets/trip-db717d4c8bc494c3.jpg" alt="울루와뚜 케착"><span>울루와뚜 케착</span></figure></div>
+          <div class="day-main"><div><h3>울루와뚜 케착과 짐바란 저녁</h3><p>레이트 체크아웃까지 라구나에서 쉬고, 기사가 짐을 실은 채 울루와뚜 사원과 짐바란을 이어서 이동해. 사원 산책 뒤 18시 케착 공연을 보고 해변에서 저녁을 먹은 다음 공항 앞 호텔로 들어가.</p><div class="schedule"><div class="beat"><time>오전</time><div>조식, 수영장, 짐 정리</div></div><div class="beat"><time>16:00</time><div>라구나 체크아웃과 기사 미팅</div></div><div class="beat"><time>17:15</time><div>울루와뚜 사원 산책</div></div><div class="beat"><time>18:00</time><div><strong>케착 파이어 댄스</strong></div></div><div class="beat"><time>19:40</time><div>짐바란 해변에서 마지막 저녁</div></div><div class="beat"><time>21:15</time><div>힐튼 가든 인 공항 체크인</div></div></div></div><figure class="day-photo"><img src="assets/trip-db717d4c8bc494c3.jpg" alt="울루와뚜 케착"><span>울루와뚜 케착</span></figure></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/10</strong><span>토요일</span><em>귀국</em></div>
-          <div class="day-main"><div><h3>느긋하게 공항으로</h3><p>공항 앞에서 자니까 아침에 서두를 필요가 없어.</p><div class="schedule"><div class="beat"><time>08:30</time><div>조식</div></div><div class="beat"><time>09:45</time><div>호텔 출발</div></div><div class="beat"><time>13:05</time><div>MH714 출발</div></div><div class="beat"><time>19:00</time><div>MH526으로 청두 출발</div></div></div></div></div>
+          <div class="day-main"><div><h3>발리에서 청두로</h3><p>공항 앞 호텔에서 아침을 먹고 9시 45분에 출발해. 쿠알라룸푸르에서 3시간 환승한 뒤 청두행 야간편을 타고, 자정을 조금 넘겨 톈푸공항에 도착해.</p><div class="schedule"><div class="beat"><time>08:30</time><div>조식과 체크아웃 준비</div></div><div class="beat"><time>09:45</time><div>호텔 출발</div></div><div class="beat"><time>13:05</time><div>MH714 발리 출발</div></div><div class="beat"><time>16:00</time><div>KUL 도착과 환승</div></div><div class="beat"><time>19:00</time><div>MH526으로 청두 출발</div></div></div></div></div>
         </article>
 
         <article class="day">
