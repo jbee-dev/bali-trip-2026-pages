@@ -1,9 +1,9 @@
-# 발리와 길리 10주년 여행
+# 발리와 길리 10주년 여행 가이드
 
 2026년 9월 23일 밤부터 10월 11일 새벽까지, 두 사람이 함께하는 여행입니다.
 
-- [여행 일정표](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#days)
-- [예약한 숙소](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#stays)
+- [날짜별 여행 가이드](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#days)
+- [숙소 이용 안내](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#stays)
 - [남은 준비](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#todo)
 - [입국 신고와 준비물](preparation.md)
 
