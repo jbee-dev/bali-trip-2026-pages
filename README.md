@@ -4,6 +4,7 @@
 
 - [날짜별 여행 가이드](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#days)
 - [숙소 이용 안내](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#stays)
+- [동선에 맞춘 맛집과 식사 예산](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#food)
 - [남은 준비](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#todo)
 - [입국 신고와 준비물](preparation.md)
 
