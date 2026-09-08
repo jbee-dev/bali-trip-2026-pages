@@ -228,6 +228,15 @@ h2 { margin: 0; font-size: 28px; line-height: 1.25; letter-spacing: -.03em; }
 .place-picks div { min-width: 0; }
 .place-picks dt { color: var(--muted); font-size: 12px; }
 .place-picks dd { margin: 5px 0 0; font-size: 13px; line-height: 1.55; }
+.local-tips { display: grid; gap: 22px; margin-top: 24px; }
+.local-tip h4 { margin: 0; color: var(--ink); font-size: 15px; font-weight: 600; }
+.local-tip p { margin: 7px 0 0; color: var(--body); font-size: 14px; line-height: 1.75; }
+.local-tip .food-links { margin-top: 8px; font-size: 12px; }
+.tip-sources { margin-top: 22px; color: var(--muted); font-size: 12px; }
+.tip-sources summary { cursor: pointer; }
+.tip-sources ul { margin: 10px 0 0; padding-left: 18px; }
+.tip-sources li { margin-bottom: 8px; }
+.day-tip { font-size: 13px; }
 
 .status-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .status-card { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); }
@@ -357,7 +366,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
 @media (max-width: 900px) {
   .navlinks a { display: none; }
-  .navlinks a[href="#food"] { display: inline-flex; }
+  .navlinks a[href="#food"], .navlinks a[href="#places"] { display: inline-flex; }
   .facts { grid-template-columns: repeat(2, 1fr); }
   .fact:nth-child(2) { border-right: 0; }
   .fact:nth-child(-n+2) { border-bottom: 1px solid var(--line-soft); }
@@ -490,6 +499,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
       <a href="#days">하루하루</a>
       <a href="#stays">숙소</a>
       <a href="#food">맛집</a>
+      <a href="#places">꿀팁</a>
       <a href="#route">동선</a>
       <a href="#transport">교통</a>
       <a href="#todo">남은 준비</a>
@@ -541,19 +551,19 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
         <article class="day">
           <div class="date"><strong>9/24</strong><span>목요일</span><em>쿠알라룸푸르와 JB</em></div>
-          <div class="day-main"><div><h3>쿠알라룸푸르에서 반나절</h3><p>환승 시간이 11시간 55분이라 입국심사를 마친 뒤 시내에 다녀올 수 있습니다. KLIA Ekspres로 이동해 아침과 산책, 마사지를 즐기고 국내선 출발 3시간 전에는 공항으로 돌아옵니다.</p><p class="day-meal">식사: 구시가 아침 <a href="#eat-kafei-dian">Kafei Dian</a> 공항 복귀 전 점심 <a href="#eat-ali-muthu">Ali, Muthu &amp; Ah Hock</a> JB 도착 뒤 <a href="#eat-pacific-kopi">Pacific Kopi</a></p><div class="schedule"><div class="beat"><time>06:10</time><div>KUL 도착과 입국심사</div></div><div class="beat"><time>08:00</time><div>KLIA Ekspres로 시내 이동</div></div><div class="beat"><time>오전</time><div>아침, 산책, 마사지</div></div><div class="beat"><time>15:00</time><div>공항 복귀와 국내선 체크인</div></div><div class="beat"><time>15:45</time><div><strong>라운지패스로 KUL 국내선 라운지 이용</strong></div></div><div class="beat"><time>18:05</time><div>MH1057로 조호르바루 이동</div></div><div class="beat"><time>19:05</time><div>JHB 도착과 숙소 이동</div></div></div></div></div>
+          <div class="day-main"><div><h3>쿠알라룸푸르에서 반나절</h3><p>환승 시간이 11시간 55분이라 입국심사를 마친 뒤 시내에 다녀올 수 있습니다. KLIA Ekspres로 이동해 아침과 산책, 마사지를 즐기고 국내선 출발 3시간 전에는 공항으로 돌아옵니다.</p><p class="day-meal">식사: 구시가 아침 <a href="#eat-kafei-dian">Kafei Dian</a> 공항 복귀 전 점심 <a href="#eat-ali-muthu">Ali, Muthu &amp; Ah Hock</a> JB 도착 뒤 <a href="#eat-pacific-kopi">Pacific Kopi</a></p><p class="day-tip"><a href="#tips-kl">KL 벽화 골목과 커피</a></p><div class="schedule"><div class="beat"><time>06:10</time><div>KUL 도착과 입국심사</div></div><div class="beat"><time>08:00</time><div>KLIA Ekspres로 시내 이동</div></div><div class="beat"><time>오전</time><div>아침, 산책, 마사지</div></div><div class="beat"><time>15:00</time><div>공항 복귀와 국내선 체크인</div></div><div class="beat"><time>15:45</time><div><strong>라운지패스로 KUL 국내선 라운지 이용</strong></div></div><div class="beat"><time>18:05</time><div>MH1057로 조호르바루 이동</div></div><div class="beat"><time>19:05</time><div>JHB 도착과 숙소 이동</div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/25</strong><span>금요일</span><em>조호르바루</em></div>
-          <div class="day-main"><div><h3>늦게 일어나 구시가 산책</h3><p>전날 심야 비행과 긴 환승을 고려해 오전은 숙소에서 쉽니다. 늦은 점심 뒤 구시가와 카페를 걷고 마사지를 받은 다음, 저녁에는 싱가포르 육로 입국에 필요한 서류와 작은 가방을 정리합니다.</p><p class="day-meal">늦은 점심은 <a href="#eat-hua-mui">Hua Mui 치킨찹</a> 저녁은 숙소 근처 <a href="#eat-pacific-kopi">Pacific Kopi</a></p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 늦은 아침</div></div><div class="beat"><time>오후</time><div>구시가 산책, 카페, 마사지</div></div><div class="beat"><time>저녁</time><div>조호르바루에서 저녁 식사</div></div><div class="beat"><time>밤</time><div>싱가포르 입국 서류와 당일 짐 확인</div></div></div></div></div>
+          <div class="day-main"><div><h3>늦게 일어나 구시가 산책</h3><p>전날 심야 비행과 긴 환승을 고려해 오전은 숙소에서 쉽니다. 늦은 점심 뒤 구시가와 카페를 걷고 마사지를 받은 다음, 저녁에는 싱가포르 육로 입국에 필요한 서류와 작은 가방을 정리합니다.</p><p class="day-meal">늦은 점심은 <a href="#eat-hua-mui">Hua Mui 치킨찹</a> 저녁은 숙소 근처 <a href="#eat-pacific-kopi">Pacific Kopi</a></p><p class="day-tip"><a href="#tips-jb">치킨찹·바나나케이크와 구시가 산책</a></p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 늦은 아침</div></div><div class="beat"><time>오후</time><div>구시가 산책, 카페, 마사지</div></div><div class="beat"><time>저녁</time><div>조호르바루에서 저녁 식사</div></div><div class="beat"><time>밤</time><div>싱가포르 입국 서류와 당일 짐 확인</div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>9/26</strong><span>토요일</span><em>싱가포르</em></div>
           <div class="day-main"><div>
             <h3>USS와 싱가포르 야경</h3>
-            <p>07:30 기차로 싱가포르에 들어가 USS에서 하루를 보냅니다. 저녁에는 마리나베이를 걷고 20:00 Spectra 분수쇼와 20:45 Garden Rhapsody를 봅니다. 쇼가 끝나면 Grab으로 기차역에 가서 22:30 귀환편을 탑니다.</p><p class="day-meal">점심은 USS 안 <a href="#eat-goldilocks">Goldilocks</a> 저녁은 MBS <a href="#eat-rasapura">Rasapura Masters</a></p>
+            <p>07:30 기차로 싱가포르에 들어가 USS에서 하루를 보냅니다. 저녁에는 마리나베이를 걷고 20:00 Spectra 분수쇼와 20:45 Garden Rhapsody를 봅니다. 쇼가 끝나면 Grab으로 기차역에 가서 22:30 귀환편을 탑니다.</p><p class="day-meal">점심은 USS 안 <a href="#eat-goldilocks">Goldilocks</a> 저녁은 MBS <a href="#eat-rasapura">Rasapura Masters</a></p><p class="day-tip"><a href="#tips-singapore">공연 관람 위치와 이동 팁</a></p>
             <div class="schedule">
               <div class="beat"><time>06:15경</time><div>JB 숙소에서 출발 준비와 이동<span class="transport-note">작은 가방과 두 사람 실물 여권, 기차·USS 티켓을 챙깁니다.</span></div></div>
               <div class="beat"><time>06:30–06:45</time><div>JB Sentral 도착 목표, 출국 수속<span class="transport-note">출발 게이트 마감 07:20</span></div></div>
@@ -579,7 +589,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
         <article class="day">
           <div class="date"><strong>9/27</strong><span>일요일</span><em>누사두아</em></div>
-          <div class="day-main"><div><h3>조호르바루에서 발리로</h3><p>조호르바루에서 쿠알라룸푸르를 거쳐 발리로 갑니다. 18:30 도착 후 입국심사와 수하물 수령을 마치고 아이온 발리 베노아에 체크인합니다. 체크인 보증금 IDR 300,000은 현금으로 냅니다. 조식이 없는 데다 다음 날 06:15에 출발하므로 저녁을 먹을 때 간단한 아침도 사둡니다.</p><p class="day-meal">저녁은 <a href="#eat-sari-boga">Warung Sari Boga</a> 또는 <a href="#eat-glaze">Glaze Bali</a> 식사 후 다음 날 먹을 빵과 물을 사 둡니다.</p><div class="schedule"><div class="beat"><time>11:15</time><div>MH1052로 KUL 이동</div></div><div class="beat"><time>12:10</time><div>KUL 도착과 국제선 환승</div></div><div class="beat"><time>13:15</time><div><strong>라운지패스로 게이트와 가까운 KUL 국제선 라운지 이용</strong></div></div><div class="beat"><time>15:10</time><div>MH853 발리행 출발</div></div><div class="beat"><time>18:30</time><div>DPS 도착, 입국과 수하물 수령</div></div><div class="beat"><time>20:15</time><div>아이온 발리 베노아 체크인과 늦은 저녁</div></div><div class="beat"><time>밤</time><div>다음 날 배표, 멀미약, 방수 가방 준비</div></div></div></div><figure class="day-photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><span>누사두아</span></figure></div>
+          <div class="day-main"><div><h3>조호르바루에서 발리로</h3><p>조호르바루에서 쿠알라룸푸르를 거쳐 발리로 갑니다. 18:30 도착 후 입국심사와 수하물 수령을 마치고 아이온 발리 베노아에 체크인합니다. 체크인 보증금 IDR 300,000은 현금으로 냅니다. 조식이 없는 데다 다음 날 06:15에 출발하므로 저녁을 먹을 때 간단한 아침도 사둡니다.</p><p class="day-meal">저녁은 <a href="#eat-sari-boga">Warung Sari Boga</a> 또는 <a href="#eat-glaze">Glaze Bali</a> 식사 후 다음 날 먹을 빵과 물을 사 둡니다.</p><p class="day-tip"><a href="#tips-benoa">첫날 저녁과 이른 배 준비</a></p><div class="schedule"><div class="beat"><time>11:15</time><div>MH1052로 KUL 이동</div></div><div class="beat"><time>12:10</time><div>KUL 도착과 국제선 환승</div></div><div class="beat"><time>13:15</time><div><strong>라운지패스로 게이트와 가까운 KUL 국제선 라운지 이용</strong></div></div><div class="beat"><time>15:10</time><div>MH853 발리행 출발</div></div><div class="beat"><time>18:30</time><div>DPS 도착, 입국과 수하물 수령</div></div><div class="beat"><time>20:15</time><div>아이온 발리 베노아 체크인과 늦은 저녁</div></div><div class="beat"><time>밤</time><div>다음 날 배표, 멀미약, 방수 가방 준비</div></div></div></div><figure class="day-photo"><img src="assets/trip-8d7b61873ef13c64.jpg" alt="누사두아 해변"><span>누사두아</span></figure></div>
         </article>
 
         <article class="day">
@@ -589,7 +599,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
         <article class="day">
           <div class="date"><strong>9/29</strong><span>화요일</span><em>길리 에어</em></div>
-          <div class="day-main"><div><h3>에어 동쪽 해변에서 스노클링</h3><p>Turtle Beach 쪽은 해변에서 바로 들어갈 수 있습니다. 조류와 수위를 확인한 뒤 오전에 거북이와 산호를 보고, 장비 반납 후 늦은 아침을 먹습니다. 오후에는 숙소 수영장과 마사지, 서쪽 해변 일몰 가운데 선택합니다.</p><p class="day-meal">북동쪽까지 둘러본다면 <a href="#eat-pachamama">Pachamama에서 점심</a> 숙소에서 쉬는 날은 가까운 곳에서 먹습니다.</p><div class="schedule"><div class="beat"><time>07:30</time><div>동쪽 Turtle Beach로 이동</div></div><div class="beat"><time>08:00</time><div><strong>해변 스노클링</strong></div></div><div class="beat"><time>10:00</time><div>늦은 조식과 카페</div></div><div class="beat"><time>오후</time><div>수영장 또는 마사지</div></div><div class="beat"><time>17:30</time><div>서쪽 해변 일몰</div></div></div></div></div>
+          <div class="day-main"><div><h3>에어 동쪽 해변에서 스노클링</h3><p>Turtle Beach 쪽은 해변에서 바로 들어갈 수 있습니다. 조류와 수위를 확인한 뒤 오전에 거북이와 산호를 보고, 장비 반납 후 늦은 아침을 먹습니다. 오후에는 숙소 수영장과 마사지, 서쪽 해변 일몰 가운데 선택합니다.</p><p class="day-meal">북동쪽까지 둘러본다면 <a href="#eat-pachamama">Pachamama에서 점심</a> 숙소에서 쉬는 날은 가까운 곳에서 먹습니다.</p><p class="day-tip"><a href="#tips-gili-air">길리 에어 카페와 노을 산책</a></p><div class="schedule"><div class="beat"><time>07:30</time><div>동쪽 Turtle Beach로 이동</div></div><div class="beat"><time>08:00</time><div><strong>해변 스노클링</strong></div></div><div class="beat"><time>10:00</time><div>늦은 조식과 카페</div></div><div class="beat"><time>오후</time><div>수영장 또는 마사지</div></div><div class="beat"><time>17:30</time><div>서쪽 해변 일몰</div></div></div></div></div>
         </article>
 
         <article class="day">
@@ -599,7 +609,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
         <article class="day">
           <div class="date"><strong>10/1</strong><span>목요일</span><em>길리 T</em></div>
-          <div class="day-main"><div><h3>길리 에어에서 T로 이동</h3><p>스캘리왁스에서 마지막 아침을 보내고 섬 사이 보트로 길리 T에 이동합니다. 카사 카이에 체크인한 뒤 동쪽 해변과 식당가를 둘러봅니다.</p><p class="day-meal">항구와 동쪽 해변 산책 중 <a href="#eat-scallywags-t">Scallywags Seafood Bar &amp; Grill</a></p><div class="schedule"><div class="beat"><time>08:30</time><div>조식과 체크아웃 준비</div></div><div class="beat"><time>11시 전후</time><div>길리 에어에서 T로 이동</div></div><div class="beat"><time>14:00 이후</time><div>카사 카이 디럭스 테라스 체크인</div></div><div class="beat"><time>오후</time><div>수영장과 동쪽 해변 산책</div></div><div class="beat"><time>저녁</time><div>해변 식당에서 저녁</div></div></div></div></div>
+          <div class="day-main"><div><h3>길리 에어에서 T로 이동</h3><p>스캘리왁스에서 마지막 아침을 보내고 섬 사이 보트로 길리 T에 이동합니다. 카사 카이에 체크인한 뒤 동쪽 해변과 식당가를 둘러봅니다.</p><p class="day-meal">항구와 동쪽 해변 산책 중 <a href="#eat-scallywags-t">Scallywags Seafood Bar &amp; Grill</a></p><p class="day-tip"><a href="#tips-gili-t">동쪽 카페·야시장과 거북 관찰</a></p><div class="schedule"><div class="beat"><time>08:30</time><div>조식과 체크아웃 준비</div></div><div class="beat"><time>11시 전후</time><div>길리 에어에서 T로 이동</div></div><div class="beat"><time>14:00 이후</time><div>카사 카이 디럭스 테라스 체크인</div></div><div class="beat"><time>오후</time><div>수영장과 동쪽 해변 산책</div></div><div class="beat"><time>저녁</time><div>해변 식당에서 저녁</div></div></div></div></div>
         </article>
 
         <article class="day">
@@ -614,7 +624,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
         <article class="day">
           <div class="date"><strong>10/4</strong><span>일요일</span><em>길리 T · 펄 선셋</em></div>
-          <div class="day-main"><div><h3>펄 선셋에서 수영장과 해변 휴식</h3><p>길리에서 보내는 마지막 온전한 하루입니다. 수영장과 바다를 오가며 쉬고 일몰을 봅니다. 저녁에는 짐을 정리하고 다음 날 배의 체크인 장소와 시간을 확인합니다.</p><p class="day-meal">산책 중 점심은 <a href="#eat-lumi">Lumi Restaurant</a> 저녁은 <a href="#eat-cloud9">Cloud9</a></p><div class="schedule"><div class="beat"><time>아침</time><div>아침 식사와 해변 산책</div></div><div class="beat"><time>낮</time><div>숙소 수영장과 선베드에서 휴식</div></div><div class="beat"><time>오후</time><div>해변 휴식, 마사지 또는 짐 정리</div></div><div class="beat"><time>일몰</time><div>길리에서 마지막 일몰과 저녁</div></div></div></div></div>
+          <div class="day-main"><div><h3>펄 선셋에서 수영장과 해변 휴식</h3><p>길리에서 보내는 마지막 온전한 하루입니다. 수영장과 바다를 오가며 쉬고 일몰을 봅니다. 저녁에는 짐을 정리하고 다음 날 배의 체크인 장소와 시간을 확인합니다.</p><p class="day-meal">산책 중 점심은 <a href="#eat-lumi">Lumi Restaurant</a> 저녁은 <a href="#eat-cloud9">Cloud9</a></p><p class="day-tip"><a href="#tips-gili-t">서쪽 해변에서 쉬는 법</a></p><div class="schedule"><div class="beat"><time>아침</time><div>아침 식사와 해변 산책</div></div><div class="beat"><time>낮</time><div>숙소 수영장과 선베드에서 휴식</div></div><div class="beat"><time>오후</time><div>해변 휴식, 마사지 또는 짐 정리</div></div><div class="beat"><time>일몰</time><div>길리에서 마지막 일몰과 저녁</div></div></div></div></div>
         </article>
 
         <article class="day">
@@ -624,7 +634,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
         <article class="day">
           <div class="date"><strong>10/6</strong><span>화요일</span><em>우붓</em></div>
-          <div class="day-main"><div><h3>클룩 아융강 래프팅</h3><p>오전에는 예약한 아융강 래프팅을 합니다. 호텔 조식은 07:00부터라 집합 시각에 맞춰 먹고, 수영복·여벌옷·물놀이 신발을 챙깁니다. 활동을 마치면 숙소에서 쉬다가 저녁에 우붓 시내로 나갑니다.</p><p class="day-meal">휴식 후 저녁은 <a href="#eat-sun-sun">Sun Sun Warung</a> 피곤하면 <a href="#eat-bisma-sunset">비스마 거리에서 한 끼</a></p><div class="schedule"><div class="beat"><time>아침</time><div>아침 식사와 활동 준비</div></div><div class="beat"><time>오전</time><div>아융강 래프팅 · 예약 완료</div></div><div class="beat"><time>활동 후</time><div>숙소 복귀와 휴식</div></div><div class="beat"><time>저녁</time><div>우붓에서 저녁 식사</div></div></div><div class="choice-note">오전 출발 예약입니다. 정확한 집합 시각·장소와 호텔 픽업 조건은 클룩 이용 안내가 필요합니다.</div></div></div>
+          <div class="day-main"><div><h3>클룩 아융강 래프팅</h3><p>오전에는 예약한 아융강 래프팅을 합니다. 호텔 조식은 07:00부터라 집합 시각에 맞춰 먹고, 수영복·여벌옷·물놀이 신발을 챙깁니다. 활동을 마치면 숙소에서 쉬다가 저녁에 우붓 시내로 나갑니다.</p><p class="day-meal">휴식 후 저녁은 <a href="#eat-sun-sun">Sun Sun Warung</a> 피곤하면 <a href="#eat-bisma-sunset">비스마 거리에서 한 끼</a></p><p class="day-tip"><a href="#tips-ubud">래프팅 뒤 커피와 연못 산책</a></p><div class="schedule"><div class="beat"><time>아침</time><div>아침 식사와 활동 준비</div></div><div class="beat"><time>오전</time><div>아융강 래프팅 · 예약 완료</div></div><div class="beat"><time>활동 후</time><div>숙소 복귀와 휴식</div></div><div class="beat"><time>저녁</time><div>우붓에서 저녁 식사</div></div></div><div class="choice-note">오전 출발 예약입니다. 정확한 집합 시각·장소와 호텔 픽업 조건은 클룩 이용 안내가 필요합니다.</div></div></div>
         </article>
 
         <article class="day">
@@ -634,12 +644,12 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 
         <article class="day">
           <div class="date"><strong>10/8</strong><span>목요일</span><em>10주년</em></div>
-          <div class="day-main"><div><h3>라구나에서 보내는 10주년</h3><p>알람 없이 일어나 늦은 아침을 먹고 라군 풀과 해변을 오갑니다. 오후에는 쉬거나 커플 스파를 받고, 일몰 무렵 칵테일과 기념 저녁을 즐깁니다.</p><p class="day-meal">기념일 저녁은 라구나 해변의 <a href="#eat-arwana">Arwana 추천 · 메뉴와 예산</a></p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 조식</div></div><div class="beat"><time>오전</time><div>라군 풀과 해변</div></div><div class="beat"><time>점심</time><div>리조트 안에서 가벼운 식사</div></div><div class="beat"><time>오후</time><div>커플 스파와 객실 휴식</div></div><div class="beat"><time>일몰</time><div>칵테일과 <strong>기념 저녁</strong></div></div></div></div></div>
+          <div class="day-main"><div><h3>라구나에서 보내는 10주년</h3><p>알람 없이 일어나 늦은 아침을 먹고 라군 풀과 해변을 오갑니다. 오후에는 쉬거나 커플 스파를 받고, 일몰 무렵 칵테일과 기념 저녁을 즐깁니다.</p><p class="day-meal">기념일 저녁은 라구나 해변의 <a href="#eat-arwana">Arwana 추천 · 메뉴와 예산</a></p><p class="day-tip"><a href="#tips-nusa-dua">리조트 근처 카페·미술관</a></p><div class="schedule"><div class="beat"><time>늦게</time><div>알람 없이 기상과 조식</div></div><div class="beat"><time>오전</time><div>라군 풀과 해변</div></div><div class="beat"><time>점심</time><div>리조트 안에서 가벼운 식사</div></div><div class="beat"><time>오후</time><div>커플 스파와 객실 휴식</div></div><div class="beat"><time>일몰</time><div>칵테일과 <strong>기념 저녁</strong></div></div></div></div></div>
         </article>
 
         <article class="day">
           <div class="date"><strong>10/9</strong><span>금요일</span><em>울루와뚜와 공항</em></div>
-          <div class="day-main"><div><h3>울루와뚜 케착과 짐바란 저녁</h3><p>오후 3시 차량 출발을 목표로 라구나에서 쉬다가 울루와뚜 사원과 짐바란으로 이동합니다. 레이트 체크아웃이 불가하면 먼저 짐을 맡깁니다. 사원 산책 뒤 18시 케착 공연을 보고 해변에서 저녁을 먹은 다음 공항 앞 호텔로 이동합니다.</p><p class="day-meal">공연 뒤 저녁은 <a href="#eat-lia">Lia Cafe 해산물구이</a> 도착이 늦어지면 기사와 식당에 시간을 맞춥니다.</p><div class="schedule"><div class="beat"><time>오전</time><div>조식, 수영장, 짐 정리</div></div><div class="beat"><time>15:00</time><div>라구나에서 기사 미팅 후 출발</div></div><div class="beat"><time>17:15</time><div>울루와뚜 사원 산책</div></div><div class="beat"><time>18:00</time><div><strong>케착 파이어 댄스</strong><span class="transport-note">18:00 회차 입장권·차량 예약 필요</span></div></div><div class="beat"><time>19:40</time><div>짐바란 해변에서 마지막 저녁</div></div><div class="beat"><time>21:15</time><div>힐튼 가든 인 공항 체크인</div></div></div></div><figure class="day-photo"><img src="assets/trip-db717d4c8bc494c3.jpg" alt="울루와뚜 케착"><span>울루와뚜 케착</span></figure></div>
+          <div class="day-main"><div><h3>울루와뚜 케착과 짐바란 저녁</h3><p>오후 3시 차량 출발을 목표로 라구나에서 쉬다가 울루와뚜 사원과 짐바란으로 이동합니다. 레이트 체크아웃이 불가하면 먼저 짐을 맡깁니다. 사원 산책 뒤 18시 케착 공연을 보고 해변에서 저녁을 먹은 다음 공항 앞 호텔로 이동합니다.</p><p class="day-meal">공연 뒤 저녁은 <a href="#eat-lia">Lia Cafe 해산물구이</a> 도착이 늦어지면 기사와 식당에 시간을 맞춥니다.</p><p class="day-tip"><a href="#tips-uluwatu">사원에서 볼 것과 공연 뒤 이동</a></p><div class="schedule"><div class="beat"><time>오전</time><div>조식, 수영장, 짐 정리</div></div><div class="beat"><time>15:00</time><div>라구나에서 기사 미팅 후 출발</div></div><div class="beat"><time>17:15</time><div>울루와뚜 사원 산책</div></div><div class="beat"><time>18:00</time><div><strong>케착 파이어 댄스</strong><span class="transport-note">18:00 회차 입장권·차량 예약 필요</span></div></div><div class="beat"><time>19:40</time><div>짐바란 해변에서 마지막 저녁</div></div><div class="beat"><time>21:15</time><div>힐튼 가든 인 공항 체크인</div></div></div></div><figure class="day-photo"><img src="assets/trip-db717d4c8bc494c3.jpg" alt="울루와뚜 케착"><span>울루와뚜 케착</span></figure></div>
         </article>
 
         <article class="day">
@@ -816,7 +826,7 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
 <!-- Input: restaurants.json sha256:0a10be2c1696eb1bae1e853ca96720bc3358c67f68bfed526b4875e0d3bae6ab -->
   <section id="food"><div class="wrap">
     <div class="section-head"><div><h2>어디서 먹을까</h2><p>숙소와 그날 동선에 맞춰 골라 둔 식당입니다. 길리와 우붓에서는 포함된 호텔 조식을 먹고, 점심과 저녁을 가까운 곳에서 고릅니다.</p></div><a href="https://www.google.com/maps/d/viewer?mid=1VREBbsg6ZiLug3qy1c3ihiRJwRhkkDY" target="_blank" rel="noopener">숙소·맛집 전체 지도</a></div>
-    <p class="food-budget-note">지도에서 파란 핀은 숙소, 주황 핀은 맛집입니다. 맛집 핀을 누르면 메뉴와 1인 식사 예산을 볼 수 있습니다.</p>
+    <p class="food-budget-note">지도에서 파란 핀은 숙소, 주황 핀은 맛집, 초록 핀은 볼거리와 카페입니다. 맛집 핀을 누르면 메뉴와 1인 식사 예산을 볼 수 있습니다.</p>
     <nav class="food-jumps" aria-label="지역별 맛집">
 <a href="#food-kl">쿠알라룸푸르</a>
 <a href="#food-jb">조호르바루</a>
@@ -1040,21 +1050,275 @@ footer { padding: 38px 0 70px; border-top: 1px solid var(--line-soft); color: va
   </div></section>
 <!-- RESTAURANTS:GENERATED:END -->
 
-  <section id="places">
-    <div class="wrap">
-      <div class="section-head"><div><h2>지역별 볼거리</h2></div></div>
-      <div class="place-grid">
-        <article class="place-card"><header><time>9/24</time><div><h3>쿠알라룸푸르</h3><p class="known-for">도심 한가운데 솟은 페트로나스 트윈타워와 말레이 음식으로 잘 알려진 도시입니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>KLCC 공원, 메르데카 광장, 부킷빈탕 마사지</dd></div><div><dt>식당</dt><dd><a href="#food-kl">KL 식당과 메뉴</a></dd></div></dl></article>
-        <article class="place-card"><header><time>9/24부터 9/27</time><div><h3>조호르바루</h3><p class="known-for">싱가포르 국경을 마주 보는 도시로, 하루 쉬면서 현지 음식을 즐기기 좋습니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>탄히옥니 문화거리, JB 올드타운, R&amp;F 마리나 산책</dd></div><div><dt>식당</dt><dd><a href="#food-jb">JB 식당과 메뉴</a></dd></div></dl></article>
-        <article class="place-card"><header><time>9/26</time><div><h3>싱가포르</h3><p class="known-for">USS를 중심으로 즐긴 뒤, 저녁에는 가든스 바이 더 베이와 마리나베이 야경을 감상합니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>유니버설 스튜디오, 가든스 바이 더 베이, 마리나베이 산책</dd></div><div><dt>식당</dt><dd><a href="#food-singapore">USS 점심과 MBS 저녁</a></dd></div></dl></article>
-        <article class="place-card"><header><time>9/27과 10/7부터</time><div><h3>누사두아</h3><p class="known-for">파도가 잔잔한 해변과 큰 리조트가 모여 있습니다. 첫날은 배편을 위한 숙박, 마지막에는 라구나에서 휴식을 즐깁니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>라구나 라군 풀, 누사두아 해변, 워터 블로우</dd></div><div><dt>식당</dt><dd><a href="#food-benoa">첫날 베노아 식당</a> · <a href="#food-laguna">라구나 기념일 저녁</a></dd></div></dl></article>
-        <article class="place-card"><header><time>9/28부터</time><div><h3>길리 에어</h3><p class="known-for">차가 없는 작은 섬입니다. 동쪽 바다에서는 거북이를 보기 좋고, 서쪽은 조용한 일몰로 유명합니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>Turtle Beach, 자전거 섬 한 바퀴, 서쪽 해변 일몰</dd></div><div><dt>식당</dt><dd><a href="#food-gili-air">길리 에어 식당과 메뉴</a></dd></div></dl></article>
-        <article class="place-card"><header><time>10/1부터</time><div><h3>길리 트라왕안</h3><p class="known-for">세 섬 중 식당과 다이브숍이 가장 많습니다. 동쪽은 활기차고 서쪽은 일몰이 좋습니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>Shark Point 또는 Halik, 서쪽 해변 자전거길, 동쪽 메인 스트립</dd></div><div><dt>식당</dt><dd><a href="#food-gili-t">동쪽·서쪽 식당과 메뉴</a></dd></div></dl></article>
-        <article class="place-card"><header><time>10/5부터 10/7</time><div><h3>우붓</h3><p class="known-for">페르티위 비스마에서 2박을 보냅니다. 10/6 오전에는 아융강 래프팅을 하고, 오후에는 숙소에서 쉬거나 시내를 걷습니다.</p></div></header><dl class="place-picks"><div><dt>하루 계획</dt><dd>10/6 오전 아융강 래프팅, 오후 휴식과 시내 산책</dd></div><div><dt>숙소</dt><dd><a href="#stay-pertiwi">페르티위 비스마 · 조식 07:00–10:00 · 주소와 지도</a></dd></div></dl></article>
-        <article class="place-card"><header><time>10/9</time><div><h3>울루와뚜와 짐바란</h3><p class="known-for">라구나 체크아웃 뒤 당일 코스로 들릅니다. 절벽 사원과 일몰 공연을 본 뒤 짐바란에서 저녁을 먹습니다.</p></div></header><dl class="place-picks"><div><dt>가볼 곳</dt><dd>울루와뚜 사원, 일몰 케착 공연</dd></div><div><dt>식당</dt><dd><a href="#food-jimbaran">짐바란 저녁과 주문 안내</a></dd></div></dl></article>
-      </div>
-    </div>
-  </section>
+<!-- LOCAL-TIPS:GENERATED:START -->
+<!-- Input: local_tips.json sha256:fed1fb2df5c84c010dfb83296510b8fa7b3a8860516986eaebf4b120a3febe81 -->
+<section id="places"><div class="wrap">
+<div class="section-head"><div><h2>지역별 꿀팁</h2>
+<p>어디를 걷고, 뭘 먹고, 어느 카페에서 쉴지 골라뒀습니다. 그날 끌리는 곳 한두 군데만 들러도 충분합니다.</p></div>
+<a href="https://www.google.com/maps/d/viewer?mid=1VREBbsg6ZiLug3qy1c3ihiRJwRhkkDY" target="_blank" rel="noopener">볼거리·카페까지 한 지도에</a>
+</div>
+<nav class="food-jumps" aria-label="지역별 꿀팁">
+<a href="#tips-kl">쿠알라룸푸르</a>
+<a href="#tips-jb">조호르바루</a>
+<a href="#tips-singapore">싱가포르</a>
+<a href="#tips-benoa">탄중 베노아</a>
+<a href="#tips-gili-air">길리 에어</a>
+<a href="#tips-gili-t">길리 트라왕안</a>
+<a href="#tips-ubud">우붓</a>
+<a href="#tips-nusa-dua">누사두아</a>
+<a href="#tips-uluwatu">울루와뚜와 짐바란</a>
+</nav>
+<div class="place-grid">
+<article class="place-card" id="tips-kl">
+<header><time>9/24</time><div><h3>쿠알라룸푸르</h3>
+<p class="known-for">환승일에는 차이나타운에서 아침과 짧은 산책을 즐기고, KL Sentral로 돌아와 공항 이동을 준비합니다. 공항 도착 목표는 15:00입니다.</p></div></header>
+<div class="local-tips">
+<div class="local-tip" id="tip-kl-breakfast">
+<h4>옛 우체국에서 코피와 토스트</h4>
+<p>07:30에 문을 여는 Kafei Dian에서 코피와 카레치킨 토스트로 아침을 시작합니다. 옛 우체국 건물을 살린 공간이므로 식사 전후에 외관과 실내도 함께 둘러봅니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Kafei+Dian+Petaling+Street+KL%2C+15-1+Jalan+Balai+Polis%2C+Kuala+Lumpur" target="_blank" rel="noopener">지도</a> <a href="#eat-kafei-dian">Kafei Dian 식사 안내</a></div>
+</div>
+<div class="local-tip" id="tip-kwai-chai-hong">
+<h4>09시 이후 벽화 골목 산책</h4>
+<p>아침을 먹은 뒤 09:00에 문을 여는 Kwai Chai Hong으로 이동합니다. Lorong Panggung의 벽화를 보고 골목 사진을 찍는 데 20~30분을 배정하면 짧은 환승 일정에도 넣기 좋습니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Kwai+Chai+Hong%2C+Lorong+Panggung%2C+50000+Kuala+Lumpur%2C+Malaysia" target="_blank" rel="noopener">지도</a> <a href="#eat-kafei-dian">산책 전 Kafei Dian 아침</a></div>
+</div>
+<div class="local-tip" id="tip-kl-airport-lunch">
+<h4>공항 가기 전 NU Sentral에서 점심</h4>
+<p>공항 복귀 전 점심은 NU Sentral의 Ali, Muthu &amp; Ah Hock으로 연결합니다. 13:30쯤 식사를 마치고 KLIA Ekspres 승강장으로 이동해 15:00 공항 도착에 맞춥니다. 현재 공식 안내는 20분 간격 운행이며, KL Sentral에서 KLIA T1까지 28분, T2까지 33분이므로 이용 터미널도 확인합니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ali+Muthu+Ah+Hock+NU+Sentral%2C+GF.37+GF.38%2C+201+Jalan+Tun+Sambanthan%2C+Kuala+Lumpur" target="_blank" rel="noopener">지도</a> <a href="#eat-ali-muthu">Ali, Muthu &amp; Ah Hock 점심</a></div>
+</div>
+</div>
+<details class="tip-sources"><summary>방문 전 확인할 안내</summary><ul>
+<li><a href="https://www.malayaheritage.com/" target="_blank" rel="noopener">Kafei Dian 운영사 공식 소개·메뉴·영업시간</a></li>
+<li><a href="https://www.kwaichaihong.com/" target="_blank" rel="noopener">Kwai Chai Hong 공식 위치·영업시간</a></li>
+<li><a href="https://www.nusentral.com/portfolio-item/ali-muthu-ah-hock/" target="_blank" rel="noopener">NU Sentral 공식 식당 위치</a></li>
+<li><a href="https://www.kliaekspres.com/products-fares/klia-ekspres/" target="_blank" rel="noopener">KLIA Ekspres 공식 운행 간격</a></li>
+<li><a href="https://www.kliaekspres.com/plan-your-trip/plan/faq-on-airport-transfer-by-train-to-kuala-lumpur-city" target="_blank" rel="noopener">KLIA Ekspres 공식 터미널별 소요시간</a></li>
+</ul></details>
+</article>
+<article class="place-card" id="tips-jb">
+<header><time>9/24–27</time><div><h3>조호르바루</h3>
+<p class="known-for">R&amp;F Phase 2 숙소를 기준으로 도착일 저녁과 다음 날 구시가 산책을 연결합니다. 숙소 로비와 R&amp;F Mall의 식당 위치는 각각 확인합니다.</p></div></header>
+<div class="local-tips">
+<div class="local-tip" id="tip-jb-late-dinner">
+<h4>체크인 뒤 R&amp;F Mall에서 늦은 저녁</h4>
+<p>도착일 늦은 저녁은 Pacific Kopi의 R&amp;F Mall 지점으로 연결합니다. 브랜드가 연결한 지도는 07:00~24:00 영업을 안내하며, 볶음국수나 나시르막에 코피를 곁들이기 좋습니다. 이동할 때는 숙소 Phase 2 로비와 식당의 위치를 구분해 확인합니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Pacific+Kopi+R%26F+Mall%2C+Lot+110%2C+Jalan+Tanjung+Puteri%2C+80300+Johor+Bahru%2C+Malaysia" target="_blank" rel="noopener">지도</a> <a href="#eat-pacific-kopi">Pacific Kopi 늦은 저녁</a></div>
+</div>
+<div class="local-tip" id="tip-jb-hua-mui-walk">
+<h4>치킨찹부터 먹고 탄히옥니 걷기</h4>
+<p>9/25에는 Hua Mui Jalan Trus 본점에서 14:00~15:00쯤 치킨찹으로 늦은 점심을 먹습니다. 본점은 08:00~17:00 영업하며 주문은 16:50에 마감하므로 식사를 먼저 두고 탄히옥니 산책을 이어갑니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Restoran+Hua+Mui%2C+131+Jalan+Trus%2C+80000+Johor+Bahru%2C+Malaysia" target="_blank" rel="noopener">지도</a> <a href="#eat-hua-mui">Hua Mui 점심 안내</a></div>
+</div>
+<div class="local-tip" id="tip-hiap-joo">
+<h4>바나나케이크는 숙소 간식으로</h4>
+<p>탄히옥니 산책 중 Hiap Joo Bakery &amp; Biscuit Factory에서 바나나케이크를 포장하면 숙소 간식으로 즐기기 좋습니다. 주소는 13 Jalan Tan Hiok Nee이며, 영업시간과 재고는 당일 확인이 필요합니다. 줄이 길면 기다리기보다 골목 산책을 이어갑니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hiap+Joo+Bakery+%26+Biscuit+Factory%2C+13+Jalan+Tan+Hiok+Nee%2C+80000+Johor+Bahru%2C+Malaysia" target="_blank" rel="noopener">지도</a> <a href="#eat-hua-mui">산책 전 Hua Mui 점심</a></div>
+</div>
+</div>
+<details class="tip-sources"><summary>방문 전 확인할 안내</summary><ul>
+<li><a href="https://linktr.ee/pacifickopi" target="_blank" rel="noopener">Pacific Kopi 공식 메뉴·지점 연결</a></li>
+<li><a href="https://www.waze.com/en/live-map/directions/my/johor-darul-tazim/johor-bahru/pacific-kopi-@-randf-mall-%E6%B0%91%E6%B4%8B%E8%8C%B6%E5%AE%A4-@-%E5%AF%8C%E5%8A%9B%E5%B9%BF%E5%9C%BA?to=place.ChIJJ_XLlKYT2jERdFfJyF2lE_M" target="_blank" rel="noopener">브랜드가 연결한 R&amp;F Mall 지도·영업시간</a></li>
+<li><a href="https://eatbook.sg/rnf-mall-jb-food-guide/" target="_blank" rel="noopener">2026년 8월 R&amp;F Mall 메뉴 보조자료</a></li>
+<li><a href="https://huamui.com/contact-us/" target="_blank" rel="noopener">Hua Mui 공식 본점 위치·영업시간</a></li>
+<li><a href="https://huamui.com/" target="_blank" rel="noopener">Hua Mui 공식 대표 메뉴 소개</a></li>
+<li><a href="https://www.mbjb.gov.my/sites/default/files/2022-05/johorfoodpamphlet_fa_1.pdf" target="_blank" rel="noopener">JB 시청 관광자료: 매장·대표 메뉴·주소</a></li>
+<li><a href="https://maps.apple.com/place?place-id=IAD6E33920C35BBBF" target="_blank" rel="noopener">지도 위치 보조자료</a></li>
+</ul></details>
+</article>
+<article class="place-card" id="tips-singapore">
+<header><time>9/26</time><div><h3>싱가포르</h3>
+<p class="known-for">USS를 10:00~17:00에 관람한 뒤 Rasapura Masters 저녁, 20:00 Spectra, 20:45 Garden Rhapsody를 이어갑니다. 조호르바루로 돌아갈 때는 Woodlands Train Checkpoint에서 출발하는 22:30 열차를 이용합니다.</p></div></header>
+<div class="local-tips">
+<div class="local-tip" id="tip-uss-lunch">
+<h4>USS에서는 점심을 조금 일찍</h4>
+<p>입장 전에 USS 앱에서 그날 운영과 임시 휴장 놀이기구를 확인합니다. 재입장이 불가능한 일정이므로 점심은 내부 Goldilocks에서 11:30 전후를 시도하되, 실제 매장 운영에 맞춰 조정합니다. 1인 식사 예산은 SGD18~25의 추정액으로 잡고 현장 메뉴 가격을 확인합니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Goldilocks%2C+Far+Far+Away%2C+Universal+Studios+Singapore%2C+Singapore" target="_blank" rel="noopener">지도</a> <a href="#eat-goldilocks">Goldilocks 내부 점심</a></div>
+</div>
+<div class="local-tip" id="tip-spectra">
+<h4>저녁 뒤 수변에서 분수쇼</h4>
+<p>Rasapura Masters에서 18:00~19:00에 저녁을 먹고 19:40쯤 Event Plaza 관람 위치로 이동합니다. 20:00 Spectra는 수변에서 보는 15분 무료 공연입니다. 공연이 끝나면 20:45 Garden Rhapsody 관람을 위해 바로 이동합니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Spectra+A+Light+%26+Water+Show%2C+Event+Plaza%2C+Marina+Bay+Sands%2C+Singapore" target="_blank" rel="noopener">지도</a> <a href="#eat-rasapura">공연 전 Rasapura Masters 저녁</a></div>
+</div>
+<div class="local-tip" id="tip-supertree-grove">
+<h4>슈퍼트리 야경 뒤 조호르바루로</h4>
+<p>20:45 Garden Rhapsody는 Supertree Grove에서 관람합니다. MBS에서는 Bayfront MRT Exit B 지하 연결통로와 Dragonfly Bridge를 거치는 공식 보행 경로를 이용합니다. 공연이 끝나면 바로 차량 승차장으로 이동하고, Grab에 Woodlands Train Checkpoint를 목적지로 지정해 22:30 열차의 22:10 게이트 마감까지 여유가 있는지 실시간 도착예상으로 확인합니다. 20:40에 배차를 미리 확인하고 21:10 출발이 어려워지면 쇼를 조금 일찍 나옵니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Supertree+Grove%2C+Gardens+by+the+Bay%2C+18+Marina+Gardens+Drive%2C+Singapore+018953" target="_blank" rel="noopener">지도</a> <a href="#eat-rasapura">저녁 식사와 공연 동선</a></div>
+</div>
+</div>
+<details class="tip-sources"><summary>방문 전 확인할 안내</summary><ul>
+<li><a href="https://www.rwsentosa.com/en/play/universal-studios-singapore" target="_blank" rel="noopener">USS 공식 앱·운영 안내</a></li>
+<li><a href="https://www.rwsentosa.com/-/jssmedia/project/non-gaming/rwsentosa/attractions/universal-studios-singapore/dining/menu/goldilock/gfc-menu.pdf?hash=64C8AFDDD0E4687696E9BEB4625BAA18&amp;rev=4812aa4469a5421e9fd15d87df86e9d2&amp;sc_lang=en" target="_blank" rel="noopener">Goldilocks 공식 메뉴</a></li>
+<li><a href="https://www.marinabaysands.com/attractions/spectra.html" target="_blank" rel="noopener">MBS 공식 Spectra 관람장·공연 길이</a></li>
+<li><a href="https://www.marinabaysands.com/plan-your-visit/family.html" target="_blank" rel="noopener">MBS 공식 Spectra 공연 시간</a></li>
+<li><a href="https://www.marinabaysands.com/restaurants/rasapura-masters.html" target="_blank" rel="noopener">Rasapura Masters 공식 위치·영업시간</a></li>
+<li><a href="https://www.gardensbythebay.com.sg/en/things-to-do/calendar-of-events/garden-rhapsody.html" target="_blank" rel="noopener">Garden Rhapsody 공식 공연 시간·관람 위치</a></li>
+<li><a href="https://www.gardensbythebay.com.sg/en/plan-your-visit/getting-here.html" target="_blank" rel="noopener">Gardens by the Bay 공식 보행 경로</a></li>
+<li><a href="https://online.ktmb.com.my/Home/ShuttleFAQ" target="_blank" rel="noopener">KTMB 공식 Woodlands 탑승 게이트 마감</a></li>
+</ul></details>
+</article>
+<article class="place-card" id="tips-benoa">
+<header><time>9/27–28</time><div><h3>탄중 베노아</h3>
+<p class="known-for">아이온에서 보내는 첫날 밤입니다. 다음 날 이른 배를 타므로 호텔 근처에서 저녁을 먹고 쉽니다.</p></div></header>
+<div class="local-tips">
+<div class="local-tip" id="tip-benoa-dinner">
+<h4>첫날 저녁은 가까운 곳에서</h4>
+<p>도착 후 기운이 있으면 Warung Sari Boga에서 나시고렝이나 사테를 먹습니다. 쉬고 싶은 날은 호텔 가까운 Glaze에서 저녁을 먹어도 좋습니다. 발리 첫날부터 먼 카페를 찾아가기보다 다음 날 배에 맞춰 일찍 쉽니다.</p>
+<div class="food-links"><a href="#eat-sari-boga">현지식 메뉴와 예산</a> <a href="#eat-glaze">Glaze 저녁 메뉴</a></div>
+</div>
+<div class="local-tip" id="tip-benoa-early-boat">
+<h4>배 타는 날 아침은 전날 준비</h4>
+<p>아이온 예약은 조식 불포함이고, 다음 날 06:15 차량 출발을 목표로 합니다. 전날 저녁에 물과 간단한 아침을 사두고, 체크아웃 때 보증금을 돌려받습니다. 누사두아 항구의 체크인 장소는 배 티켓에 적힌 곳으로 기사와 맞춥니다.</p>
+<div class="food-links"><a href="#stay-ion">아이온 이용 안내</a> <a href="#boats">배 체크인 안내</a></div>
+</div>
+</div>
+</article>
+<article class="place-card" id="tips-gili-air">
+<header><time>9/28–10/1</time><div><h3>길리 에어</h3>
+<p class="known-for">아침은 호텔에서 먹고, 낮에는 섬 안쪽 카페나 북동쪽 바다를 둘러봅니다. 노을을 보는 날에는 서쪽 해변까지 산책합니다.</p></div></header>
+<div class="local-tips">
+<div class="local-tip" id="tip-gili-coffee-roasters">
+<h4>Gili Coffee Roasters에서 커피 한 잔</h4>
+<p>9/29 오전이나 이른 오후에 섬 안쪽을 걸으며 들르기 좋습니다. 인도네시아 원두로 내린 커피와 직접 만든 빵을 고르고, 마음에 들면 원두를 기념품으로 사도 좋습니다. 공식 안내상 일반 영업일은 08:00–16:30이므로 낮에 방문합니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Gili+Coffee+Roasters+Sunset+Boulevard+Gili+Air+Indonesia" target="_blank" rel="noopener">지도</a></div>
+</div>
+<div class="local-tip" id="tip-hans-reef">
+<h4>북동쪽 바다와 점심을 한 번에</h4>
+<p>9/29 또는 9/30에는 북동쪽 Hans Reef 주변 스노클링과 Pachamama 점심을 묶으면 동선이 좋습니다. Hans Reef는 다이빙 지점으로도 쓰이는 바다 구역이므로, 현지 다이브센터에서 그날 입수 지점과 조류를 확인한 뒤 들어갑니다.</p>
+<div class="food-links"><a href="#eat-pachamama">Pachamama에서 점심</a></div>
+</div>
+<div class="local-tip" id="tip-artjuna">
+<h4>Blue Marine 안의 작은 갤러리</h4>
+<p>북동쪽을 산책할 때 Blue Marine Dive Gili Air 안의 Artjuna Gallery도 잠깐 둘러봅니다. 현지 작품을 소개하는 공간으로, 스노클링을 쉬는 날이나 점심 전후에 들를 만합니다.</p>
+</div>
+<div class="local-tip" id="tip-mowies">
+<h4>Mowies 앞 서쪽 해변에서 노을</h4>
+<p>9/28 또는 9/30 늦은 오후에는 Mowies 앞 서쪽 해변까지 산책합니다. 음료를 마시며 노을을 본 뒤 숙소 쪽으로 돌아와 저녁을 먹으면 됩니다. 모래 위 테이블을 이용하고 싶다면 그날 자리를 확인합니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Mowies+Gili+Air+Bar+and+Bungalows+West+Beach+Indonesia" target="_blank" rel="noopener">지도</a></div>
+</div>
+</div>
+<details class="tip-sources"><summary>방문 전 확인할 안내</summary><ul>
+<li><a href="https://www.gilicoffeeroasters.com/our-location" target="_blank" rel="noopener">공식 위치·영업 안내</a></li>
+<li><a href="https://www.bluemarinedive.com/resort" target="_blank" rel="noopener">Blue Marine의 스노클링 안내</a></li>
+<li><a href="https://www.giliairdivers.com/id/dive-sites/hans-reef/" target="_blank" rel="noopener">Hans Reef 위치·수심</a></li>
+<li><a href="https://www.bluemarinedive.com/gili-air-1" target="_blank" rel="noopener">Blue Marine의 갤러리 안내</a></li>
+<li><a href="https://www.mowiesgiliair.com/" target="_blank" rel="noopener">공식 서쪽 해변 위치 안내</a></li>
+<li><a href="https://www.mowiesgiliair.com/restaurant" target="_blank" rel="noopener">식당 방문 안내</a></li>
+</ul></details>
+</article>
+<article class="place-card" id="tips-gili-t">
+<header><time>10/1–3 동쪽 · 10/3–5 서쪽</time><div><h3>길리 트라왕안</h3>
+<p class="known-for">동쪽에 머무는 동안 항구 주변 카페와 야시장, 북동쪽 바다를 둘러봅니다. 펄 선셋으로 옮긴 뒤에는 서쪽에서 수영하고 쉬는 시간을 충분히 둡니다.</p></div></header>
+<div class="local-tips">
+<div class="local-tip" id="tip-kayu-cafe">
+<h4>Kayu Café에서 더위 식히기</h4>
+<p>10/1 도착 후에는 항구 근처 Kayu Café에서 잠깐 쉬어갑니다. 실내 에어컨 좌석에서 아이스커피와 직접 만든 케이크를 고르고, 배가 고프면 샌드위치나 가벼운 점심으로 이어가도 좋습니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Kayu+Cafe+and+Restaurant+Gili+Trawangan+Harbour+Indonesia" target="_blank" rel="noopener">지도</a></div>
+</div>
+<div class="local-tip" id="tip-turtle-point">
+<h4>Turtle Point는 북동쪽 해변에서</h4>
+<p>거북을 찾아보고 싶다면 10/1–3 동쪽에 머무는 동안 북동쪽 Turtle Point를 후보로 둡니다. 핀은 해변 구역을 가리키며, 실제 입수 지점은 그날 물때와 조류를 확인해 정합니다. 관찰은 운에 달려 있고, 거북을 만나면 충분히 거리를 두고 조용히 지켜봅니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Turtle+Point+M26P%2B7XQ+Gili+Terawangan" target="_blank" rel="noopener">지도</a></div>
+</div>
+<div class="local-tip" id="tip-gili-night-market">
+<h4>야시장은 한 접시만 가볍게</h4>
+<p>10/1 저녁에는 항구 근처 야시장에서 사테 아얌이나 나시 참푸르를 맛보는 것도 좋습니다. 한 접시부터 시작해 배가 고프면 더 고릅니다. 생선구이는 주문 전에 크기와 총액을 확인합니다.</p>
+</div>
+<div class="local-tip" id="tip-pearl-sunset-rest">
+<h4>서쪽에서는 짧게 걷고 충분히 쉬기</h4>
+<p>10/4에는 서쪽 해변을 조금 걷고 루미에서 점심을 먹은 뒤 수영과 낮잠 시간을 넉넉히 둡니다. 펄 선셋 자체가 노을을 보는 서쪽 해변에 있으니, 저녁에는 숙소로 돌아와 바다를 보며 편하게 식사합니다.</p>
+<div class="food-links"><a href="#eat-lumi">Lumi에서 점심</a> <a href="#eat-cloud9">Cloud9에서 저녁</a></div>
+</div>
+</div>
+<details class="tip-sources"><summary>방문 전 확인할 안내</summary><ul>
+<li><a href="https://kayucafegili.wixsite.com/home" target="_blank" rel="noopener">카페 공식 소개·위치</a></li>
+<li><a href="https://restaurantguru.com/Kayu-Cafe-Indonesia" target="_blank" rel="noopener">최근 영업·상호 확인</a></li>
+<li><a href="https://www.indonesia.travel/id/en/travel-ideas/adventure/gili-trawangan" target="_blank" rel="noopener">관광청 스노클링 안내</a></li>
+<li><a href="https://bluewater-express.com/news/tips/go-snorkeling-in-the-gili-islands-with-bluewater-express/" target="_blank" rel="noopener">위치·입수 시 참고사항</a></li>
+<li><a href="https://www.indonesia.travel/id/id/travel-ideas/adventure/gili-trawangan" target="_blank" rel="noopener">관광청 음식·위치 안내</a></li>
+<li><a href="https://gili.travel/restaurants-bars/trawangan-night-market/" target="_blank" rel="noopener">야시장 위치·저녁 운영</a></li>
+<li><a href="https://pearlsunsetresort.com/" target="_blank" rel="noopener">Pearl Sunset 공식 위치</a></li>
+<li><a href="https://hotel-lumi.com/" target="_blank" rel="noopener">Lumi 서쪽 위치</a></li>
+</ul></details>
+</article>
+<article class="place-card" id="tips-ubud">
+<header><time>10/5–7</time><div><h3>우붓</h3>
+<p class="known-for">페르티위 비스마 우붓에서 2박을 합니다. 10/6 오전 아융강 래프팅 뒤에는 쉬었다가 카페나 연못 정원에 들릅니다.</p></div></header>
+<div class="local-tips">
+<div class="local-tip" id="tip-seniman">
+<h4>세니만에서 인도네시아 원두 한 잔</h4>
+<p>Jl. Sri Wedari No.5의 세니만은 인도네시아 원두와 여러 추출 방식을 고를 수 있는 카페입니다. 10/6 래프팅 뒤 씻고 쉬었다가 시내에 나갈 때 들릅니다. 필터커피가 궁금하면 원하는 산미와 진하기를 말하고 그날 마실 원두를 추천받습니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Seniman+Coffee+Jl.+Sri+Wedari+No.5+Ubud+Bali" target="_blank" rel="noopener">지도</a> <a href="#eat-sun-sun">우붓 저녁 메뉴</a></div>
+</div>
+<div class="local-tip" id="tip-water-palace">
+<h4>연꽃 연못과 발리 조각 보기</h4>
+<p>Ubud Water Palace에서는 연꽃 연못과 중앙 길, 문에 새겨진 조각을 둘러봅니다. 10/6 오후에 짧게 걷고 싶을 때 선택하고, 입구에서 제공하는 사롱을 착용합니다. 사원 내부는 관광객 출입 대상이 아니며 음식과 음료는 들어가기 전에 마칩니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ubud+Water+Palace+Pura+Taman+Kemuda+Saraswati+Jalan+Raya+Ubud+No.14+Bali" target="_blank" rel="noopener">지도</a></div>
+</div>
+<div class="local-tip" id="tip-ubud-rest-first">
+<h4>도착일은 비스마 거리에서 마무리</h4>
+<p>10/5는 길리에서 배와 차량으로 이동하므로 호텔에 도착한 뒤 가까운 곳에서 먹고 쉽니다. 다음 날 오전 래프팅을 마치고도 피곤하면 시내 산책을 생략하고 비스마 거리에서 저녁을 먹습니다. 기사에게 숙소를 보여줄 때는 Google 지도에 ‘페르티위 비스마 2’로 표시되는 호텔 핀을 사용합니다.</p>
+<div class="food-links"><a href="#stay-pertiwi">숙소 위치와 이용 안내</a> <a href="#eat-bisma-sunset">비스마 거리 저녁 메뉴</a></div>
+</div>
+</div>
+<details class="tip-sources"><summary>방문 전 확인할 안내</summary><ul>
+<li><a href="https://www.senimancoffee.com/seniman-ubud/" target="_blank" rel="noopener">공식 카페 안내</a></li>
+<li><a href="https://ubudwaterpalace.com/" target="_blank" rel="noopener">공식 장소 소개</a></li>
+<li><a href="https://ubudwaterpalace.com/do-dont/" target="_blank" rel="noopener">방문 규칙</a></li>
+</ul></details>
+</article>
+<article class="place-card" id="tips-nusa-dua">
+<header><time>10/7–9 · 기념일 저녁은 10/8</time><div><h3>누사두아</h3>
+<p class="known-for">라구나에서 쉬는 시간을 넉넉히 둡니다. 밖에 나가고 싶은 날에 박물관이나 카페 한 곳을 골라 다녀옵니다.</p></div></header>
+<div class="local-tips">
+<div class="local-tip" id="tip-dua-kafe">
+<h4>발리 컬렉션 구경 뒤 커피 한 잔</h4>
+<p>DUA Kafe는 발리 컬렉션 A-17#4에 있어 상점 구경과 함께 들르기 좋습니다. 10/7–8에 외출하고 싶을 때 커피 한 잔 쉬어갑니다. 10/8에는 기념일 저녁을 여유 있게 즐기도록 카페에서는 간단히 주문합니다. 지도는 쇼핑 단지 위치를 표시하므로 도착 후 매장 번호로 찾습니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bali+Collection+Nusa+Dua+Bali" target="_blank" rel="noopener">지도</a> <a href="#eat-arwana">기념일 저녁 메뉴</a></div>
+</div>
+<div class="local-tip" id="tip-museum-pasifika">
+<h4>발리를 그린 그림 만나기</h4>
+<p>Museum Pasifika에서는 발리에서 활동한 화가들의 작품과 아시아·태평양 미술을 함께 볼 수 있습니다. 10/7–8에 관심 있는 전시실 위주로 둘러보는 짧은 외출로 잡습니다. 전시관은 냉방 대신 환기를 이용하므로, 더위를 피하려고 간다면 날씨와 컨디션을 보고 선택합니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Museum+Pasifika+ITDC+Area+Block+P+Benoa+Nusa+Dua+Bali" target="_blank" rel="noopener">지도</a></div>
+</div>
+<div class="local-tip" id="tip-water-blow">
+<h4>워터블로우는 개방 확인 후 산책</h4>
+<p>Water Blow는 바위 틈으로 밀려드는 파도를 보는 곳이며, 파도가 잔잔한 날에는 해안 경치를 즐기는 정도로 생각합니다. 개방 여부가 확인되지 않은 곳이라 10/7–8 산책 당일 호텔에 먼저 물어보고, 안내받은 접근로로 갑니다. 파도는 지정 전망 구역에서 바라보고 사진도 그 안에서 찍습니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Water+Blow+Peninsula+Island+Nusa+Dua+Bali" target="_blank" rel="noopener">지도</a></div>
+</div>
+</div>
+<details class="tip-sources"><summary>방문 전 확인할 안내</summary><ul>
+<li><a href="https://bali-collection.com/tenant/dua-kafe" target="_blank" rel="noopener">쇼핑몰 공식 매장 안내</a></li>
+<li><a href="https://www.museum-pasifika.com/" target="_blank" rel="noopener">공식 전시·위치 안내</a></li>
+<li><a href="https://www.museum-pasifika.com/about" target="_blank" rel="noopener">박물관 시설 안내</a></li>
+<li><a href="https://www.cms.itdc.co.id/press-release/januari-2022-water-blow-peninsula-nusa-dua-resmi-dibuka-kembali-untuk-umum-20220118100703" target="_blank" rel="noopener">운영기관 위치 안내</a></li>
+</ul></details>
+</article>
+<article class="place-card" id="tips-uluwatu">
+<header><time>10/9 · 케착 18:00 회차</time><div><h3>울루와뚜와 짐바란</h3>
+<p class="known-for">공연 전에는 절벽과 사원을 둘러보고, 공연이 끝나면 짐바란에서 저녁을 먹습니다. 이날은 다른 해변이나 카페를 더 넣지 않아도 충분합니다.</p></div></header>
+<div class="local-tips">
+<div class="local-tip" id="tip-uluwatu-temple">
+<h4>공연 전에 절벽길 둘러보기</h4>
+<p>울루와뚜에서는 바다 위 절벽에 선 사원의 실루엣을 봅니다. 10/9 케착 18:00 회차 전에 사원도 둘러볼 수 있도록 17:15 사원 산책 전에 도착하도록 이동하고, 공연 티켓의 입장 안내를 따릅니다. 사롱 등 입구 복장 안내를 따르고 안경·모자·휴대폰은 원숭이에게 빼앗기지 않게 챙깁니다.</p>
+<div class="food-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Uluwatu+Temple+Pura+Luhur+Uluwatu+Pecatu+South+Kuta+Bali" target="_blank" rel="noopener">지도</a></div>
+</div>
+<div class="local-tip" id="tip-uluwatu-jimbaran-evening">
+<h4>공연 뒤에는 기사와 바로 만나기</h4>
+<p>공연장에 들어가기 전에 기사와 다시 만날 위치를 정해 둡니다. 공연 뒤 출차와 도로 상황에 따라 Lia Cafe 도착이 늦어질 수 있으므로 19:40은 목표 시각으로 생각합니다. 짐바란에서는 생선과 새우를 나눠 먹고, 주문 전에 무게와 세금을 포함한 총액을 확인한 뒤 공항 앞 힐튼 가든 인으로 이동합니다.</p>
+<div class="food-links"><a href="#eat-lia">짐바란 저녁과 주문 안내</a> <a href="#stay-hgi">마지막 숙소 안내</a></div>
+</div>
+</div>
+<details class="tip-sources"><summary>방문 전 확인할 안내</summary><ul>
+<li><a href="https://disparda.baliprov.go.id/en/uluwatu-clip/" target="_blank" rel="noopener">발리 관광청 장소 소개</a></li>
+<li><a href="https://www.indonesia.travel/id/id/travel-ideas/pilgrimage/pura-uluwatu" target="_blank" rel="noopener">관광청 방문·공연 안내</a></li>
+</ul></details>
+</article>
+</div>
+<p class="food-footnote">장소·운영 안내는 2026-09-09 기준입니다. 산책 시간과 코스는 이 여행에 맞춘 추천이며, 카페 휴무와 현장 입장 조건은 방문 전에 확인합니다.</p>
+</div></section>
+<!-- LOCAL-TIPS:GENERATED:END -->
 
   <section id="boats">
     <div class="wrap">

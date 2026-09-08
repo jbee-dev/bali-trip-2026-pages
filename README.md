@@ -3,7 +3,8 @@
 2026년 9월 23일 밤부터 10월 11일 새벽까지, 두 사람이 함께하는 여행입니다.
 
 - [날짜별 여행 가이드](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#days)
-- [숙소·맛집 구글 지도](https://www.google.com/maps/d/viewer?mid=1VREBbsg6ZiLug3qy1c3ihiRJwRhkkDY): 숙소 8곳과 맛집 18곳.
+- [숙소·맛집 구글 지도](https://www.google.com/maps/d/viewer?mid=1VREBbsg6ZiLug3qy1c3ihiRJwRhkkDY): 숙소 8곳, 맛집 18곳, 볼거리·카페 14곳.
+- [지역별 꿀팁](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#places): 카페·산책·먹거리와 현장 이용 팁.
 - [숙소 이용 안내](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#stays)
 - [동선에 맞춘 맛집과 식사 예산](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#food)
 - [남은 준비](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#todo)
