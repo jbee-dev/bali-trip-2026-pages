@@ -1,15 +1,14 @@
-# 발리와 길리 10주년 여행 가이드
+# 발리·길리 여행 가이드
 
-2026년 9월 23일 밤부터 10월 11일 새벽까지, 두 사람이 함께하는 여행입니다.
+2026년 9월 23일–10월 11일. 조호르바루와 싱가포르를 거쳐 길리, 우붓, 누사두아로 이어지는 두 사람의 여행입니다.
 
-- [날짜별 여행 가이드](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#days)
-- [숙소·맛집 구글 지도](https://www.google.com/maps/d/viewer?mid=1VREBbsg6ZiLug3qy1c3ihiRJwRhkkDY): 숙소 8곳, 맛집 18곳, 볼거리·카페 14곳.
-- [지역별 꿀팁](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#places): 카페·산책·먹거리와 현장 이용 팁.
-- [숙소 이용 안내](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#stays)
-- [동선에 맞춘 맛집과 식사 예산](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#food)
-- [남은 준비](https://jbee-dev.github.io/bali-trip-2026-pages/plan.html#todo)
-- [입국 신고와 준비물](preparation.md)
+날짜를 고르면 그날의 일정·이동·숙소·주변 식당을 함께 볼 수 있습니다.
 
-조호르바루와 싱가포르를 거쳐 발리로 갑니다. 길리 에어에서 3박, 트라왕안에서 4박을 보내고 우붓에서 2박을 지낸 뒤 라구나로 이동합니다. 10월 8일은 라구나에서 10주년을 보냅니다.
+- [날짜별 일정](plan.html)
+- [숙소](stays.html)
+- [구간별 이동](transport.html)
+- [식당과 산책](places.html)
+- [입국과 준비물](essentials.html)
+- [전체 지도](https://www.google.com/maps/d/viewer?mid=1VREBbsg6ZiLug3qy1c3ihiRJwRhkkDY)
 
-홈 화면에 추가하면 ‘발리 여행’ 아이콘으로 일정표를 열 수 있습니다. 여행 중에도 인터넷 연결이 필요합니다.
+홈 화면에 추가하면 ‘발리 여행’ 아이콘으로 열 수 있습니다. 지도와 외부 사이트 이용에는 인터넷 연결이 필요합니다.
