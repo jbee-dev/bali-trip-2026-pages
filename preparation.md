@@ -2,7 +2,7 @@
 
 [여행 가이드](plan.html) · [입국 안내](essentials.html#entry) · [준비물](essentials.html#packing)
 
-<!-- GENERATED: BALI-GUEST-GUIDE; input-sha256: e65a5883b1e8b4a17fb608462ec4c5f617a46845aec6701978b2b88f97467f2b -->
+<!-- GENERATED: BALI-GUEST-GUIDE; input-sha256: a8bd51e25e8d784102f2efffc3d386e75bf9f4fdf33d6a7a5f2d9dd93b7f0c62 -->
 
 ## 입국 신청
 

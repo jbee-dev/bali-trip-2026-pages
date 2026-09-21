@@ -105,6 +105,12 @@ footer{border-top:1px solid var(--border-1);padding:var(--space-5) 0;color:var(-
  summary{grid-template-columns:82px minmax(0,1fr);gap:var(--space-3);padding-right:26px}.summary-date{font-size:14px}.summary-title{font-size:17px}.detail-body{padding-left:0}.hotel-meta{grid-template-columns:76px minmax(0,1fr);gap:var(--space-3)}.place-desc{font-size:15px}.entry-row{display:block;padding:var(--space-4) 0}.entry-row p{font-size:15px}.entry-when{margin-top:var(--space-2)}.packing-grid{grid-template-columns:1fr}.practical-row{display:block}.practical-row h3{margin-bottom:var(--space-2)}footer .wrap{display:block}footer p+p{margin-top:var(--space-2)}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.day-introduction{max-width:850px;font-size:18px;line-height:1.9;margin-bottom:var(--space-6);color:var(--fg-2)}
+.region-introduction{font-size:17px;line-height:1.9;margin-bottom:var(--space-4)}.visit-tip{color:var(--fg-2);padding-bottom:var(--space-4)}
+.destination-details>summary{display:block;font-size:20px;font-weight:700;color:var(--fg-brand);border-bottom:1px solid var(--border-1);margin-bottom:var(--space-4)}
+.destination-place{padding:var(--space-5) 0;border-bottom:1px solid var(--border-1)}.destination-place h4{margin:0;font-size:18px;color:var(--fg-brand)}.destination-place p{line-height:1.85}.destination-place .section-title{margin-bottom:8px}
+.place-more>summary,.place-sources>summary{display:block;min-height:44px;padding:10px 26px 10px 0;font-size:14px;color:var(--fg-link)}.place-more>summary:after,.place-sources>summary:after{top:8px}.place-more p+p{margin-top:12px}.place-sources .links{margin-top:0}.food-order{margin-top:12px;font-size:14px;color:var(--fg-3)}
+@media(max-width:767px){.day-introduction{font-size:17px}.destination-place .section-title{align-items:flex-start}.destination-place .section-title>a{flex-shrink:0}.destination-details>summary{font-size:18px}}
 .booking-item{padding:var(--space-3) 0;border-bottom:1px solid var(--border-1)}
 .booking-item:last-child{border-bottom:0}.booking-item h3{font-size:16px;line-height:1.6;font-weight:700;color:var(--fg-brand)}
 .booking-actions{display:flex;flex-wrap:wrap;gap:0 var(--space-4)}.booking-actions a,.booking-links .booking-actions a{display:inline-flex;align-items:center;min-height:44px;font-size:var(--fs-small);font-weight:400;color:var(--fg-link)}
@@ -127,7 +133,7 @@ body[data-page=bookings] #heading-bookings,body[data-page=tools] #travel-tools>h
 </head>
 <body data-page="entry">
 <div class="utility-bar"><div class="wrap"><a id="guide-back" href="plan.html">← 전체 일정</a><a href="tools.html">환율, ATM</a></div></div>
-<!-- GENERATED: BALI-GUEST-GUIDE; input-sha256: e65a5883b1e8b4a17fb608462ec4c5f617a46845aec6701978b2b88f97467f2b -->
+<!-- GENERATED: BALI-GUEST-GUIDE; input-sha256: a8bd51e25e8d784102f2efffc3d386e75bf9f4fdf33d6a7a5f2d9dd93b7f0c62 -->
 <header class="cover wrap"><div class="cover-line"><h1><a class="home-link" href="plan.html">여행 준비</a></h1><a class="map-link" href="https://www.google.com/maps/d/viewer?mid=1VREBbsg6ZiLug3qy1c3ihiRJwRhkkDY" target="_blank" rel="noopener noreferrer">전체 지도</a></div><p class="dates">2026. 9. 23 — 10. 11 ,  2인</p></header>
 <nav class="nav" aria-label="여행 안내"><div class="wrap"><a href="plan.html">일정</a><a href="bookings.html">예약</a><a href="places.html">장소</a><a href="essentials.html" aria-current="page">준비</a><a href="tools.html">도구</a></div></nav>
 <main class="wrap">
@@ -159,7 +165,7 @@ body[data-page=bookings] #heading-bookings,body[data-page=tools] #travel-tools>h
    document.getElementById('start-summary').textContent=current.summary;
    document.getElementById('start-link').href=current.id+'.html';
    document.getElementById('start-bookings').href=current.id+'.html#day-bookings';
-   document.getElementById('start-note').textContent=index>=0?'현지 날짜 기준 ,  필요한 표와 이동 정보를 먼저 확인하세요.':date<days[0].date?'여행 중에는 현지 날짜에 맞는 일정이 여기에 표시됩니다.':'지난 일정과 예약 자료는 날짜별로 다시 열 수 있어요.';
+   document.getElementById('start-note').textContent=index>=0?'현지 날짜 기준':date<days[0].date?'여행 중에는 현지 날짜에 맞는 일정이 여기에 표시됩니다.':'지난 일정과 예약 자료는 날짜별로 다시 열 수 있어요.';
    document.querySelectorAll('.day-index a[aria-current]').forEach(a=>a.removeAttribute('aria-current'));
    if(index>=0)document.getElementById('date-'+current.id.slice(4))?.setAttribute('aria-current','date');
   }
