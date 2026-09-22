@@ -2,7 +2,7 @@
 
 [여행 가이드](plan.html) · [입국 안내](essentials.html#entry) · [준비물](essentials.html#packing)
 
-<!-- GENERATED: BALI-GUEST-GUIDE; input-sha256: a8bd51e25e8d784102f2efffc3d386e75bf9f4fdf33d6a7a5f2d9dd93b7f0c62 -->
+<!-- GENERATED: BALI-GUEST-GUIDE; input-sha256: 29020544dfb4b126726a776bafe0bf6ea98fcbee91a0346e3d7e195dea079866 -->
 
 ## 입국 신청
 
@@ -20,15 +20,15 @@
 
 ### [말레이시아 MDAC](https://imigresen-online.imi.gov.my/mdac/register)
 
-9/24 입국: 9/22~24 · 9/26 재입국: 9/24~26
+9/24 입국: 9/22~24, 9/25 재입국: 9/23~25, 9/26 재입국: 9/24~26
 
-무료. 10/10 KUL에서 입국심사를 거치면 10/8~10에 추가 제출. 수하물 연결과 환승 동선은 항공사에 확인.
+무료. 9/24 입국 후 첫 출국일은 9/25. 싱가포르에서 돌아오는 각 입국 건을 준비하고, 9/25 야경 후 귀환이 자정을 넘으면 실제 입국 날짜를 확인해 작성. 10/10 KUL에서 입국심사를 거치면 10/8~10 추가 제출.
 
 ### [싱가포르 SG Arrival Card](https://eservices.ica.gov.sg/sgarrivalcard)
 
-9/24~26, 싱가포르 입국 전
+9/25 입국: 9/23~25, 9/26 입국: 9/24~26
 
-무료. 9/26 육로 입국·출국하는 당일치기 일정으로 작성.
+무료. 9/25와 9/26 각각 육로 당일치기 방문으로 신고. 개인 제출에서 최대 3개 여행을 추가할 수 있으며, 두 날짜를 함께 작성하려면 9/24부터 가능.
 
 ### [All Indonesia](https://allindonesia.imigrasi.go.id/)
 
