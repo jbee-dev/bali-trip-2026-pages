@@ -12,3 +12,5 @@
 - [전체 지도](https://www.google.com/maps/d/viewer?mid=1VREBbsg6ZiLug3qy1c3ihiRJwRhkkDY)
 
 홈 화면에 추가하면 ‘발리 여행’ 아이콘으로 열 수 있습니다. 지도와 외부 사이트 이용에는 인터넷 연결이 필요합니다.
+
+다른 컴퓨터에서 입국 신고를 이어갈 때는 [신고 진행 상태와 이어서 할 일](docs/entry-handoff.md)을 먼저 확인해줘.
